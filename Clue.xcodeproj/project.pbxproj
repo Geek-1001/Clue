@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E258F3FB1CE3CEBE001E9F92 /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3F91CE3CEBE001E9F92 /* Clue.h */; };
+		E258F3FC1CE3CEBE001E9F92 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FA1CE3CEBE001E9F92 /* Clue.m */; };
+		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; };
+		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
+		E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */; };
+		E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E272DD8D1CD5223300F1FECA /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		E272DD921CD5223300F1FECA /* ClueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DD911CD5223300F1FECA /* ClueTests.m */; };
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E258F3F91CE3CEBE001E9F92 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clue.h; path = Classes/Clue.h; sourceTree = "<group>"; };
+		E258F3FA1CE3CEBE001E9F92 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clue.m; path = Classes/Clue.m; sourceTree = "<group>"; };
+		E258F3FD1CE3D037001E9F92 /* CLUOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUOptions.h; path = Classes/Models/CLUOptions.h; sourceTree = "<group>"; };
+		E258F3FE1CE3D037001E9F92 /* CLUOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUOptions.m; path = Classes/Models/CLUOptions.m; sourceTree = "<group>"; };
+		E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+CLUWindow.h"; path = "Classes/Extensions/UIWindow+CLUWindow.h"; sourceTree = "<group>"; };
+		E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+CLUWindow.m"; path = "Classes/Extensions/UIWindow+CLUWindow.m"; sourceTree = "<group>"; };
 		E272DD821CD5223300F1FECA /* Clue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E272DD851CD5223300F1FECA /* Clue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
 		E272DD871CD5223300F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E258F3F81CE3CD6A001E9F92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */,
+				E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		E272DD781CD5223300F1FECA = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +124,7 @@
 		E272DD841CD5223300F1FECA /* Clue */ = {
 			isa = PBXGroup;
 			children = (
+				E272DDBA1CD52B4000F1FECA /* Frameworks */,
 				E272DD9C1CD5225B00F1FECA /* Classes */,
 				E272DD851CD5223300F1FECA /* Clue.h */,
 				E272DD871CD5223300F1FECA /* Info.plist */,
@@ -122,6 +144,12 @@
 		E272DD9C1CD5225B00F1FECA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E258F3F81CE3CD6A001E9F92 /* Extensions */,
+				E272DDBD1CD5300000F1FECA /* Views */,
+				E272DDBC1CD52FE900F1FECA /* Controllers */,
+				E272DDBB1CD52FE300F1FECA /* Models */,
+				E258F3F91CE3CEBE001E9F92 /* Clue.h */,
+				E258F3FA1CE3CEBE001E9F92 /* Clue.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -150,6 +178,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E272DDBA1CD52B4000F1FECA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E272DDBB1CD52FE300F1FECA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E258F3FD1CE3D037001E9F92 /* CLUOptions.h */,
+				E258F3FE1CE3D037001E9F92 /* CLUOptions.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E272DDBC1CD52FE900F1FECA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E272DDBD1CD5300000F1FECA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -158,6 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
+				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
+				E258F3FB1CE3CEBE001E9F92 /* Clue.h in Headers */,
+				E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E258F3FC1CE3CEBE001E9F92 /* Clue.m in Sources */,
+				E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */,
+				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +595,7 @@
 				E272DD981CD5223300F1FECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E272DD991CD5223300F1FECA /* Build configuration list for PBXNativeTarget "ClueTests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +604,7 @@
 				E272DD9B1CD5223300F1FECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E272DDB51CD522F000F1FECA /* Build configuration list for PBXNativeTarget "ClueExampleApp" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +613,7 @@
 				E272DDB71CD522F000F1FECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
