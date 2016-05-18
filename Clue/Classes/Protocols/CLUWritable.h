@@ -13,5 +13,6 @@
 @required
 - (BOOL)isReadyForWriting;
 - (void)finishWriting;
+- (void)startWriting;
 
 @end

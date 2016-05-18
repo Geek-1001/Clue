@@ -26,6 +26,8 @@
 		E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C881CED03F700A48C61 /* CLUVideoModule.h */; };
 		E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C891CED03F700A48C61 /* CLUVideoModule.m */; };
 		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; };
+		E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */; };
+		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		E2A30C881CED03F700A48C61 /* CLUVideoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUVideoModule.h; path = Classes/Modules/CLUVideoModule.h; sourceTree = "<group>"; };
 		E2A30C891CED03F700A48C61 /* CLUVideoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoModule.m; path = Classes/Modules/CLUVideoModule.m; sourceTree = "<group>"; };
 		E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUWritable.h; path = Classes/Protocols/CLUWritable.h; sourceTree = "<group>"; };
+		E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUVideoWriter.h; path = Classes/Writers/CLUVideoWriter.h; sourceTree = "<group>"; };
+		E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoWriter.m; path = Classes/Writers/CLUVideoWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			children = (
 				E2A30C851CED017F00A48C61 /* Protocols */,
 				E2A30C841CED017200A48C61 /* Modules */,
+				E2A30C8E1CED0BC700A48C61 /* Writers */,
 				E258F3F81CE3CD6A001E9F92 /* Extensions */,
 				E272DDBD1CD5300000F1FECA /* Views */,
 				E272DDBB1CD52FE300F1FECA /* Models */,
@@ -228,6 +233,15 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		E2A30C8E1CED0BC700A48C61 /* Writers */ = {
+			isa = PBXGroup;
+			children = (
+				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
+				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
+			);
+			name = Writers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -241,6 +255,7 @@
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */,
+				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +392,7 @@
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
 				E258F3FC1CE3CEBE001E9F92 /* Clue.m in Sources */,
 				E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */,
+				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
