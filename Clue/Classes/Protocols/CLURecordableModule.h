@@ -15,6 +15,6 @@
 - (instancetype)initWithWriter:(id <CLUWritable>)writer;
 - (void)startRecording;
 - (void)stopRecording;
-- (BOOL)addNewFrameWithTimestamp:(CFTimeInterval)timestamp;
+- (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp;
 
 @end
