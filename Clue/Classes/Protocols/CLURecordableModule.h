@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CLUWritable.h"
 
 @protocol CLURecordableModule <NSObject>
 
 @required
+- (instancetype)initWithWriter:(id <CLUWritable>)writer;
 - (void)startRecording;
 - (void)stopRecording;
 - (BOOL)addNewFrameWithTimestamp:(CFTimeInterval)timestamp;
