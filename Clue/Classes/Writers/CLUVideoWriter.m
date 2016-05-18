@@ -45,7 +45,14 @@
 }
 
 - (void)finishWriting {
-    
+    [_videoWriterInput markAsFinished];
+    [_videoWriter finishWritingWithCompletionHandler:^{
+        _videoWriterAdaptor = nil;
+        _videoWriterInput = nil;
+        _videoWriter = nil;
+        CGColorSpaceRelease(_colorSpace);
+        CVPixelBufferPoolRelease(_outputBufferPool);
+    }];
 }
 
 - (BOOL)isReadyForWriting {
