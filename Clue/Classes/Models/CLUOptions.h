@@ -6,6 +6,8 @@
 //  Copyright © 2016 Ahmed Sulaiman. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface CLUOptions : NSObject
 
 @end
