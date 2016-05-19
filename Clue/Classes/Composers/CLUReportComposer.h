@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) NSMutableArray *recordableModules;
 @property (nonatomic, readonly) BOOL isRecording;
 
+- (instancetype)initWithModulesArray:(NSArray *)modulesArray;
+
 - (void)addRecordableModule:(id <CLURecordableModule>)module;
 - (void)removeRecordableModule:(id <CLURecordableModule>)module;
 

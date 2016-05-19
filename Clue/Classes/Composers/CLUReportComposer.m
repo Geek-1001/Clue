@@ -20,22 +20,28 @@
     dispatch_semaphore_t _recordSemaphore;
 }
 
-- (instancetype)init {
+- (instancetype)initWithModulesArray:(NSArray *)modulesArray {
     self = [super init];
     // TODO: make same initializer in other classes
-    if (!self) {
+    if (!self || !modulesArray) {
         return nil;
     }
     
     _isRecording = NO;
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(onScreenUpdate)];
-    _recordableModules = [[NSMutableArray alloc] init];
+    _recordableModules = [[NSMutableArray alloc] initWithArray:modulesArray];
     
     _moduleRecordQueue = dispatch_queue_create("CLUReportComposer.module_record_queue", DISPATCH_QUEUE_SERIAL);
     _mainRecordQueue = dispatch_queue_create("CLUReportComposer.main_record_queue", DISPATCH_QUEUE_SERIAL);
     dispatch_set_target_queue(_mainRecordQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0));
     _recordSemaphore = dispatch_semaphore_create(1);
     
+    return self;
+}
+
+- (instancetype)init {
+    _recordableModules = [[NSMutableArray alloc] init];
+    self = [self initWithModulesArray:_recordableModules];
     return self;
 }
 
