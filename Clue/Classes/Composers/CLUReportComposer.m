@@ -20,7 +20,7 @@
     dispatch_semaphore_t _recordSemaphore;
 }
 
-- (instancetype)initWithReportOutputURL:(NSURL *)outputURL {
+- (instancetype)init {
     self = [super init];
     // TODO: make same initializer in other classes
     if (!self) {
@@ -30,7 +30,6 @@
     _isRecording = NO;
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(onScreenUpdate)];
     _recordableModules = [[NSMutableArray alloc] init];
-    _outputURL = outputURL;
     
     _moduleRecordQueue = dispatch_queue_create("CLUReportComposer.module_record_queue", DISPATCH_QUEUE_SERIAL);
     _mainRecordQueue = dispatch_queue_create("CLUReportComposer.main_record_queue", DISPATCH_QUEUE_SERIAL);

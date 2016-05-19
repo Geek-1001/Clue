@@ -13,10 +13,7 @@
 @interface CLUReportComposer : NSObject
 
 @property (nonatomic, readonly) NSMutableArray *recordableModules;
-@property (nonatomic, readonly) NSURL *outputURL;
 @property (nonatomic, readonly) BOOL isRecording;
-
-- (instancetype)initWithReportOutputURL:(NSURL *)outputURL;
 
 - (void)addRecordableModule:(id <CLURecordableModule>)module;
 - (void)removeRecordableModule:(id <CLURecordableModule>)module;
