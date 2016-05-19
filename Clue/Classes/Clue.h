@@ -11,17 +11,15 @@
 
 static char* ClueAssociationKey = "ClueAssociationKey";
 
-@interface Clue : NSObject {
-    @private
-    BOOL _isEnabled;
-    BOOL _isRecording;
-}
+@interface Clue : NSObject
 
 - (instancetype)initWithWindow:(UIWindow *)window;
-- (BOOL)startRecord;
-- (BOOL)stopRecord;
+- (void)startRecording;
+- (void)stopRecording;
+- (void)handleShake:(UIEventSubtype)motion;
 
 - (void)enable;
+- (void)disable;
 - (void)enableWithOptions:(CLUOptions *)options;
 
 
