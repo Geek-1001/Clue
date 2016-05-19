@@ -22,6 +22,8 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
+		E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = E28CC08B1CEE214B00C9DFD9 /* CLUReportComposer.h */; };
+		E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */; };
 		E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */; };
 		E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C881CED03F700A48C61 /* CLUVideoModule.h */; };
 		E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C891CED03F700A48C61 /* CLUVideoModule.m */; };
@@ -70,6 +72,8 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28CC08B1CEE214B00C9DFD9 /* CLUReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUReportComposer.h; path = Classes/Composers/CLUReportComposer.h; sourceTree = "<group>"; };
+		E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUReportComposer.m; path = Classes/Composers/CLUReportComposer.m; sourceTree = "<group>"; };
 		E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLURecordableModule.h; path = Classes/Protocols/CLURecordableModule.h; sourceTree = "<group>"; };
 		E2A30C881CED03F700A48C61 /* CLUVideoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUVideoModule.h; path = Classes/Modules/CLUVideoModule.h; sourceTree = "<group>"; };
 		E2A30C891CED03F700A48C61 /* CLUVideoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoModule.m; path = Classes/Modules/CLUVideoModule.m; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		E272DD9C1CD5225B00F1FECA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E28CC08A1CEE210D00C9DFD9 /* Composers */,
 				E2A30C851CED017F00A48C61 /* Protocols */,
 				E2A30C841CED017200A48C61 /* Modules */,
 				E2A30C8E1CED0BC700A48C61 /* Writers */,
@@ -215,6 +220,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		E28CC08A1CEE210D00C9DFD9 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				E28CC08B1CEE214B00C9DFD9 /* CLUReportComposer.h */,
+				E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */,
+			);
+			name = Composers;
+			sourceTree = "<group>";
+		};
 		E2A30C841CED017200A48C61 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +268,7 @@
 				E258F3FB1CE3CEBE001E9F92 /* Clue.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
+				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
 				E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */,
 				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
@@ -391,6 +406,7 @@
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
 				E258F3FC1CE3CEBE001E9F92 /* Clue.m in Sources */,
+				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
 				E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
