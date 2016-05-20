@@ -18,14 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [_window.clue enable];
-    
+    [[ClueController sharedInstance] enable];
     return YES;
 }
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    [_window.clue handleShake:motion];
+    [[ClueController sharedInstance] handleShake:motion];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

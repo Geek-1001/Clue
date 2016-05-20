@@ -18,6 +18,10 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
+		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
+		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
+		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
+		E28610151CEFB9C300FA9BAF /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610111CEFB9C300FA9BAF /* Karla-Regular.ttf */; };
 		E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = E28CC08B1CEE214B00C9DFD9 /* CLUReportComposer.h */; };
 		E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */; };
 		E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */ = {isa = PBXBuildFile; fileRef = E28CC0931CEE619000C9DFD9 /* ClueController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +70,10 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
+		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
+		E28610111CEFB9C300FA9BAF /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
 		E28CC08B1CEE214B00C9DFD9 /* CLUReportComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUReportComposer.h; path = Classes/Composers/CLUReportComposer.h; sourceTree = "<group>"; };
 		E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUReportComposer.m; path = Classes/Composers/CLUReportComposer.m; sourceTree = "<group>"; };
 		E28CC0931CEE619000C9DFD9 /* ClueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueController.h; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 		E272DDA21CD522F000F1FECA /* ClueExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				E286100D1CEFB9AD00FA9BAF /* Resources */,
 				E272DDA61CD522F000F1FECA /* AppDelegate.h */,
 				E272DDA71CD522F000F1FECA /* AppDelegate.m */,
 				E272DDA91CD522F000F1FECA /* ViewController.h */,
@@ -212,6 +221,17 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E286100D1CEFB9AD00FA9BAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */,
+				E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */,
+				E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */,
+				E28610111CEFB9C300FA9BAF /* Karla-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E28CC08A1CEE210D00C9DFD9 /* Composers */ = {
@@ -386,7 +406,11 @@
 			files = (
 				E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */,
 				E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */,
+				E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */,
+				E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */,
+				E28610151CEFB9C300FA9BAF /* Karla-Regular.ttf in Resources */,
 				E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */,
+				E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
