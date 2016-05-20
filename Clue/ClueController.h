@@ -11,9 +11,9 @@
 
 static char* ClueAssociationKey = "ClueAssociationKey";
 
-@interface Clue : NSObject
+@interface ClueController : NSObject
 
-- (instancetype)initWithWindow:(UIWindow *)window;
++ (instancetype)sharedInstance;
 - (void)startRecording;
 - (void)stopRecording;
 - (void)handleShake:(UIEventSubtype)motion;

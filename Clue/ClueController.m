@@ -6,30 +6,28 @@
 //  Copyright © 2016 Ahmed Sulaiman. All rights reserved.
 //
 
-#import "Clue.h"
+#import "ClueController.h"
 #import "CLUReportComposer.h"
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
 
-@interface Clue()
+@interface ClueController()
 
 @property (nonatomic) BOOL isEnabled;
 @property (nonatomic) BOOL isRecording;
-@property (nonatomic, weak) UIWindow *window;
 @property (nonatomic) CLUOptions *options;
 @property (nonatomic) CLUReportComposer *reportComposer;
 
 @end
 
-@implementation Clue
+@implementation ClueController
 
-- (instancetype)initWithWindow:(UIWindow *)window {
+- (instancetype)init {
     self = [super init];
-    if (!self || !window) {
+    if (!self) {
         return nil;
     }
-    _window = window;
     _isEnabled = NO;
     _options = [[CLUOptions alloc] init];
     
@@ -37,6 +35,15 @@
     _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
     
     return self;
+}
+
++ (instancetype)sharedInstance {
+    static dispatch_once_t once;
+    static ClueController *instance;
+    dispatch_once(&once, ^{
+        instance = [[ClueController alloc] init];
+    });
+    return instance;
 }
 
 - (void)enable {
