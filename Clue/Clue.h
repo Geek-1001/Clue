@@ -14,6 +14,5 @@ FOUNDATION_EXPORT double ClueVersionNumber;
 //! Project version string for Clue.
 FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Clue/PublicHeader.h>
-
-
+#import <Clue/ClueController.h>
+#import <Clue/CLUOptions.h>
