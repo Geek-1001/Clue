@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
-		E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E272DD8D1CD5223300F1FECA /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		E272DD921CD5223300F1FECA /* ClueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DD911CD5223300F1FECA /* ClueTests.m */; };
@@ -52,8 +50,6 @@
 /* Begin PBXFileReference section */
 		E258F3FD1CE3D037001E9F92 /* CLUOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUOptions.h; path = Classes/Models/CLUOptions.h; sourceTree = "<group>"; };
 		E258F3FE1CE3D037001E9F92 /* CLUOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUOptions.m; path = Classes/Models/CLUOptions.m; sourceTree = "<group>"; };
-		E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+CLUWindow.h"; path = "Classes/Extensions/UIWindow+CLUWindow.h"; sourceTree = "<group>"; };
-		E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+CLUWindow.m"; path = "Classes/Extensions/UIWindow+CLUWindow.m"; sourceTree = "<group>"; };
 		E272DD821CD5223300F1FECA /* Clue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E272DD851CD5223300F1FECA /* Clue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
 		E272DD871CD5223300F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 		E258F3F81CE3CD6A001E9F92 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E258F4011CE3D12E001E9F92 /* UIWindow+CLUWindow.h */,
-				E258F4021CE3D12E001E9F92 /* UIWindow+CLUWindow.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -266,7 +260,6 @@
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
-				E258F4031CE3D12E001E9F92 /* UIWindow+CLUWindow.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
@@ -406,7 +399,6 @@
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
-				E258F4041CE3D12E001E9F92 /* UIWindow+CLUWindow.m in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
