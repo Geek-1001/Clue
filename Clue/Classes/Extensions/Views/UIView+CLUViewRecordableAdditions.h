@@ -11,4 +11,7 @@
 
 @interface UIView (CLUViewRecordableAdditions) <CLUViewRecordableProperties>
 
+- (NSDictionary *)clue_colorPropertyDictionaryForColor:(UIColor *)color;
+- (NSDictionary *)clue_sizePropertyDictionaryForSize:(CGSize)size;
+
 @end

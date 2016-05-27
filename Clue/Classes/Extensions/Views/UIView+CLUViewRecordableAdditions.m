@@ -26,7 +26,7 @@
     
     NSDictionary *framePropertyDictionary = [self clue_frameProprtyDictionary];
     [propertiesDictionary setValue:framePropertyDictionary forKey:@"frame"];
-    NSDictionary *backgroundColorProperty = [self clue_backgroundColorPropertyDictionary];
+    NSDictionary *backgroundColorProperty = [self clue_colorPropertyDictionaryForColor:self.backgroundColor];
     [propertiesDictionary setValue:backgroundColorProperty forKey:@"backgroundColor"];
     [propertiesDictionary setValue:[NSNumber numberWithBool:[self isHidden]] forKey:@"hidden"];
     // TODO: add Layer parsing
@@ -49,6 +49,24 @@
     return rootDictionary;
 }
 
+- (NSDictionary *)clue_colorPropertyDictionaryForColor:(UIColor *)color {
+    NSMutableDictionary *colorDictionary = [[NSMutableDictionary alloc] init];
+    CGFloat red, green, blue, alpha;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    [colorDictionary setValue:[NSNumber numberWithFloat:red] forKey:@"red"];
+    [colorDictionary setValue:[NSNumber numberWithFloat:green] forKey:@"green"];
+    [colorDictionary setValue:[NSNumber numberWithFloat:blue] forKey:@"blue"];
+    [colorDictionary setValue:[NSNumber numberWithFloat:alpha] forKey:@"alpha"];
+    return colorDictionary;
+}
+
+- (NSDictionary *)clue_sizePropertyDictionaryForSize:(CGSize)size {
+    NSMutableDictionary *sizeDictionary = [[NSMutableDictionary alloc] init];
+    [sizeDictionary setValue:[NSNumber numberWithFloat:size.width] forKey:@"width"];
+    [sizeDictionary setValue:[NSNumber numberWithFloat:size.height] forKey:@"height"];
+    return sizeDictionary;
+}
+
 - (NSDictionary *)clue_frameProprtyDictionary {
     NSMutableDictionary *frameDictionary = [[NSMutableDictionary alloc] init];
     [frameDictionary setValue:[NSNumber numberWithFloat:self.frame.origin.x] forKey:@"x"];
@@ -56,17 +74,6 @@
     [frameDictionary setValue:[NSNumber numberWithFloat:self.frame.size.width] forKey:@"width"];
     [frameDictionary setValue:[NSNumber numberWithFloat:self.frame.size.height] forKey:@"height"];
     return frameDictionary;
-}
-
-- (NSDictionary *)clue_backgroundColorPropertyDictionary {
-    NSMutableDictionary *backgroundDictionary = [[NSMutableDictionary alloc] init];
-    CGFloat red, green, blue, alpha;
-    [self.backgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
-    [backgroundDictionary setValue:[NSNumber numberWithFloat:red] forKey:@"red"];
-    [backgroundDictionary setValue:[NSNumber numberWithFloat:green] forKey:@"green"];
-    [backgroundDictionary setValue:[NSNumber numberWithFloat:blue] forKey:@"blue"];
-    [backgroundDictionary setValue:[NSNumber numberWithFloat:alpha] forKey:@"alpha"];
-    return backgroundDictionary;
 }
 
 - (NSDictionary *)clue_layoutMarginsPropertyDictionary {
