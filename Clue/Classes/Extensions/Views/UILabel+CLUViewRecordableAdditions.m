@@ -20,8 +20,8 @@
     
     [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
     
-    NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionary];
-    NSDictionary *fontDictionary = [self clue_fontPropertyDictionary];
+    NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:self.attributedText];
+    NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     NSDictionary *textColorDictionary = [self clue_colorPropertyDictionaryForColor:self.textColor];
     NSDictionary *highlightedTextColorDictionary = [self clue_colorPropertyDictionaryForColor:self.highlightedTextColor];
     NSDictionary *shadowColorDictionary = [self clue_colorPropertyDictionaryForColor:self.shadowColor];
@@ -42,24 +42,6 @@
     [rootDictionary setValue:propertiesDictionary forKey:@"properties"];
     
     return rootDictionary;
-}
-
-- (NSMutableDictionary *)clue_attributedTextPropertyDictionary {
-    NSMutableDictionary *attributedTextDictionary = [[NSMutableDictionary alloc] init];
-    NSAttributedString *atrubutedText = self.attributedText;
-    [attributedTextDictionary setValue:[atrubutedText string] forKey:@"string"];
-    // TODO: add Retrieving Attribute Information
-    return attributedTextDictionary;
-}
-
-- (NSMutableDictionary *)clue_fontPropertyDictionary {
-    NSMutableDictionary *fontDictionary = [[NSMutableDictionary alloc] init];
-    UIFont *font = self.font;
-    [fontDictionary setValue:font.familyName forKey:@"familyName"];
-    [fontDictionary setValue:font.fontName forKey:@"fontName"];
-    [fontDictionary setValue:[NSNumber numberWithFloat:font.pointSize] forKey:@"pointSize"];
-    [fontDictionary setValue:[NSNumber numberWithFloat:font.lineHeight] forKey:@"lineHeight"];
-    return fontDictionary;
 }
 
 @end
