@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */; };
+		E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */; };
 		E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */; };
 		E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */; };
 		E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
+		E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
 		E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewRecordableProperties.h; path = Classes/Protocols/CLUViewRecordableProperties.h; sourceTree = "<group>"; };
 		E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UIView+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UIView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */,
 				E232BA901CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h */,
 				E232BA911CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m */,
+				E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */,
+				E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
+				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
 				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
@@ -461,6 +468,7 @@
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
+				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
