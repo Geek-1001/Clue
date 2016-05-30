@@ -86,4 +86,20 @@
     return marginsDictionary;
 }
 
+- (NSDictionary *)clue_fontPropertyDictionaryForFont:(UIFont *)font {
+    NSMutableDictionary *fontDictionary = [[NSMutableDictionary alloc] init];
+    [fontDictionary setValue:font.familyName forKey:@"familyName"];
+    [fontDictionary setValue:font.fontName forKey:@"fontName"];
+    [fontDictionary setValue:[NSNumber numberWithFloat:font.pointSize] forKey:@"pointSize"];
+    [fontDictionary setValue:[NSNumber numberWithFloat:font.lineHeight] forKey:@"lineHeight"];
+    return fontDictionary;
+}
+
+- (NSDictionary *)clue_attributedTextPropertyDictionaryForAttributedString:(NSAttributedString *)attributedText {
+    NSMutableDictionary *attributedTextDictionary = [[NSMutableDictionary alloc] init];
+    [attributedTextDictionary setValue:[attributedText string] forKey:@"string"];
+    // TODO: add Retrieving Attribute Information
+    return attributedTextDictionary;
+}
+
 @end

@@ -13,5 +13,7 @@
 
 - (NSDictionary *)clue_colorPropertyDictionaryForColor:(UIColor *)color;
 - (NSDictionary *)clue_sizePropertyDictionaryForSize:(CGSize)size;
+- (NSDictionary *)clue_fontPropertyDictionaryForFont:(UIFont *)font;
+- (NSDictionary *)clue_attributedTextPropertyDictionaryForAttributedString:(NSAttributedString *)attributedText;
 
 @end
