@@ -43,6 +43,8 @@
 		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; };
 		E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */; };
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
+		E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */; };
+		E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUWritable.h; path = Classes/Protocols/CLUWritable.h; sourceTree = "<group>"; };
 		E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUVideoWriter.h; path = Classes/Writers/CLUVideoWriter.h; sourceTree = "<group>"; };
 		E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoWriter.m; path = Classes/Writers/CLUVideoWriter.m; sourceTree = "<group>"; };
+		E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewStructureWriter.h; path = Classes/Writers/CLUViewStructureWriter.h; sourceTree = "<group>"; };
+		E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUViewStructureWriter.m; path = Classes/Writers/CLUViewStructureWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,8 @@
 			children = (
 				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
 				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
+				E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */,
+				E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */,
 			);
 			name = Writers;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
+				E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */,
 				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
 				E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */,
 				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
@@ -472,6 +479,7 @@
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
+				E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
