@@ -19,12 +19,13 @@
     NSDictionary *propertiesDictionary = [rootDictionary valueForKey:@"properties"];
     
     [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
-    
-    [propertiesDictionary setValue:[self image] forKey:@"image"];
-    [propertiesDictionary setValue:[self highlightedImage] forKey:@"highlightedImage"];
+
+    // TODO: Save image in a different way
+//    [propertiesDictionary setValue:[self image] forKey:@"image"];
+//    [propertiesDictionary setValue:[self highlightedImage] forKey:@"highlightedImage"];
+//    [propertiesDictionary setValue:[self animationImages] forKey:@"animationImages"];
+//    [propertiesDictionary setValue:[self highlightedAnimationImages] forKey:@"highlightedAnimationImages"];
     [propertiesDictionary setValue:[NSNumber numberWithBool:[self isAnimating]] forKey:@"isAnimating"];
-    [propertiesDictionary setValue:[self animationImages] forKey:@"animationImages"];
-    [propertiesDictionary setValue:[self highlightedAnimationImages] forKey:@"highlightedAnimationImages"];
     [propertiesDictionary setValue:[NSNumber numberWithDouble:[self animationDuration]] forKey:@"animationDuration"];
     [propertiesDictionary setValue:[NSNumber numberWithInteger:[self animationRepeatCount]] forKey:@"animationRepeatCount"];
     [propertiesDictionary setValue:[NSNumber numberWithBool:[self isHighlighted]] forKey:@"highlighted"];
