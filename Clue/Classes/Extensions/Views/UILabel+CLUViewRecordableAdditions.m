@@ -23,7 +23,6 @@
     NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:self.attributedText];
     NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     NSDictionary *textColorDictionary = [self clue_colorPropertyDictionaryForColor:self.textColor];
-    NSDictionary *highlightedTextColorDictionary = [self clue_colorPropertyDictionaryForColor:self.highlightedTextColor];
     NSDictionary *shadowColorDictionary = [self clue_colorPropertyDictionaryForColor:self.shadowColor];
     NSDictionary *shadowOffsetDictionary = [self clue_sizePropertyDictionaryForSize:self.shadowOffset];
     
@@ -35,7 +34,6 @@
     [propertiesDictionary setValue:[NSNumber numberWithInteger:[self lineBreakMode]] forKey:@"lineBreakMode"];
     [propertiesDictionary setValue:[NSNumber numberWithInteger:[self numberOfLines]] forKey:@"numberOfLines"];
     [propertiesDictionary setValue:[NSNumber numberWithBool:[self isHighlighted]] forKey:@"highlighted"];
-    [propertiesDictionary setValue:highlightedTextColorDictionary forKey:@"highlightedTextColor"];
     [propertiesDictionary setValue:shadowColorDictionary forKey:@"shadowColor"];
     [propertiesDictionary setValue:shadowOffsetDictionary forKey:@"shadowOffset"];
     
