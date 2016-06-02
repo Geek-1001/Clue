@@ -11,6 +11,8 @@
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
+#import "CLUViewStructureWriter.h"
+#import "CLUViewStructureModule.h"
 
 @interface ClueController()
 
@@ -102,7 +104,9 @@
 - (NSMutableArray *)configureRecordableModules {
     NSMutableArray *modulesArray = [[NSMutableArray alloc] init];
     CLUVideoModule *videoModul = [self configureVideoModule];
+    CLUViewStructureModule *viewStructureModule = [self configureViewStructureModule];
     [modulesArray addObject:videoModul];
+    [modulesArray addObject:viewStructureModule];
     return modulesArray;
 }
 
@@ -115,5 +119,11 @@
     return videoModule;
 }
 
+- (CLUViewStructureModule *)configureViewStructureModule {
+    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/screencast.json"]; // TODO: change harcoded file path
+    CLUViewStructureWriter *viewStructureWriter = [[CLUViewStructureWriter alloc] initWithOutputURL:outputURL];
+    CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:viewStructureWriter];
+    return viewStructureModule;
+}
 
 @end
