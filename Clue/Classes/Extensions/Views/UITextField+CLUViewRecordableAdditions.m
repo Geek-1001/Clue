@@ -20,23 +20,23 @@
     
     [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
     
-    [propertiesDictionary setValue:[self text] forKey:@"text"];
     NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:[self attributedText]];
+    NSDictionary *attributedPlaceholderDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:[self attributedPlaceholder]];
+    NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
+    NSDictionary *textColorDicitonary = [self clue_colorPropertyDictionaryForColor:[self textColor]];
+    
+    [propertiesDictionary setValue:[self text] forKey:@"text"];
     [propertiesDictionary setValue:attributedTextDictionary forKey:@"attributedText"];
     [propertiesDictionary setValue:[self placeholder] forKey:@"placeholder"];
-    NSDictionary *attributedPlaceholderDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:[self attributedPlaceholder]];
     [propertiesDictionary setValue:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
-    [propertiesDictionary setValue:[self defaultTextAttributes] forKey:@"defaultTextAttributes"];
-    NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     [propertiesDictionary setValue:fontDictionary forKey:@"font"];
-    NSDictionary *textColorDicitonary = [self clue_colorPropertyDictionaryForColor:[self textColor]];
     [propertiesDictionary setValue:textColorDicitonary forKey:@"textColor"];
-    [propertiesDictionary setValue:[self typingAttributes] forKey:@"typingAttributes"];
     [propertiesDictionary setValue:[NSNumber numberWithFloat:[self minimumFontSize]] forKey:@"minimumFontSize"];
     [propertiesDictionary setValue:[NSNumber numberWithBool:[self isEditing]] forKey:@"editing"];
     [propertiesDictionary setValue:[NSNumber numberWithInt:[self borderStyle]] forKey:@"borderStyle"];
-    [propertiesDictionary setValue:[self background] forKey:@"background"];
-    [propertiesDictionary setValue:[self disabledBackground] forKey:@"disabledBackground"];
+    // TODO: Save image in a different way
+//    [propertiesDictionary setValue:[self background] forKey:@"background"];
+//    [propertiesDictionary setValue:[self disabledBackground] forKey:@"disabledBackground"];
     
     [rootDictionary setValue:propertiesDictionary forKey:@"properties"];
     
