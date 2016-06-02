@@ -75,6 +75,11 @@
     [rootViewDictionary setValue:propertiesDictionary forKey:@"view"];
     
     NSError *error;
+    BOOL isPropertiesDictionaryValid = [NSJSONSerialization isValidJSONObject:rootViewDictionary];
+    if (!isPropertiesDictionaryValid) {
+        // TODO: notify about error
+        //return;
+    }
     NSData *viewPropertiesData = [NSJSONSerialization dataWithJSONObject:rootViewDictionary options:0 error:&error];
     NSUInteger length = [viewPropertiesData length];
     

@@ -13,4 +13,7 @@
 
 @property (nonatomic, readonly) NSURL *outputURL;
 
+- (instancetype)initWithOutputURL:(NSURL *)outputURL;
+- (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary withTimeInterval:(CFTimeInterval)timeInterval;
+
 @end
