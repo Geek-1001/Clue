@@ -27,6 +27,10 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
+		E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DB1D03505F0083E951 /* CLUObserveModule.h */; };
+		E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7DC1D03505F0083E951 /* CLUObserveModule.m */; };
+		E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DF1D035DC90083E951 /* CLUDataWriter.h */; };
+		E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E01D035DC90083E951 /* CLUDataWriter.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
 		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
 		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
@@ -92,6 +96,10 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E278B7DB1D03505F0083E951 /* CLUObserveModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUObserveModule.h; path = Classes/Modules/CLUObserveModule.h; sourceTree = "<group>"; };
+		E278B7DC1D03505F0083E951 /* CLUObserveModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUObserveModule.m; path = Classes/Modules/CLUObserveModule.m; sourceTree = "<group>"; };
+		E278B7DF1D035DC90083E951 /* CLUDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUDataWriter.h; path = Classes/Writers/CLUDataWriter.h; sourceTree = "<group>"; };
+		E278B7E01D035DC90083E951 /* CLUDataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUDataWriter.m; path = Classes/Writers/CLUDataWriter.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
@@ -292,6 +300,8 @@
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
 				E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */,
 				E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */,
+				E278B7DB1D03505F0083E951 /* CLUObserveModule.h */,
+				E278B7DC1D03505F0083E951 /* CLUObserveModule.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -313,6 +323,8 @@
 				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
 				E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */,
 				E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */,
+				E278B7DF1D035DC90083E951 /* CLUDataWriter.h */,
+				E278B7E01D035DC90083E951 /* CLUDataWriter.m */,
 			);
 			name = Writers;
 			sourceTree = "<group>";
@@ -332,10 +344,12 @@
 				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
 				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
+				E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
 				E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */,
 				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
+				E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */,
 				E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */,
 				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
@@ -476,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
+				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
@@ -486,6 +501,7 @@
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
+				E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
