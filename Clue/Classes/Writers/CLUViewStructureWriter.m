@@ -8,61 +8,14 @@
 
 #import "CLUViewStructureWriter.h"
 
-@interface CLUViewStructureWriter()
-
-@property (nonatomic) BOOL isWriting;
-@property (nonatomic) NSOutputStream *outputStream;
-
-@end
-
 @implementation CLUViewStructureWriter
 
 - (instancetype)initWithOutputURL:(NSURL *)outputURL {
-    self = [super init];
+    self = [super initWithOutputURL:outputURL];
     if (!self) {
         return nil;
     }
-    _isWriting = NO;
-    _outputURL = outputURL;
-    _outputStream = [NSOutputStream outputStreamWithURL:outputURL append:YES];
-    [_outputStream setDelegate:self];
-    [_outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     return self;
-}
-
-- (BOOL)isReadyForWriting {
-    BOOL isReady = NO;
-    NSStreamStatus streamStatus = [_outputStream streamStatus];
-    if (streamStatus == NSStreamStatusOpen && _isWriting) {
-        isReady = YES;
-    }
-    return isReady;
-}
-
-- (void)finishWriting {
-    if (_isWriting) {
-        _isWriting = NO;
-        
-        [_outputStream close];
-        [_outputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        _outputStream = nil;
-    }
-}
-
-- (void)startWriting {
-    if (!_isWriting) {
-        _isWriting = YES;
-        [_outputStream open];
-    }
-}
-
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
-    NSUInteger eventCodeInteger = (NSUInteger) eventCode;
-    switch(eventCodeInteger) {
-        case NSStreamEventErrorOccurred:
-            [self handleStreamError];
-            break;
-    }
 }
 
 - (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary withTimeInterval:(CFTimeInterval)timeInterval {
@@ -78,30 +31,10 @@
     BOOL isPropertiesDictionaryValid = [NSJSONSerialization isValidJSONObject:rootViewDictionary];
     if (!isPropertiesDictionaryValid) {
         // TODO: notify about error
-        //return;
+        return;
     }
     NSData *viewPropertiesData = [NSJSONSerialization dataWithJSONObject:rootViewDictionary options:0 error:&error];
-    NSUInteger length = [viewPropertiesData length];
-    
-    NSInteger writeStatus = [_outputStream write:[viewPropertiesData bytes] maxLength:length];
-    if (writeStatus < 0) {
-        [self handleStreamError];
-        return;
-    }
-    
-    NSString *nextLineString = @"\n";
-    NSData *nextLineData = [nextLineString dataUsingEncoding:NSUTF8StringEncoding];
-    writeStatus = [_outputStream write:[nextLineData bytes] maxLength:[nextLineData length]];
-    // Remove this copy-paste error checking block
-    if (writeStatus < 0) {
-        [self handleStreamError];
-        return;
-    }
-}
-
-- (void)handleStreamError {
-    NSError *streamError = [_outputStream streamError];
-    NSLog(@"Stream error : %@", [streamError localizedDescription]);
+    [self addData:viewPropertiesData];
 }
 
 @end

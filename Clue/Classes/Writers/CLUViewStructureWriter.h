@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CLUWritable.h"
+#import "CLUDataWriter.h"
 
-@interface CLUViewStructureWriter : NSObject <CLUWritable, NSStreamDelegate>
-
-@property (nonatomic, readonly) NSURL *outputURL;
+@interface CLUViewStructureWriter : CLUDataWriter
 
 - (instancetype)initWithOutputURL:(NSURL *)outputURL;
 - (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary withTimeInterval:(CFTimeInterval)timeInterval;
