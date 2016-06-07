@@ -31,6 +31,8 @@
 		E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7DC1D03505F0083E951 /* CLUObserveModule.m */; };
 		E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DF1D035DC90083E951 /* CLUDataWriter.h */; };
 		E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E01D035DC90083E951 /* CLUDataWriter.m */; };
+		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
+		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
 		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
 		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
@@ -100,6 +102,8 @@
 		E278B7DC1D03505F0083E951 /* CLUObserveModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUObserveModule.m; path = Classes/Modules/CLUObserveModule.m; sourceTree = "<group>"; };
 		E278B7DF1D035DC90083E951 /* CLUDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUDataWriter.h; path = Classes/Writers/CLUDataWriter.h; sourceTree = "<group>"; };
 		E278B7E01D035DC90083E951 /* CLUDataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUDataWriter.m; path = Classes/Writers/CLUDataWriter.m; sourceTree = "<group>"; };
+		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUUserInteractionModule.h; path = Classes/Modules/CLUUserInteractionModule.h; sourceTree = "<group>"; };
+		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUUserInteractionModule.m; path = Classes/Modules/CLUUserInteractionModule.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 				E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */,
 				E278B7DB1D03505F0083E951 /* CLUObserveModule.h */,
 				E278B7DC1D03505F0083E951 /* CLUObserveModule.m */,
+				E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */,
+				E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */,
+				E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */,
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
@@ -493,6 +500,7 @@
 				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
+				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
 				E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
