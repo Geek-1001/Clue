@@ -11,7 +11,6 @@
 @interface CLUVideoModule()
 
 @property (nonatomic) CLUVideoWriter *writer;
-@property (nonatomic) CFTimeInterval firstTimestemp;
 
 @end
 
@@ -64,12 +63,7 @@
         if (![_writer isReadyForWriting]) {
             return;
         }
-        if (!_firstTimestemp) {
-            _firstTimestemp = timestamp;
-        }
-        
-        CFTimeInterval elapsedTimeInterval = timestamp - _firstTimestemp;
-        CMTime presentTime = CMTimeMakeWithSeconds(elapsedTimeInterval, 1000);
+        CMTime presentTime = CMTimeMakeWithSeconds(timestamp, 1000);
         
         CVPixelBufferRef pixelBuffer = NULL;
         CGContextRef bitmapContext = [_writer bitmapContextForPixelBuffer:&pixelBuffer];

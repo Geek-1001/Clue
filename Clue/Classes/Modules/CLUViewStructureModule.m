@@ -14,7 +14,6 @@
 @interface CLUViewStructureModule()
 
 @property (nonatomic) CLUViewStructureWriter *viewStructureWriter;
-@property (nonatomic) CFTimeInterval firstTimestemp;
 @property (nonatomic) NSDictionary *lastRecordedViewStructure;
 
 @end
@@ -61,11 +60,6 @@
         if (![_viewStructureWriter isReadyForWriting]) {
             return;
         }
-        
-        if (!_firstTimestemp) {
-            _firstTimestemp = timestamp;
-        }
-        CFTimeInterval elapsedTimeInterval = timestamp - _firstTimestemp;
 
         NSDictionary *currentViewStructure;
         for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
@@ -78,7 +72,7 @@
         }
         
         if (!_lastRecordedViewStructure || ![_lastRecordedViewStructure isEqualToDictionary:currentViewStructure]) {
-            [_viewStructureWriter addViewStructureProperties:currentViewStructure withTimeInterval:elapsedTimeInterval];
+            [_viewStructureWriter addViewStructureProperties:currentViewStructure withTimeInterval:timestamp];
             _lastRecordedViewStructure = currentViewStructure;
         }
         

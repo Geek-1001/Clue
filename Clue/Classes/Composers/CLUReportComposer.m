@@ -11,6 +11,7 @@
 @interface CLUReportComposer()
 
 @property (nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) CFTimeInterval firstTimestemp;
 
 @end
 
@@ -84,7 +85,12 @@
     dispatch_async(_mainRecordQueue, ^{
         for (id <CLURecordableModule> module in _recordableModules) {
             dispatch_async(_moduleRecordQueue, ^{
-                [module addNewFrameWithTimestamp:_displayLink.timestamp];
+                CFTimeInterval timestamp = _displayLink.timestamp;
+                if (!_firstTimestemp) {
+                    _firstTimestemp = timestamp;
+                }
+                CFTimeInterval elapsedTimeInterval = timestamp - _firstTimestemp;
+                [module addNewFrameWithTimestamp:elapsedTimeInterval];
             });
         }
         dispatch_semaphore_signal(_recordSemaphore);

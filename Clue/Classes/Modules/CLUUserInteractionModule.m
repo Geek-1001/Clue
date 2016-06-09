@@ -14,7 +14,6 @@
 @interface CLUUserInteractionModule()
 
 @property (nonatomic) CFTimeInterval currentTimeStamp;
-@property (nonatomic) CFTimeInterval firstTimestemp;
 @property (nonatomic) CLUGeneralGestureRecognizer *gestureRecognizer;
 
 @end
@@ -52,10 +51,7 @@
 }
 
 - (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
-    if (!_firstTimestemp) {
-        _firstTimestemp = timestamp;
-    }
-    _currentTimeStamp = timestamp - _firstTimestemp;
+    _currentTimeStamp = timestamp;
     [super addNewFrameWithTimestamp:timestamp];
 }
 
