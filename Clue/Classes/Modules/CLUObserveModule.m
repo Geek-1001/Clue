@@ -59,14 +59,17 @@
     }
     
     dispatch_async(_recordQueue, ^{
-        if ([self isBufferEmpty]) {
-            return;
-        }
-        if (![_writer isReadyForWriting]) {
-            return;
-        }
-        for (NSData *data in _bufferArray) {
-            [_writer addData:data];
+        if (![self isBufferEmpty]) {
+            
+            if (![_writer isReadyForWriting]) {
+                return;
+            }
+            
+            for (NSData *data in _bufferArray) {
+                [_writer addData:data];
+            }
+            
+            [self clearBuffer];
         }
         dispatch_semaphore_signal(_frameRecordingSemaphore);
     });
