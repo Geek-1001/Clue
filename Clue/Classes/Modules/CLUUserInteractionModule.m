@@ -8,11 +8,14 @@
 
 #import "CLUUserInteractionModule.h"
 #import "CLUDataWriter.h"
+#import "CLUGeneralGestureRecognizer.h"
+#import "UITouch+CLUUserInteractionAdditions.h"
 
 @interface CLUUserInteractionModule()
 
 @property (nonatomic) CFTimeInterval currentTimeStamp;
 @property (nonatomic) CFTimeInterval firstTimestemp;
+@property (nonatomic) CLUGeneralGestureRecognizer *gestureRecognizer;
 
 @end
 
@@ -23,21 +26,28 @@
     if (!self) {
         return nil;
     }
-    // TODO: init gesture recogniser and method to handle user interactions
+    _gestureRecognizer = [[CLUGeneralGestureRecognizer alloc] init];
     return self;
 }
 
 - (void)startRecording {
     if (!self.isRecording) {
         [super startRecording];
-        // TODO: setup gesture recognizer for root view(s)
+        [_gestureRecognizer setObserverDelegate:self];
+        #warning If some window will be destroyed how to deattach gesture recognizer from it? Possible memory leak!
+        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+            [window addGestureRecognizer:_gestureRecognizer];
+        }
     }
 }
 
 - (void)stopRecording {
     if (self.isRecording) {
         [super isRecording];
-        // TODO: remove observers from views
+        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+            [window removeGestureRecognizer:_gestureRecognizer];
+        }
+        [_gestureRecognizer removeObserverDelegate];
     }
 }
 
@@ -47,6 +57,42 @@
     }
     _currentTimeStamp = timestamp - _firstTimestemp;
     [super addNewFrameWithTimestamp:timestamp];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches {
+    // TODO: set touch type value as a const string
+    [self addOneTimeTouchs:[touches allObjects] forType:@"began"];
+}
+
+- (void)touchesMoved:(NSArray<UITouch *> *)touches {
+    [self addOneTimeTouchs:touches forType:@"moved"];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches {
+    [self addOneTimeTouchs:[touches allObjects] forType:@"ended"];
+}
+
+- (void)addOneTimeTouchs:(NSArray<UITouch *> *)touches forType:(NSString *)type {
+    @synchronized (self) {
+        NSMutableDictionary *touchDictionary = [[NSMutableDictionary alloc] init];
+        [touchDictionary setValue:type forKey:@"type"];
+        [touchDictionary setValue:[NSNumber numberWithFloat:_currentTimeStamp] forKey:@"timestamp"];
+        
+        NSMutableArray *touchArray = [[NSMutableArray alloc] init];
+        for (UITouch *touch in touches) {
+            NSDictionary *touchPropertiesDictionary = [touch clue_touchProperties];
+            [touchArray addObject:touchPropertiesDictionary];
+        }
+        [touchDictionary setValue:touchArray forKey:@"touches"];
+        
+        if ([NSJSONSerialization isValidJSONObject:touchDictionary]) {
+            NSError *error;
+            NSData *touchData = [NSJSONSerialization dataWithJSONObject:touchDictionary options:0 error:&error];
+            [self addData:touchData];
+        } else {
+            NSLog(@"Touch properties json is invalid");
+        }
+    }
 }
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import "CLUObserveModule.h"
+#import "CLUInteractionObserverDelegate.h"
 
-@interface CLUUserInteractionModule : CLUObserveModule
+@interface CLUUserInteractionModule : CLUObserveModule <CLUInteractionObserverDelegate>
 
 - (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp;
 - (void)startRecording;
