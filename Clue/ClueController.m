@@ -13,6 +13,8 @@
 #import "CLUVideoModule.h"
 #import "CLUViewStructureWriter.h"
 #import "CLUViewStructureModule.h"
+#import "CLUUserInteractionModule.h"
+#import "CLUDataWriter.h"
 
 @interface ClueController()
 
@@ -105,8 +107,10 @@
     NSMutableArray *modulesArray = [[NSMutableArray alloc] init];
     CLUVideoModule *videoModul = [self configureVideoModule];
     CLUViewStructureModule *viewStructureModule = [self configureViewStructureModule];
+    CLUUserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
     [modulesArray addObject:videoModul];
     [modulesArray addObject:viewStructureModule];
+    [modulesArray addObject:userInteractionModule];
     return modulesArray;
 }
 
@@ -124,6 +128,13 @@
     CLUViewStructureWriter *viewStructureWriter = [[CLUViewStructureWriter alloc] initWithOutputURL:outputURL];
     CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:viewStructureWriter];
     return viewStructureModule;
+}
+
+- (CLUUserInteractionModule *)configureUserInteractionModule {
+    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/user_interaction.json"]; // TODO: change harcoded file path
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
+    return userInteractionModule;
 }
 
 @end
