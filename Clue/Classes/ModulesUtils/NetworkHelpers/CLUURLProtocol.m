@@ -8,6 +8,8 @@
 
 #import "CLUURLProtocol.h"
 
+#pragma mark - CLUURLProtocol
+
 @interface CLUURLProtocol()
 
 @property (nonatomic, readwrite, strong) NSURLSessionDataTask *dataTask;
@@ -57,6 +59,7 @@
 #pragma mark - NSURLSession Task Delegate
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    [[[CLUURLProtocolConfiguration sharedConfiguration] networkDelegate] networkRequestDidCompleteWithError:error];
     if (error) {
         [[self client] URLProtocol:self didFailWithError:error];
     } else {
@@ -77,6 +80,8 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         newRequest:(NSURLRequest *)request
  completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
     [[self client] URLProtocol:self wasRedirectedToRequest:request redirectResponse:response];
+    [[[CLUURLProtocolConfiguration sharedConfiguration] networkDelegate] networkRequestDidRedirectWithResponse:response
+                                                                                                    newRequest:request];
 }
 
 #pragma mark - NSURLSession Data Delegate
@@ -86,6 +91,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
     [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowedInMemoryOnly];
+    [[[CLUURLProtocolConfiguration sharedConfiguration] networkDelegate] networkRequestDidReceiveResponse:response];
     if (completionHandler) {
         completionHandler(NSURLSessionResponseAllow);
     }
@@ -95,6 +101,7 @@ didReceiveResponse:(NSURLResponse *)response
           dataTask:(NSURLSessionDataTask *)dataTask
     didReceiveData:(NSData *)data {
     [[self client] URLProtocol:self didLoadData:data];
+    [[[CLUURLProtocolConfiguration sharedConfiguration] networkDelegate] networkRequestDidReceiveData:data];
 }
 
 - (void)URLSession:(NSURLSession *)session
@@ -105,3 +112,30 @@ didReceiveResponse:(NSURLResponse *)response
 }
 
 @end
+
+
+#pragma mark - CLUURLProtocolConfiguration
+
+@implementation CLUURLProtocolConfiguration
+
++ (instancetype)sharedConfiguration {
+    static CLUURLProtocolConfiguration *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+- (void)setNetworkObserverDelegate:(id <CLUNetworkObserverDelegate>)delegate {
+    if (delegate) {
+        _delegate = delegate;
+    }
+}
+
+- (void)removeNetworkObserverDelegate {
+    _delegate = nil;
+}
+
+@end
+
