@@ -48,6 +48,7 @@
 		E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC0941CEE619000C9DFD9 /* ClueController.m */; };
 		E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */; };
 		E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */; };
+		E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */; };
 		E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */; };
 		E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */; };
 		E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */; };
@@ -126,6 +127,7 @@
 		E28CC0941CEE619000C9DFD9 /* ClueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueController.m; sourceTree = "<group>"; };
 		E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUURLProtocol.h; path = Classes/ModulesUtils/NetworkHelpers/CLUURLProtocol.h; sourceTree = "<group>"; };
 		E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUURLProtocol.m; path = Classes/ModulesUtils/NetworkHelpers/CLUURLProtocol.m; sourceTree = "<group>"; };
+		E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUNetworkObserverDelegate.h; path = Classes/Protocols/CLUNetworkObserverDelegate.h; sourceTree = "<group>"; };
 		E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewStructureModule.h; path = Classes/Modules/CLUViewStructureModule.h; sourceTree = "<group>"; };
 		E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUViewStructureModule.m; path = Classes/Modules/CLUViewStructureModule.m; sourceTree = "<group>"; };
 		E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLURecordableModule.h; path = Classes/Protocols/CLURecordableModule.h; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */,
 				E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */,
 				E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */,
+				E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
 				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
+				E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */,
 				E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
