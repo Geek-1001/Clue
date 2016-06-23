@@ -22,6 +22,7 @@
     if (!self) {
         return nil;
     }
+    self.cancelsTouchesInView = NO;
     _movedTouchesBuffer = [[NSMutableArray alloc] init];
     return self;
 }
