@@ -9,6 +9,10 @@
 #import "CLUNetworkModule.h"
 #import "CLUDataWriter.h"
 #import "CLUURLProtocol.h"
+#import "NSError+CLUNetworkAdditions.h"
+#import "NSURLResponse+CLUNetworkAdditions.h"
+#import "NSHTTPURLResponse+CLUNetworkAdditions.h"
+#import "NSURLRequest+CLUNetworkAdditions.h"
 
 @implementation CLUNetworkModule
 
@@ -28,22 +32,57 @@
     }
 }
 
+#pragma mark Parser for Network objects
+
+- (void)addNetworkOperationToBufferWithLabel:(nonnull NSString *)label properties:(nullable NSArray<NSDictionary *> *)properties {
+    @synchronized (self) {
+        NSMutableDictionary *networkDictionary = [[NSMutableDictionary alloc] init];
+        [networkDictionary setValue:[NSNumber numberWithFloat:self.currentTimeStamp] forKey:@"timestamp"];
+        [networkDictionary setValue:label forKey:@"label"];
+        
+        if (properties && [properties count] > 0) {
+            [networkDictionary setValue:properties forKey:@"properties"];
+        }
+        
+        if ([NSJSONSerialization isValidJSONObject:networkDictionary]) {
+            NSError *error;
+            NSData *networkData = [NSJSONSerialization dataWithJSONObject:networkDictionary options:0 error:&error];
+            if (!error) {
+                [self addData:networkData];
+            }
+        } else {
+            NSLog(@"Network properties json is invalid");
+        }
+    }
+}
+
 #pragma mark - Network Observer Delegate
 
 - (void)networkRequestDidCompleteWithError:(NSError *)error {
-    
+    NSDictionary *errorProperties;
+    if (error) {
+        errorProperties = [error clue_errorProperties];
+    }
+    [self addNetworkOperationToBufferWithLabel:@"DidComplete" properties:@[errorProperties]];
 }
 
 - (void)networkRequestDidRedirectWithResponse:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request {
-    
+    NSDictionary *responseProperties = [response clue_responseProperties];
+    NSDictionary *newRequestProperties = [request clue_requestProperties];
+    [self addNetworkOperationToBufferWithLabel:@"DidRedirect" properties:@[responseProperties, newRequestProperties]];
 }
 
 - (void)networkRequestDidReceiveData:(NSData *)data {
-    
+    // TODO: think about better approach for NSData
+    NSMutableDictionary *dataProperties = [[NSMutableDictionary alloc] init];
+    NSString *bodyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [dataProperties setValue:bodyString forKey:@"HTTPBody"];
+    [self addNetworkOperationToBufferWithLabel:@"DidReceiveData" properties:@[dataProperties]];
 }
 
 - (void)networkRequestDidReceiveResponse:(NSURLResponse *)response {
-    
+    NSDictionary *responseProperties = [response clue_responseProperties];
+    [self addNetworkOperationToBufferWithLabel:@"DidReceiveResponse" properties:@[responseProperties]];
 }
 
 @end
