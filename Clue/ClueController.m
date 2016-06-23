@@ -14,6 +14,7 @@
 #import "CLUViewStructureWriter.h"
 #import "CLUViewStructureModule.h"
 #import "CLUUserInteractionModule.h"
+#import "CLUNetworkModule.h"
 #import "CLUDataWriter.h"
 
 @interface ClueController()
@@ -105,12 +106,17 @@
 
 - (NSMutableArray *)configureRecordableModules {
     NSMutableArray *modulesArray = [[NSMutableArray alloc] init];
+    
     CLUVideoModule *videoModul = [self configureVideoModule];
     CLUViewStructureModule *viewStructureModule = [self configureViewStructureModule];
     CLUUserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
+    CLUNetworkModule *networkModule = [self configureNetworkModule];
+    
     [modulesArray addObject:videoModul];
     [modulesArray addObject:viewStructureModule];
     [modulesArray addObject:userInteractionModule];
+    [modulesArray addObject:networkModule];
+    
     return modulesArray;
 }
 
@@ -135,6 +141,13 @@
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
     return userInteractionModule;
+}
+
+- (CLUNetworkModule *)configureNetworkModule {
+    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/network_operations.json"]; // TODO: change harcoded file path
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    CLUNetworkModule *networkModule = [[CLUNetworkModule alloc] initWithWriter:dataWriter];
+    return networkModule;
 }
 
 @end
