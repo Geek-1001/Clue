@@ -13,7 +13,6 @@
 
 @interface CLUUserInteractionModule()
 
-@property (nonatomic) CFTimeInterval currentTimeStamp;
 @property (nonatomic) CLUGeneralGestureRecognizer *gestureRecognizer;
 
 @end
@@ -50,11 +49,6 @@
     }
 }
 
-- (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
-    _currentTimeStamp = timestamp;
-    [super addNewFrameWithTimestamp:timestamp];
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches {
     // TODO: set touch type value as a const string
     [self addOneTimeTouchs:[touches allObjects] forType:@"began"];
@@ -72,7 +66,7 @@
     @synchronized (self) {
         NSMutableDictionary *touchDictionary = [[NSMutableDictionary alloc] init];
         [touchDictionary setValue:type forKey:@"type"];
-        [touchDictionary setValue:[NSNumber numberWithFloat:_currentTimeStamp] forKey:@"timestamp"];
+        [touchDictionary setValue:[NSNumber numberWithFloat:self.currentTimeStamp] forKey:@"timestamp"];
         
         NSMutableArray *touchArray = [[NSMutableArray alloc] init];
         for (UITouch *touch in touches) {

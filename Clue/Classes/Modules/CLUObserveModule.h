@@ -12,6 +12,7 @@
 @interface CLUObserveModule : NSObject <CLURecordableModule>
 
 @property (nonatomic, readonly) BOOL isRecording;
+@property (nonatomic, readonly) CFTimeInterval currentTimeStamp;
 
 - (BOOL)isBufferEmpty;
 - (void)addData:(NSData *)bufferItem;

@@ -11,7 +11,6 @@
 
 @interface CLUUserInteractionModule : CLUObserveModule <CLUInteractionObserverDelegate>
 
-- (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp;
 - (void)startRecording;
 - (void)stopRecording;
 

@@ -29,6 +29,7 @@
     _writer = writer;
     _bufferArray = [[NSMutableArray alloc] init];
     _isRecording = NO;
+    _currentTimeStamp = 0;
     _recordQueue = dispatch_queue_create("CLUObserveModule.record_queue", DISPATCH_QUEUE_SERIAL);
     dispatch_set_target_queue(_recordQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0));
     _frameRecordingSemaphore = dispatch_semaphore_create(1);
@@ -54,6 +55,7 @@
 }
 
 - (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
+    _currentTimeStamp = timestamp;
     if (dispatch_semaphore_wait(_frameRecordingSemaphore, DISPATCH_TIME_NOW) != 0) {
         return;
     }
