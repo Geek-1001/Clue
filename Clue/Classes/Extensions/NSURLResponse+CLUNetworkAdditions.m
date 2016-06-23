@@ -17,7 +17,7 @@
     NSMutableDictionary *responseProperties = [[NSMutableDictionary alloc] init];
     [responseProperties setValue:NSStringFromClass([self class]) forKey:@"class"];
     [responseProperties setValue:self.MIMEType forKey:@"MIMEType"];
-    [responseProperties setValue:self.URL forKey:@"URL"];
+    [responseProperties setValue:self.URL.absoluteString forKey:@"URL"];
     [responseProperties setValue:[NSNumber numberWithLong:self.expectedContentLength] forKey:@"expectedContentLength"];
     
     return responseProperties;
