@@ -15,6 +15,7 @@
         return nil;
     }
     NSMutableDictionary *requestProperties = [[NSMutableDictionary alloc] init];
+    [requestProperties setValue:NSStringFromClass([self class]) forKey:@"class"];
     [requestProperties setValue:self.URL forKey:@"URL"];
     [requestProperties setValue:self.allHTTPHeaderFields forKey:@"allHTTPHeaderFields"];
     [requestProperties setValue:self.HTTPMethod forKey:@"HTTPMethod"];

@@ -15,6 +15,7 @@
         return nil;
     }
     NSMutableDictionary *errorProperties = [[NSMutableDictionary alloc] init];
+    [errorProperties setValue:NSStringFromClass([self class]) forKey:@"class"];
     [errorProperties setValue:[NSNumber numberWithInteger:self.code] forKey:@"code"];
     [errorProperties setValue:self.domain forKey:@"domain"];
     [errorProperties setValue:self.userInfo forKey:@"userInfo"];

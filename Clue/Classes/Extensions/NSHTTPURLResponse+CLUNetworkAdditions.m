@@ -17,7 +17,7 @@
     }
     NSDictionary *URLResponseDictionary = [super clue_responseProperties];
     NSMutableDictionary *responseDictionary = [[NSMutableDictionary alloc] initWithDictionary:URLResponseDictionary];
-
+    [responseDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
     [responseDictionary setValue:[NSNumber numberWithInteger:self.statusCode] forKey:@"statusCode"];
     [responseDictionary setValue:[NSHTTPURLResponse localizedStringForStatusCode:self.statusCode]
                           forKey:@"localizedStringForStatusCode"];
