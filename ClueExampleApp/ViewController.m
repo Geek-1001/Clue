@@ -101,7 +101,34 @@
 }
 
 - (void)loginButtonClick:(UIButton *)sender {
-    // TODO : handle login request somewhere
+    NSURLRequest *request = [self requestWithPath:@"http://apple.com" HTTPMethod:@"GET" andData:nil];
+    [self performRequest:request completion:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
+        // Do something here
+        NSLog(@"tst");
+    }];
+}
+
+- (NSURLRequest *)requestWithPath:(NSString *)path
+                       HTTPMethod:(NSString *)httpMethod
+                          andData:(NSData *)data {
+    NSURL *URL = [NSURL URLWithString:path];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:httpMethod];
+    if (data) {
+        NSString *length = [[NSNumber numberWithFloat:[data length]] stringValue];
+        [request setValue:length forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:data];
+    }
+    return request;
+}
+
+- (void)performRequest:(NSURLRequest *)request completion:(void (^)(NSData *, NSHTTPURLResponse *, NSError *))completion {
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        completion(data, httpResponse, error);
+    }] resume];
 }
 
 - (void)didReceiveMemoryWarning {
