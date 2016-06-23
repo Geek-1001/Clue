@@ -22,6 +22,8 @@
 		E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */; };
 		E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */; };
 		E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E238913E1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m */; };
+		E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891411D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h */; };
+		E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E23891421D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m */; };
 		E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */; };
 		E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */; };
 		E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */; };
@@ -100,6 +102,8 @@
 		E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+CLUNetworkAdditions.m"; path = "Classes/Extensions/NSError+CLUNetworkAdditions.m"; sourceTree = "<group>"; };
 		E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLResponse+CLUNetworkAdditions.h"; path = "Classes/Extensions/NSURLResponse+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
 		E238913E1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLResponse+CLUNetworkAdditions.m"; path = "Classes/Extensions/NSURLResponse+CLUNetworkAdditions.m"; sourceTree = "<group>"; };
+		E23891411D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSHTTPURLResponse+CLUNetworkAdditions.h"; path = "Classes/Extensions/NSHTTPURLResponse+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
+		E23891421D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSHTTPURLResponse+CLUNetworkAdditions.m"; path = "Classes/Extensions/NSHTTPURLResponse+CLUNetworkAdditions.m"; sourceTree = "<group>"; };
 		E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUInteractionObserverDelegate.h; path = Classes/Protocols/CLUInteractionObserverDelegate.h; sourceTree = "<group>"; };
 		E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUGeneralGestureRecognizer.h; path = Classes/ModulesUtils/GestureRecognizers/CLUGeneralGestureRecognizer.h; sourceTree = "<group>"; };
 		E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUGeneralGestureRecognizer.m; path = Classes/ModulesUtils/GestureRecognizers/CLUGeneralGestureRecognizer.m; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */,
 				E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */,
 				E238913E1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m */,
+				E23891411D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h */,
+				E23891421D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */,
 				E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */,
 				E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */,
+				E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */,
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
@@ -576,6 +583,7 @@
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
 				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
+				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
 				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
