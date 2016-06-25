@@ -96,7 +96,7 @@
     _isEnabled = YES;
 }
 
-- (void)configureWithOptions:(CLUOptions *)options {
+- (void)configureWithOptions:(nullable CLUOptions *)options {
     if (!options) {
         options = [[CLUOptions alloc] init];
     }

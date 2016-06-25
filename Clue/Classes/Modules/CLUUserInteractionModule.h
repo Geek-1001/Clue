@@ -11,7 +11,4 @@
 
 @interface CLUUserInteractionModule : CLUObserveModule <CLUInteractionObserverDelegate>
 
-- (void)startRecording;
-- (void)stopRecording;
-
 @end

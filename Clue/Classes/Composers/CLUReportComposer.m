@@ -21,9 +21,8 @@
     dispatch_semaphore_t _recordSemaphore;
 }
 
-- (instancetype)initWithModulesArray:(NSArray *)modulesArray {
+- (instancetype)initWithModulesArray:(NSArray<id <CLURecordableModule>> *)modulesArray {
     self = [super init];
-    // TODO: make same initializer in other classes
     if (!self || !modulesArray) {
         return nil;
     }

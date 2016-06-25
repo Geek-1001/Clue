@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CLUOptions.h"
 
-static char* ClueAssociationKey = "ClueAssociationKey";
-
 @interface ClueController : NSObject
 
 + (instancetype)sharedInstance;
@@ -21,6 +19,5 @@ static char* ClueAssociationKey = "ClueAssociationKey";
 - (void)enable;
 - (void)disable;
 - (void)enableWithOptions:(CLUOptions *)options;
-
 
 @end
