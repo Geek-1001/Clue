@@ -62,18 +62,18 @@
     [self addOneTimeTouchs:[touches allObjects] forType:@"ended"];
 }
 
-- (void)addOneTimeTouchs:(NSArray<UITouch *> *)touches forType:(NSString *)type {
+- (void)addOneTimeTouchs:(NSArray<UITouch *> *)touches forType:(nonnull NSString *)type {
     @synchronized (self) {
         NSMutableDictionary *touchDictionary = [[NSMutableDictionary alloc] init];
-        [touchDictionary setValue:type forKey:@"type"];
-        [touchDictionary setValue:[NSNumber numberWithFloat:self.currentTimeStamp] forKey:@"timestamp"];
+        [touchDictionary setObject:type forKey:@"type"];
+        [touchDictionary setObject:@(self.currentTimeStamp) forKey:@"timestamp"];
         
         NSMutableArray *touchArray = [[NSMutableArray alloc] init];
         for (UITouch *touch in touches) {
             NSDictionary *touchPropertiesDictionary = [touch clue_touchProperties];
             [touchArray addObject:touchPropertiesDictionary];
         }
-        [touchDictionary setValue:touchArray forKey:@"touches"];
+        [touchDictionary setObject:touchArray forKey:@"touches"];
         
         if ([NSJSONSerialization isValidJSONObject:touchDictionary]) {
             NSError *error;

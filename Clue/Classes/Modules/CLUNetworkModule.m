@@ -37,11 +37,11 @@
 - (void)addNetworkOperationToBufferWithLabel:(nonnull NSString *)label properties:(nullable NSArray<NSDictionary *> *)properties {
     @synchronized (self) {
         NSMutableDictionary *networkDictionary = [[NSMutableDictionary alloc] init];
-        [networkDictionary setValue:[NSNumber numberWithFloat:self.currentTimeStamp] forKey:@"timestamp"];
-        [networkDictionary setValue:label forKey:@"label"];
+        [networkDictionary setObject:@(self.currentTimeStamp) forKey:@"timestamp"];
+        [networkDictionary setObject:label forKey:@"label"];
         
         if (properties && [properties count] > 0) {
-            [networkDictionary setValue:properties forKey:@"properties"];
+            [networkDictionary setObject:properties forKey:@"properties"];
         }
         
         if ([NSJSONSerialization isValidJSONObject:networkDictionary]) {
@@ -76,7 +76,7 @@
     // TODO: think about better approach for NSData
     NSMutableDictionary *dataProperties = [[NSMutableDictionary alloc] init];
     NSString *bodyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [dataProperties setValue:bodyString forKey:@"HTTPBody"];
+    [dataProperties setObject:bodyString ? bodyString : @"" forKey:@"HTTPBody"];
     [self addNetworkOperationToBufferWithLabel:@"DidReceiveData" properties:@[dataProperties]];
 }
 

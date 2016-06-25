@@ -15,12 +15,12 @@
         return nil;
     }
     NSMutableDictionary *errorProperties = [[NSMutableDictionary alloc] init];
-    [errorProperties setValue:NSStringFromClass([self class]) forKey:@"class"];
-    [errorProperties setValue:[NSNumber numberWithInteger:self.code] forKey:@"code"];
-    [errorProperties setValue:self.domain forKey:@"domain"];
-    [errorProperties setValue:self.userInfo forKey:@"userInfo"];
-    [errorProperties setValue:[self localizedDescription] forKey:@"localizedDescription"];
-    [errorProperties setValue:[self localizedFailureReason] forKey:@"localizedFailureReason"];
+    [errorProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
+    [errorProperties setObject:@(self.code) forKey:@"code"];
+    [errorProperties setObject:self.domain ? self.domain : @"" forKey:@"domain"];
+    [errorProperties setObject:self.userInfo ? self.userInfo : @"" forKey:@"userInfo"];
+    [errorProperties setObject:self.localizedDescription ? self.localizedDescription : @"" forKey:@"localizedDescription"];
+    [errorProperties setObject:self.localizedFailureReason ? self.localizedFailureReason : @"" forKey:@"localizedFailureReason"];
     
     return errorProperties;
 }

@@ -16,21 +16,21 @@
         return nil;
     }
     NSMutableDictionary *rootDictionary = [super clue_viewPropertiesDictionary];
-    NSDictionary *propertiesDictionary = [rootDictionary valueForKey:@"properties"];
+    NSMutableDictionary *propertiesDictionary = [rootDictionary objectForKey:@"properties"];
     
-    [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
+    [rootDictionary setObject:NSStringFromClass([self class]) forKey:@"class"];
 
     // TODO: Save image in a different way
-//    [propertiesDictionary setValue:[self image] forKey:@"image"];
-//    [propertiesDictionary setValue:[self highlightedImage] forKey:@"highlightedImage"];
-//    [propertiesDictionary setValue:[self animationImages] forKey:@"animationImages"];
-//    [propertiesDictionary setValue:[self highlightedAnimationImages] forKey:@"highlightedAnimationImages"];
-    [propertiesDictionary setValue:[NSNumber numberWithBool:[self isAnimating]] forKey:@"isAnimating"];
-    [propertiesDictionary setValue:[NSNumber numberWithDouble:[self animationDuration]] forKey:@"animationDuration"];
-    [propertiesDictionary setValue:[NSNumber numberWithInteger:[self animationRepeatCount]] forKey:@"animationRepeatCount"];
-    [propertiesDictionary setValue:[NSNumber numberWithBool:[self isHighlighted]] forKey:@"highlighted"];
+//    [propertiesDictionary setObject:[self image] forKey:@"image"];
+//    [propertiesDictionary setObject:[self highlightedImage] forKey:@"highlightedImage"];
+//    [propertiesDictionary setObject:[self animationImages] forKey:@"animationImages"];
+//    [propertiesDictionary setObject:[self highlightedAnimationImages] forKey:@"highlightedAnimationImages"];
+    [propertiesDictionary setObject:@(self.isAnimating) forKey:@"isAnimating"];
+    [propertiesDictionary setObject:@(self.animationDuration) forKey:@"animationDuration"];
+    [propertiesDictionary setObject:@(self.animationRepeatCount) forKey:@"animationRepeatCount"];
+    [propertiesDictionary setObject:@(self.isHighlighted) forKey:@"highlighted"];
     
-    [rootDictionary setValue:propertiesDictionary forKey:@"properties"];
+    [rootDictionary setObject:propertiesDictionary forKey:@"properties"];
     
     return rootDictionary;
 }

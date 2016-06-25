@@ -19,13 +19,13 @@
     NSInteger tapCount = [self tapCount];
     
     NSMutableDictionary *touchProperties = [[NSMutableDictionary alloc] init];
-    [touchProperties setValue:[NSNumber numberWithInteger:tapCount] forKey:@"tapCount"];
+    [touchProperties setObject:@(tapCount) forKey:@"tapCount"];
     
     NSMutableDictionary *locationDictionary = [[NSMutableDictionary alloc] init];
-    [locationDictionary setValue:[NSNumber numberWithFloat:locationInWindow.x] forKey:@"x"];
-    [locationDictionary setValue:[NSNumber numberWithFloat:locationInWindow.y] forKey:@"y"];
+    [locationDictionary setObject:@(locationInWindow.x) forKey:@"x"];
+    [locationDictionary setObject:@(locationInWindow.y) forKey:@"y"];
     
-    [touchProperties setValue:locationDictionary forKey:@"locationInWindow"];
+    [touchProperties setObject:locationDictionary forKey:@"locationInWindow"];
     
     return touchProperties;
 }

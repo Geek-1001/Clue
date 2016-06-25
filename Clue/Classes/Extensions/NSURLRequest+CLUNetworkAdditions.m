@@ -15,14 +15,14 @@
         return nil;
     }
     NSMutableDictionary *requestProperties = [[NSMutableDictionary alloc] init];
-    [requestProperties setValue:NSStringFromClass([self class]) forKey:@"class"];
-    [requestProperties setValue:self.URL.absoluteString forKey:@"URL"];
-    [requestProperties setValue:self.allHTTPHeaderFields forKey:@"allHTTPHeaderFields"];
-    [requestProperties setValue:self.HTTPMethod forKey:@"HTTPMethod"];
-    [requestProperties setValue:@(self.HTTPShouldHandleCookies) forKey:@"HTTPShouldHandleCookies"];
+    [requestProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
+    [requestProperties setObject:self.URL.absoluteString ? self.URL.absoluteString : @"" forKey:@"URL"];
+    [requestProperties setObject:self.allHTTPHeaderFields ? self.allHTTPHeaderFields : @"" forKey:@"allHTTPHeaderFields"];
+    [requestProperties setObject:self.HTTPMethod ? self.HTTPMethod : @"" forKey:@"HTTPMethod"];
+    [requestProperties setObject:@(self.HTTPShouldHandleCookies) forKey:@"HTTPShouldHandleCookies"];
     if (self.HTTPBody) {
         NSString *bodyString = [[NSString alloc] initWithData:self.HTTPBody encoding:NSUTF8StringEncoding];
-        [requestProperties setValue:bodyString forKey:@"HTTPBody"];
+        [requestProperties setObject:bodyString forKey:@"HTTPBody"];
     }
     
     return requestProperties;

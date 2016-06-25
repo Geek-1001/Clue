@@ -16,9 +16,9 @@
         return nil;
     }
     NSMutableDictionary *rootDictionary = [super clue_viewPropertiesDictionary];
-    NSDictionary *propertiesDictionary = [rootDictionary valueForKey:@"properties"];
+    NSMutableDictionary *propertiesDictionary = [rootDictionary objectForKey:@"properties"];
     
-    [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
+    [rootDictionary setObject:NSStringFromClass([self class]) forKey:@"class"];
     
     NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:self.attributedText];
     NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
@@ -26,18 +26,18 @@
     NSDictionary *shadowColorDictionary = [self clue_colorPropertyDictionaryForColor:self.shadowColor];
     NSDictionary *shadowOffsetDictionary = [self clue_sizePropertyDictionaryForSize:self.shadowOffset];
     
-    [propertiesDictionary setValue:self.text forKey:@"text"];
-    [propertiesDictionary setValue:attributedTextDictionary forKey:@"attributedText"];
-    [propertiesDictionary setValue:fontDictionary forKey:@"font"];
-    [propertiesDictionary setValue:textColorDictionary forKey:@"textColor"];
-    [propertiesDictionary setValue:[NSNumber numberWithBool:[self isEnabled]] forKey:@"enabled"];
-    [propertiesDictionary setValue:[NSNumber numberWithInteger:[self lineBreakMode]] forKey:@"lineBreakMode"];
-    [propertiesDictionary setValue:[NSNumber numberWithInteger:[self numberOfLines]] forKey:@"numberOfLines"];
-    [propertiesDictionary setValue:[NSNumber numberWithBool:[self isHighlighted]] forKey:@"highlighted"];
-    [propertiesDictionary setValue:shadowColorDictionary forKey:@"shadowColor"];
-    [propertiesDictionary setValue:shadowOffsetDictionary forKey:@"shadowOffset"];
+    [propertiesDictionary setObject:self.text ? self.text : @"" forKey:@"text"];
+    [propertiesDictionary setObject:attributedTextDictionary forKey:@"attributedText"];
+    [propertiesDictionary setObject:fontDictionary forKey:@"font"];
+    [propertiesDictionary setObject:textColorDictionary forKey:@"textColor"];
+    [propertiesDictionary setObject:@(self.isEnabled) forKey:@"enabled"];
+    [propertiesDictionary setObject:@(self.lineBreakMode) forKey:@"lineBreakMode"];
+    [propertiesDictionary setObject:@(self.numberOfLines) forKey:@"numberOfLines"];
+    [propertiesDictionary setObject:@(self.isHighlighted) forKey:@"highlighted"];
+    [propertiesDictionary setObject:shadowColorDictionary forKey:@"shadowColor"];
+    [propertiesDictionary setObject:shadowOffsetDictionary forKey:@"shadowOffset"];
     
-    [rootDictionary setValue:propertiesDictionary forKey:@"properties"];
+    [rootDictionary setObject:propertiesDictionary forKey:@"properties"];
     
     return rootDictionary;
 }

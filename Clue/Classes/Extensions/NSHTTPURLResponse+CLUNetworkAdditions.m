@@ -17,11 +17,11 @@
     }
     NSDictionary *URLResponseDictionary = [super clue_responseProperties];
     NSMutableDictionary *responseDictionary = [[NSMutableDictionary alloc] initWithDictionary:URLResponseDictionary];
-    [responseDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
-    [responseDictionary setValue:[NSNumber numberWithInteger:self.statusCode] forKey:@"statusCode"];
-    [responseDictionary setValue:[NSHTTPURLResponse localizedStringForStatusCode:self.statusCode]
+    [responseDictionary setObject:NSStringFromClass([self class]) forKey:@"class"];
+    [responseDictionary setObject:@(self.statusCode) forKey:@"statusCode"];
+    [responseDictionary setObject:[NSHTTPURLResponse localizedStringForStatusCode:self.statusCode]
                           forKey:@"localizedStringForStatusCode"];
-    [responseDictionary setValue:self.allHeaderFields forKey:@"allHeaderFields"];
+    [responseDictionary setObject:self.allHeaderFields ? self.allHeaderFields : @"" forKey:@"allHeaderFields"];
     
     return responseDictionary;
 }

@@ -16,29 +16,29 @@
         return nil;
     }
     NSMutableDictionary *rootDictionary = [super clue_viewPropertiesDictionary];
-    NSDictionary *propertiesDictionary = [rootDictionary valueForKey:@"properties"];
+    NSMutableDictionary *propertiesDictionary = [rootDictionary objectForKey:@"properties"];
     
-    [rootDictionary setValue:NSStringFromClass([self class]) forKey:@"class"];
+    [rootDictionary setObject:NSStringFromClass([self class]) forKey:@"class"];
     
     NSDictionary *attributedTextDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:[self attributedText]];
     NSDictionary *attributedPlaceholderDictionary = [self clue_attributedTextPropertyDictionaryForAttributedString:[self attributedPlaceholder]];
     NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     NSDictionary *textColorDicitonary = [self clue_colorPropertyDictionaryForColor:[self textColor]];
-    
-    [propertiesDictionary setValue:[self text] forKey:@"text"];
-    [propertiesDictionary setValue:attributedTextDictionary forKey:@"attributedText"];
-    [propertiesDictionary setValue:[self placeholder] forKey:@"placeholder"];
-    [propertiesDictionary setValue:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
-    [propertiesDictionary setValue:fontDictionary forKey:@"font"];
-    [propertiesDictionary setValue:textColorDicitonary forKey:@"textColor"];
-    [propertiesDictionary setValue:[NSNumber numberWithFloat:[self minimumFontSize]] forKey:@"minimumFontSize"];
-    [propertiesDictionary setValue:[NSNumber numberWithBool:[self isEditing]] forKey:@"editing"];
-    [propertiesDictionary setValue:[NSNumber numberWithInt:[self borderStyle]] forKey:@"borderStyle"];
+
+    [propertiesDictionary setObject:self.text ? self.text : @"" forKey:@"text"];
+    [propertiesDictionary setObject:attributedTextDictionary forKey:@"attributedText"];
+    [propertiesDictionary setObject:self.placeholder ? self.placeholder : @"" forKey:@"placeholder"];
+    [propertiesDictionary setObject:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
+    [propertiesDictionary setObject:fontDictionary forKey:@"font"];
+    [propertiesDictionary setObject:textColorDicitonary forKey:@"textColor"];
+    [propertiesDictionary setObject:@(self.minimumFontSize) forKey:@"minimumFontSize"];
+    [propertiesDictionary setObject:@(self.isEditing) forKey:@"editing"];
+    [propertiesDictionary setObject:@(self.borderStyle) forKey:@"borderStyle"];
     // TODO: Save image in a different way
-//    [propertiesDictionary setValue:[self background] forKey:@"background"];
-//    [propertiesDictionary setValue:[self disabledBackground] forKey:@"disabledBackground"];
+//    [propertiesDictionary setObject:[self background] forKey:@"background"];
+//    [propertiesDictionary setObject:[self disabledBackground] forKey:@"disabledBackground"];
     
-    [rootDictionary setValue:propertiesDictionary forKey:@"properties"];
+    [rootDictionary setObject:propertiesDictionary forKey:@"properties"];
     
     return rootDictionary;
 }
