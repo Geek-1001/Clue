@@ -16,6 +16,7 @@
 #import "CLUUserInteractionModule.h"
 #import "CLUNetworkModule.h"
 #import "CLUDataWriter.h"
+#import "NSException+CLUExceptionAdditions.h"
 
 @interface ClueController()
 
@@ -38,6 +39,7 @@
     
     NSMutableArray *modulesArray = [self configureRecordableModules];
     _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
+    NSSetUncaughtExceptionHandler(&didReceiveUncaughtException);
     
     return self;
 }
@@ -51,11 +53,44 @@
     return instance;
 }
 
+void didReceiveUncaughtException(NSException *exception) {
+    [[ClueController sharedInstance] handleException:exception];
+}
+
 - (void)enable {
     if (!_isEnabled) {
         _isEnabled = YES;
         [self configureWithOptions:_options];
     }
+}
+
+- (void)handleException:(NSException *)exception {
+    if (!exception || !_isEnabled || !_isRecording) {
+        return;
+    }
+    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/exception.json"]; // TODO: change harcoded file path
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    NSDictionary *exceptionProperties = [exception clue_exceptionProperties];
+    dispatch_queue_t stopRecodingQueue = dispatch_queue_create("ClueController.stopRecodingQueue", DISPATCH_QUEUE_SERIAL);
+    
+    if ([NSJSONSerialization isValidJSONObject:exceptionProperties]) {
+        NSError *error;
+        NSData *exceptionData = [NSJSONSerialization dataWithJSONObject:exceptionProperties options:0 error:&error];
+        if (!error && exceptionData) {
+            [dataWriter startWriting];
+            [dataWriter addData:exceptionData];
+            [dataWriter finishWriting];
+        }
+    } else {
+        NSLog(@"Exception properties json is invalid");
+    }
+    
+    dispatch_sync(stopRecodingQueue, ^{
+        [self stopRecording];
+        // Crazy hack! If exception occurs wait till video writer finish async handler -[AVAssetWriter finishWritingWithCompletionHandler]
+        // TODO: come up with better approach
+        [NSThread sleepForTimeInterval:3];
+    });    
 }
 
 - (void)handleShake:(UIEventSubtype)motion {
