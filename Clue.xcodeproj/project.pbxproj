@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */; };
+		E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */; };
 		E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */; };
 		E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */; };
 		E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D61CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h */; };
@@ -89,6 +91,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSException+CLUExceptionAdditions.h"; path = "Classes/Extensions/NSException+CLUExceptionAdditions.h"; sourceTree = "<group>"; };
+		E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSException+CLUExceptionAdditions.m"; path = "Classes/Extensions/NSException+CLUExceptionAdditions.m"; sourceTree = "<group>"; };
 		E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
 		E21840D61CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UITextField+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				E23891421D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m */,
 				E23891451D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h */,
 				E23891461D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m */,
+				E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */,
+				E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
+				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
 				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
 				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
@@ -586,6 +593,7 @@
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
+				E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
 				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
