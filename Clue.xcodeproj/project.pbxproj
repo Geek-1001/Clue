@@ -13,6 +13,8 @@
 		E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */; };
 		E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D61CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h */; };
 		E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D71CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m */; };
+		E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = E22F60ED1D265DBE0062D6B8 /* CLUTouch.h */; };
+		E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = E22F60EE1D265DBE0062D6B8 /* CLUTouch.m */; };
 		E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */; };
 		E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */; };
 		E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */; };
@@ -97,6 +99,8 @@
 		E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
 		E21840D61CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UITextField+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E21840D71CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UITextField+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
+		E22F60ED1D265DBE0062D6B8 /* CLUTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUTouch.h; path = Classes/Models/CLUTouch.h; sourceTree = "<group>"; };
+		E22F60EE1D265DBE0062D6B8 /* CLUTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUTouch.m; path = Classes/Models/CLUTouch.m; sourceTree = "<group>"; };
 		E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewRecordableProperties.h; path = Classes/Protocols/CLUViewRecordableProperties.h; sourceTree = "<group>"; };
 		E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UIView+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CLUViewRecordableAdditions.m"; path = "Classes/Extensions/Views/UIView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 			children = (
 				E258F3FD1CE3D037001E9F92 /* CLUOptions.h */,
 				E258F3FE1CE3D037001E9F92 /* CLUOptions.m */,
+				E22F60ED1D265DBE0062D6B8 /* CLUTouch.h */,
+				E22F60EE1D265DBE0062D6B8 /* CLUTouch.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */,
 				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
+				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
@@ -611,6 +618,7 @@
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
+				E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */,
