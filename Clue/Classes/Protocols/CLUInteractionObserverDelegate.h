@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "CLUTouch.h"
 
 @protocol CLUInteractionObserverDelegate <NSObject>
 
 @required
-- (void)touchesBegan:(NSSet<UITouch *> *)touches;
-- (void)touchesMoved:(NSArray<UITouch *> *)touches;
-- (void)touchesEnded:(NSSet<UITouch *> *)touches;
+- (void)touchesBegan:(NSArray<CLUTouch *> *)touches;
+- (void)touchesMoved:(NSArray<CLUTouch *> *)touches;
+- (void)touchesEnded:(NSArray<CLUTouch *> *)touches;
 
 @end
