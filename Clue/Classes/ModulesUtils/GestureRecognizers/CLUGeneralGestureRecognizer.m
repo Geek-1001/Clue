@@ -10,7 +10,7 @@
 
 @interface CLUGeneralGestureRecognizer()
 
-@property (nonatomic) NSMutableArray *movedTouchesBuffer;
+@property (nonatomic) NSMutableArray<CLUTouch *> *movedTouchesBuffer;
 @property (nonatomic) id <CLUInteractionObserverDelegate> observerDelegate;
 
 @end
@@ -36,24 +36,37 @@
     [super touchesBegan:touches withEvent:event];
     [self setState:UIGestureRecognizerStatePossible];
     if (_observerDelegate) {
-        [_observerDelegate touchesBegan:touches];
+        NSArray<CLUTouch *> *receivedTouches = [self copyTouches:touches];
+        [_observerDelegate touchesBegan:receivedTouches];
     }
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    [_movedTouchesBuffer addObjectsFromArray:[touches allObjects]];
+    NSArray<CLUTouch *> *receivedTouches = [self copyTouches:touches];
+    [_movedTouchesBuffer addObjectsFromArray:receivedTouches];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     [self setState:UIGestureRecognizerStateEnded];
     if (_observerDelegate) {
         if ([_movedTouchesBuffer count] > 0) {
             [_observerDelegate touchesMoved:_movedTouchesBuffer];
         }
-        [_observerDelegate touchesEnded:touches];
+        NSArray<CLUTouch *> *receivedTouches = [self copyTouches:touches];
+        [_observerDelegate touchesEnded:receivedTouches];
     }
+}
+
+- (NSArray<CLUTouch *> *)copyTouches:(NSSet<UITouch *> *)touches {
+    NSMutableArray<CLUTouch *> *receivedTouches = [[NSMutableArray alloc] init];
+    for (UITouch *touch in touches) {
+        CLUTouch *receivedTouch = [[CLUTouch alloc] initWithTouch:touch];
+        [receivedTouches addObject:receivedTouch];
+    }
+    
+    return receivedTouches;
 }
 
 - (void)setObserverDelegate:(id <CLUInteractionObserverDelegate>)delegate {
