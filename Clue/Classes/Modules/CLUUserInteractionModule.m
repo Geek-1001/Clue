@@ -9,7 +9,6 @@
 #import "CLUUserInteractionModule.h"
 #import "CLUDataWriter.h"
 #import "CLUGeneralGestureRecognizer.h"
-#import "UITouch+CLUUserInteractionAdditions.h"
 
 @interface CLUUserInteractionModule()
 
@@ -49,28 +48,28 @@
     }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches {
+- (void)touchesBegan:(NSArray<CLUTouch *> *)touches {
     // TODO: set touch type value as a const string
-    [self addOneTimeTouchs:[touches allObjects] forType:@"began"];
+    [self addOneTimeTouchs:touches forType:@"began"];
 }
 
-- (void)touchesMoved:(NSArray<UITouch *> *)touches {
+- (void)touchesMoved:(NSArray<CLUTouch *> *)touches {
     [self addOneTimeTouchs:touches forType:@"moved"];
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches {
-    [self addOneTimeTouchs:[touches allObjects] forType:@"ended"];
+- (void)touchesEnded:(NSArray<CLUTouch *> *)touches {
+    [self addOneTimeTouchs:touches forType:@"ended"];
 }
 
-- (void)addOneTimeTouchs:(NSArray<UITouch *> *)touches forType:(nonnull NSString *)type {
+- (void)addOneTimeTouchs:(NSArray<CLUTouch *> *)touches forType:(nonnull NSString *)type {
     @synchronized (self) {
         NSMutableDictionary *touchDictionary = [[NSMutableDictionary alloc] init];
         [touchDictionary setObject:type forKey:@"type"];
         [touchDictionary setObject:@(self.currentTimeStamp) forKey:@"timestamp"];
         
         NSMutableArray *touchArray = [[NSMutableArray alloc] init];
-        for (UITouch *touch in touches) {
-            NSDictionary *touchPropertiesDictionary = [touch clue_touchProperties];
+        for (CLUTouch *touch in touches) {
+            NSDictionary *touchPropertiesDictionary = [touch properties];
             [touchArray addObject:touchPropertiesDictionary];
         }
         [touchDictionary setObject:touchArray forKey:@"touches"];
