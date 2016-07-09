@@ -17,6 +17,7 @@
 #import "CLUNetworkModule.h"
 #import "CLUDataWriter.h"
 #import "NSException+CLUExceptionAdditions.h"
+#import "CLUDeviceInfoModule.h"
 
 @interface ClueController()
 
@@ -38,7 +39,9 @@
     _options = [[CLUOptions alloc] init];
     
     NSMutableArray *modulesArray = [self configureRecordableModules];
+    NSMutableArray *infoModulesArray = [self configureInfoModules];
     _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
+    [_reportComposer setInfoModules:infoModulesArray];
     NSSetUncaughtExceptionHandler(&didReceiveUncaughtException);
     
     return self;
@@ -155,6 +158,15 @@ void didReceiveUncaughtException(NSException *exception) {
     return modulesArray;
 }
 
+- (NSMutableArray *)configureInfoModules {
+    NSMutableArray *modulesArray = [[NSMutableArray alloc] init];
+    CLUDeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
+    [modulesArray addObject:deviceModule];
+    return modulesArray;
+}
+
+#pragma mark - Configure Recoradble modules
+
 - (CLUVideoModule *)configureVideoModule {
     CGSize viewSize = [UIApplication sharedApplication].delegate.window.bounds.size;
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -183,6 +195,15 @@ void didReceiveUncaughtException(NSException *exception) {
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     CLUNetworkModule *networkModule = [[CLUNetworkModule alloc] initWithWriter:dataWriter];
     return networkModule;
+}
+
+#pragma mark - Configure Info modules
+
+- (CLUDeviceInfoModule *)configureDeviceInfoModule {
+    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/device.json"]; // TODO: change harcoded file path
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    CLUDeviceInfoModule *deviceModule = [[CLUDeviceInfoModule alloc] initWithWriter:dataWriter];
+    return deviceModule;
 }
 
 @end
