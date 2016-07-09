@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CLURecordableModule.h"
+#import "CLUInfoModule.h"
 
 @interface CLUReportComposer : NSObject
 
+@property (nonatomic, readonly) NSMutableArray<id <CLUInfoModule>> *infoModules;
 @property (nonatomic, readonly) NSMutableArray<id <CLURecordableModule>> *recordableModules;
 @property (nonatomic, readonly) BOOL isRecording;
 
@@ -19,6 +21,7 @@
 
 - (void)addRecordableModule:(id <CLURecordableModule>)module;
 - (void)removeRecordableModule:(id <CLURecordableModule>)module;
+- (void)setInfoModules:(NSMutableArray<id<CLUInfoModule>> *)infoModules;
 
 - (void)startRecording;
 - (void)stopRecording;

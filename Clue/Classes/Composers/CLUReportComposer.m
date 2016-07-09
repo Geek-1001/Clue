@@ -57,12 +57,26 @@
     }
 }
 
+- (void)setInfoModules:(NSMutableArray<id<CLUInfoModule>> *)infoModules {
+    if (infoModules && !_isRecording) {
+        _infoModules = infoModules;
+    }
+}
+
 - (void)startRecording {
     if (!_isRecording) {
         _isRecording = YES;
+        
+        if (_infoModules) {
+            for (id <CLUInfoModule> module in _infoModules) {
+                [module recordInfoData];
+            }
+        }
+        
         for (id <CLURecordableModule> module in _recordableModules) {
             [module startRecording];
         }
+        
         [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     }
 }
