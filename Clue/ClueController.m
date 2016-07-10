@@ -37,8 +37,6 @@
         return nil;
     }
     _isEnabled = NO;
-    _options = [[CLUOptions alloc] init];
-    
     NSMutableArray *modulesArray = [self configureRecordableModules];
     NSMutableArray *infoModulesArray = [self configureInfoModules];
     _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
@@ -62,10 +60,28 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (void)enable {
+    [self enableWithOptions:nil];
+}
+
+- (void)enableWithOptions:(CLUOptions *)options {
     if (!_isEnabled) {
         _isEnabled = YES;
-        [self configureWithOptions:_options];
+        [self configureWithOptions:options];
     }
+}
+
+- (void)disable {
+    if (_isEnabled) {
+        _isEnabled = NO;
+        // TODO: clear everything redundant
+    }
+}
+
+- (void)configureWithOptions:(nullable CLUOptions *)options {
+    if (!options) {
+        options = [[CLUOptions alloc] init];        
+    }
+    _options = options;
 }
 
 - (void)handleException:(NSException *)exception {
@@ -123,26 +139,6 @@ void didReceiveUncaughtException(NSException *exception) {
         _isRecording = NO;
         [_reportComposer stopRecording];
     }
-}
-
-- (void)disable {
-    if (_isEnabled) {
-        _isEnabled = NO;
-        // TODO: clear everything redundant
-    }
-}
-
-- (void)enableWithOptions:(CLUOptions *)options {
-    [self configureWithOptions:options];
-    _isEnabled = YES;
-}
-
-- (void)configureWithOptions:(nullable CLUOptions *)options {
-    if (!options) {
-        options = [[CLUOptions alloc] init];
-    }
-    _options = options;
-    // TODO: additional configuration
 }
 
 - (NSMutableArray *)configureRecordableModules {
