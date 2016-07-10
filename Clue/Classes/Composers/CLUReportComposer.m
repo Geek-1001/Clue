@@ -7,6 +7,7 @@
 //
 
 #import "CLUReportComposer.h"
+#import "CLUReportFileManager.h"
 
 @interface CLUReportComposer()
 
@@ -66,6 +67,7 @@
 - (void)startRecording {
     if (!_isRecording) {
         _isRecording = YES;
+        [[CLUReportFileManager sharedManager] createReportFile];
         
         if (_infoModules) {
             for (id <CLUInfoModule> module in _infoModules) {
