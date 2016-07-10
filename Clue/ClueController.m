@@ -18,6 +18,7 @@
 #import "CLUDataWriter.h"
 #import "NSException+CLUExceptionAdditions.h"
 #import "CLUDeviceInfoModule.h"
+#import "CLUReportFileManager.h"
 
 @interface ClueController()
 
@@ -71,7 +72,9 @@ void didReceiveUncaughtException(NSException *exception) {
     if (!exception || !_isEnabled || !_isRecording) {
         return;
     }
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/exception.json"]; // TODO: change harcoded file path
+    // TODO: rewrite to Info module
+    NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
+    NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_exception.json"];
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     NSDictionary *exceptionProperties = [exception clue_exceptionProperties];
     dispatch_queue_t stopRecodingQueue = dispatch_queue_create("ClueController.stopRecodingQueue", DISPATCH_QUEUE_SERIAL);
@@ -168,30 +171,34 @@ void didReceiveUncaughtException(NSException *exception) {
 #pragma mark - Configure Recoradble modules
 
 - (CLUVideoModule *)configureVideoModule {
+    NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     CGSize viewSize = [UIApplication sharedApplication].delegate.window.bounds.size;
     CGFloat scale = [UIScreen mainScreen].scale;
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/screencast.mp4"]; // TODO: change harcoded file path
+    NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_video.mp4"];
     CLUVideoWriter *videoWriter = [[CLUVideoWriter alloc] initWithOutputURL:outputURL viewSize:viewSize scale:scale];
     CLUVideoModule *videoModule = [[CLUVideoModule alloc] initWithWriter:videoWriter];
     return videoModule;
 }
 
 - (CLUViewStructureModule *)configureViewStructureModule {
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/screencast.json"]; // TODO: change harcoded file path
+    NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
+    NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_view.json"];
     CLUViewStructureWriter *viewStructureWriter = [[CLUViewStructureWriter alloc] initWithOutputURL:outputURL];
     CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:viewStructureWriter];
     return viewStructureModule;
 }
 
 - (CLUUserInteractionModule *)configureUserInteractionModule {
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/user_interaction.json"]; // TODO: change harcoded file path
+    NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
+    NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_interaction.json"];
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
     return userInteractionModule;
 }
 
 - (CLUNetworkModule *)configureNetworkModule {
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/network_operations.json"]; // TODO: change harcoded file path
+    NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
+    NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_network.json"];
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     CLUNetworkModule *networkModule = [[CLUNetworkModule alloc] initWithWriter:dataWriter];
     return networkModule;
@@ -200,7 +207,8 @@ void didReceiveUncaughtException(NSException *exception) {
 #pragma mark - Configure Info modules
 
 - (CLUDeviceInfoModule *)configureDeviceInfoModule {
-    NSURL *outputURL = [NSURL fileURLWithPath:@"/Users/Ahmed/Desktop/device.json"]; // TODO: change harcoded file path
+    NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
+    NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_device.json"];
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
     CLUDeviceInfoModule *deviceModule = [[CLUDeviceInfoModule alloc] initWithWriter:dataWriter];
     return deviceModule;
