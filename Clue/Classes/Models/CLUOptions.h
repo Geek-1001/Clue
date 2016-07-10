@@ -10,4 +10,8 @@
 
 @interface CLUOptions : NSObject
 
+@property (nonatomic) NSString *email;
+
++ (instancetype)initWithEmail:(NSString *)email;
+
 @end

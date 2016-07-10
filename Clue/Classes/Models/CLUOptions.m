@@ -10,4 +10,10 @@
 
 @implementation CLUOptions
 
++ (instancetype)initWithEmail:(NSString *)email {
+    CLUOptions *instance = [[self alloc] init];
+    [instance setEmail:email];
+    return instance;
+}
+
 @end
