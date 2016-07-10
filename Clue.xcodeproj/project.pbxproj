@@ -10,6 +10,8 @@
 		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
 		E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */; };
 		E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */; };
+		E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23461D31947200654690 /* CLUReportFileManager.h */; };
+		E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23471D31947200654690 /* CLUReportFileManager.m */; };
 		E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */; };
 		E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */; };
 		E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */; };
@@ -99,6 +101,8 @@
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUInfoModule.h; path = Classes/Protocols/CLUInfoModule.h; sourceTree = "<group>"; };
 		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUDeviceInfoModule.h; path = Classes/Modules/CLUDeviceInfoModule.h; sourceTree = "<group>"; };
 		E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUDeviceInfoModule.m; path = Classes/Modules/CLUDeviceInfoModule.m; sourceTree = "<group>"; };
+		E20F23461D31947200654690 /* CLUReportFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUReportFileManager.h; path = Classes/ModulesUtils/FileHelpers/CLUReportFileManager.h; sourceTree = "<group>"; };
+		E20F23471D31947200654690 /* CLUReportFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUReportFileManager.m; path = Classes/ModulesUtils/FileHelpers/CLUReportFileManager.m; sourceTree = "<group>"; };
 		E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSException+CLUExceptionAdditions.h"; path = "Classes/Extensions/NSException+CLUExceptionAdditions.h"; sourceTree = "<group>"; };
 		E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSException+CLUExceptionAdditions.m"; path = "Classes/Extensions/NSException+CLUExceptionAdditions.m"; sourceTree = "<group>"; };
 		E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+CLUViewRecordableAdditions.h"; path = "Classes/Extensions/Views/UIImageView+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20F23451D31944400654690 /* FileHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				E20F23461D31947200654690 /* CLUReportFileManager.h */,
+				E20F23471D31947200654690 /* CLUReportFileManager.m */,
+			);
+			name = FileHelpers;
+			sourceTree = "<group>";
+		};
 		E232BA8B1CF8219400F5DB52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +387,7 @@
 		E291DEA61D149E1B009AB23F /* ModulesUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E20F23451D31944400654690 /* FileHelpers */,
 				E291DEA71D149FE5009AB23F /* NetworkHelpers */,
 				E24AEDFB1D06DCE1001F31FF /* GestureRecognizers */,
 			);
@@ -452,6 +466,7 @@
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
+				E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */,
 				E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
 				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
@@ -619,6 +634,7 @@
 				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
 				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
+				E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
 				E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */,
