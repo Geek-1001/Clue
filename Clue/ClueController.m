@@ -16,9 +16,9 @@
 #import "CLUUserInteractionModule.h"
 #import "CLUNetworkModule.h"
 #import "CLUDataWriter.h"
-#import "NSException+CLUExceptionAdditions.h"
 #import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
+#import "CLUExceptionInfoModule.h"
 
 @interface ClueController()
 
@@ -88,30 +88,20 @@ void didReceiveUncaughtException(NSException *exception) {
     if (!exception || !_isEnabled || !_isRecording) {
         return;
     }
-    // TODO: rewrite to Info module
+    
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_exception.json"];
     CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
-    NSDictionary *exceptionProperties = [exception clue_exceptionProperties];
+    CLUExceptionInfoModule *exceptionModule = [[CLUExceptionInfoModule alloc] initWithWriter:dataWriter];
+    [exceptionModule setException:exception];
+    [exceptionModule recordInfoData];
+    
     dispatch_queue_t stopRecodingQueue = dispatch_queue_create("ClueController.stopRecodingQueue", DISPATCH_QUEUE_SERIAL);
-    
-    if ([NSJSONSerialization isValidJSONObject:exceptionProperties]) {
-        NSError *error;
-        NSData *exceptionData = [NSJSONSerialization dataWithJSONObject:exceptionProperties options:0 error:&error];
-        if (!error && exceptionData) {
-            [dataWriter startWriting];
-            [dataWriter addData:exceptionData];
-            [dataWriter finishWriting];
-        }
-    } else {
-        NSLog(@"Exception properties json is invalid");
-    }
-    
     dispatch_sync(stopRecodingQueue, ^{
         [self stopRecording];
         // Crazy hack! If exception occurs wait till video writer finish async handler -[AVAssetWriter finishWritingWithCompletionHandler]
         // TODO: come up with better approach
-        [NSThread sleepForTimeInterval:3];
+        [NSThread sleepForTimeInterval:4];
     });    
 }
 
