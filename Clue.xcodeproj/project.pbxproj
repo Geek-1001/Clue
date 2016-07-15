@@ -82,6 +82,43 @@
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */; };
 		E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */; };
+		E2CDA5C11D38EC480079F784 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
+		E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CDA6111D3903110079F784 /* libz.tbd */; };
+		E2CDA6951D3905D60079F784 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6711D3905D60079F784 /* aes.h */; };
+		E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6721D3905D60079F784 /* aes_via_ace.h */; };
+		E2CDA6971D3905D60079F784 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6731D3905D60079F784 /* aescrypt.c */; };
+		E2CDA6981D3905D60079F784 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6741D3905D60079F784 /* aeskey.c */; };
+		E2CDA6991D3905D60079F784 /* aesopt.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6751D3905D60079F784 /* aesopt.h */; };
+		E2CDA69A1D3905D60079F784 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6761D3905D60079F784 /* aestab.c */; };
+		E2CDA69B1D3905D60079F784 /* aestab.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6771D3905D60079F784 /* aestab.h */; };
+		E2CDA69C1D3905D60079F784 /* brg_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6781D3905D60079F784 /* brg_endian.h */; };
+		E2CDA69D1D3905D60079F784 /* brg_types.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6791D3905D60079F784 /* brg_types.h */; };
+		E2CDA69E1D3905D60079F784 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA67A1D3905D60079F784 /* entropy.c */; };
+		E2CDA69F1D3905D60079F784 /* entropy.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA67B1D3905D60079F784 /* entropy.h */; };
+		E2CDA6A01D3905D60079F784 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA67C1D3905D60079F784 /* fileenc.c */; };
+		E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA67D1D3905D60079F784 /* fileenc.h */; };
+		E2CDA6A21D3905D60079F784 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA67E1D3905D60079F784 /* hmac.c */; };
+		E2CDA6A31D3905D60079F784 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA67F1D3905D60079F784 /* hmac.h */; };
+		E2CDA6A41D3905D60079F784 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6801D3905D60079F784 /* prng.c */; };
+		E2CDA6A51D3905D60079F784 /* prng.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6811D3905D60079F784 /* prng.h */; };
+		E2CDA6A61D3905D60079F784 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6821D3905D60079F784 /* pwd2key.c */; };
+		E2CDA6A71D3905D60079F784 /* pwd2key.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6831D3905D60079F784 /* pwd2key.h */; };
+		E2CDA6A81D3905D60079F784 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6841D3905D60079F784 /* sha1.c */; };
+		E2CDA6A91D3905D60079F784 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6851D3905D60079F784 /* sha1.h */; };
+		E2CDA6AA1D3905D60079F784 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6861D3905D60079F784 /* Common.h */; };
+		E2CDA6AB1D3905D60079F784 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2CDA6871D3905D60079F784 /* Info.plist */; };
+		E2CDA6AC1D3905D60079F784 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6891D3905D60079F784 /* crypt.h */; };
+		E2CDA6AD1D3905D60079F784 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA68A1D3905D60079F784 /* ioapi.c */; };
+		E2CDA6AE1D3905D60079F784 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA68B1D3905D60079F784 /* ioapi.h */; };
+		E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA68C1D3905D60079F784 /* mztools.c */; };
+		E2CDA6B01D3905D60079F784 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA68D1D3905D60079F784 /* mztools.h */; };
+		E2CDA6B11D3905D60079F784 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA68E1D3905D60079F784 /* unzip.c */; };
+		E2CDA6B21D3905D60079F784 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA68F1D3905D60079F784 /* unzip.h */; };
+		E2CDA6B31D3905D60079F784 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6901D3905D60079F784 /* zip.c */; };
+		E2CDA6B41D3905D60079F784 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6911D3905D60079F784 /* zip.h */; };
+		E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6921D3905D60079F784 /* SSZipArchive.h */; };
+		E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6931D3905D60079F784 /* SSZipArchive.m */; };
+		E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6941D3905D60079F784 /* ZipArchive.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +221,42 @@
 		E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoWriter.m; path = Classes/Writers/CLUVideoWriter.m; sourceTree = "<group>"; };
 		E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewStructureWriter.h; path = Classes/Writers/CLUViewStructureWriter.h; sourceTree = "<group>"; };
 		E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUViewStructureWriter.m; path = Classes/Writers/CLUViewStructureWriter.m; sourceTree = "<group>"; };
+		E2CDA6111D3903110079F784 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E2CDA6711D3905D60079F784 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		E2CDA6721D3905D60079F784 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
+		E2CDA6731D3905D60079F784 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		E2CDA6741D3905D60079F784 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		E2CDA6751D3905D60079F784 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		E2CDA6761D3905D60079F784 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		E2CDA6771D3905D60079F784 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		E2CDA6781D3905D60079F784 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		E2CDA6791D3905D60079F784 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		E2CDA67A1D3905D60079F784 /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
+		E2CDA67B1D3905D60079F784 /* entropy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
+		E2CDA67C1D3905D60079F784 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		E2CDA67D1D3905D60079F784 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		E2CDA67E1D3905D60079F784 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		E2CDA67F1D3905D60079F784 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		E2CDA6801D3905D60079F784 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		E2CDA6811D3905D60079F784 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		E2CDA6821D3905D60079F784 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		E2CDA6831D3905D60079F784 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		E2CDA6841D3905D60079F784 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		E2CDA6851D3905D60079F784 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		E2CDA6861D3905D60079F784 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		E2CDA6871D3905D60079F784 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CDA6891D3905D60079F784 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		E2CDA68A1D3905D60079F784 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		E2CDA68B1D3905D60079F784 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		E2CDA68C1D3905D60079F784 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		E2CDA68D1D3905D60079F784 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		E2CDA68E1D3905D60079F784 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		E2CDA68F1D3905D60079F784 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		E2CDA6901D3905D60079F784 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		E2CDA6911D3905D60079F784 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		E2CDA6921D3905D60079F784 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		E2CDA6931D3905D60079F784 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		E2CDA6941D3905D60079F784 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +424,10 @@
 		E272DDBA1CD52B4000F1FECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2CDA66F1D3905D60079F784 /* SSZipArchive */,
+				E2CDA6111D3903110079F784 /* libz.tbd */,
 			);
-			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		E272DDBB1CD52FE300F1FECA /* Models */ = {
@@ -460,6 +536,64 @@
 			name = Writers;
 			sourceTree = "<group>";
 		};
+		E2CDA66F1D3905D60079F784 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				E2CDA6701D3905D60079F784 /* aes */,
+				E2CDA6861D3905D60079F784 /* Common.h */,
+				E2CDA6871D3905D60079F784 /* Info.plist */,
+				E2CDA6881D3905D60079F784 /* minizip */,
+				E2CDA6921D3905D60079F784 /* SSZipArchive.h */,
+				E2CDA6931D3905D60079F784 /* SSZipArchive.m */,
+				E2CDA6941D3905D60079F784 /* ZipArchive.h */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		E2CDA6701D3905D60079F784 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				E2CDA6711D3905D60079F784 /* aes.h */,
+				E2CDA6721D3905D60079F784 /* aes_via_ace.h */,
+				E2CDA6731D3905D60079F784 /* aescrypt.c */,
+				E2CDA6741D3905D60079F784 /* aeskey.c */,
+				E2CDA6751D3905D60079F784 /* aesopt.h */,
+				E2CDA6761D3905D60079F784 /* aestab.c */,
+				E2CDA6771D3905D60079F784 /* aestab.h */,
+				E2CDA6781D3905D60079F784 /* brg_endian.h */,
+				E2CDA6791D3905D60079F784 /* brg_types.h */,
+				E2CDA67A1D3905D60079F784 /* entropy.c */,
+				E2CDA67B1D3905D60079F784 /* entropy.h */,
+				E2CDA67C1D3905D60079F784 /* fileenc.c */,
+				E2CDA67D1D3905D60079F784 /* fileenc.h */,
+				E2CDA67E1D3905D60079F784 /* hmac.c */,
+				E2CDA67F1D3905D60079F784 /* hmac.h */,
+				E2CDA6801D3905D60079F784 /* prng.c */,
+				E2CDA6811D3905D60079F784 /* prng.h */,
+				E2CDA6821D3905D60079F784 /* pwd2key.c */,
+				E2CDA6831D3905D60079F784 /* pwd2key.h */,
+				E2CDA6841D3905D60079F784 /* sha1.c */,
+				E2CDA6851D3905D60079F784 /* sha1.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		E2CDA6881D3905D60079F784 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				E2CDA6891D3905D60079F784 /* crypt.h */,
+				E2CDA68A1D3905D60079F784 /* ioapi.c */,
+				E2CDA68B1D3905D60079F784 /* ioapi.h */,
+				E2CDA68C1D3905D60079F784 /* mztools.c */,
+				E2CDA68D1D3905D60079F784 /* mztools.h */,
+				E2CDA68E1D3905D60079F784 /* unzip.c */,
+				E2CDA68F1D3905D60079F784 /* unzip.h */,
+				E2CDA6901D3905D60079F784 /* zip.c */,
+				E2CDA6911D3905D60079F784 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -469,39 +603,59 @@
 			files = (
 				E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */,
 				E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */,
+				E2CDA69F1D3905D60079F784 /* entropy.h in Headers */,
 				E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */,
 				E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */,
+				E2CDA6B01D3905D60079F784 /* mztools.h in Headers */,
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */,
 				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
 				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
+				E2CDA6A51D3905D60079F784 /* prng.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */,
 				E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */,
+				E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */,
+				E2CDA6A71D3905D60079F784 /* pwd2key.h in Headers */,
+				E2CDA6A91D3905D60079F784 /* sha1.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
 				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
+				E2CDA6AE1D3905D60079F784 /* ioapi.h in Headers */,
+				E2CDA6B41D3905D60079F784 /* zip.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
 				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
 				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
 				E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */,
+				E2CDA6AA1D3905D60079F784 /* Common.h in Headers */,
 				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
 				E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */,
 				E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */,
 				E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */,
+				E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
+				E2CDA6951D3905D60079F784 /* aes.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
+				E2CDA69B1D3905D60079F784 /* aestab.h in Headers */,
+				E2CDA69C1D3905D60079F784 /* brg_endian.h in Headers */,
 				E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */,
 				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
 				E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */,
+				E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */,
+				E2CDA6A31D3905D60079F784 /* hmac.h in Headers */,
 				E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */,
 				E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */,
+				E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */,
+				E2CDA6991D3905D60079F784 /* aesopt.h in Headers */,
+				E2CDA69D1D3905D60079F784 /* brg_types.h in Headers */,
 				E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */,
 				E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */,
 				E29233D11D357DCA00DA88C2 /* CLUExceptionInfoModule.h in Headers */,
 				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
+				E2CDA6AC1D3905D60079F784 /* crypt.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
+				E2CDA6B21D3905D60079F784 /* unzip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +761,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CDA6AB1D3905D60079F784 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,22 +794,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
+				E2CDA6971D3905D60079F784 /* aescrypt.c in Sources */,
 				E29233D21D357DCA00DA88C2 /* CLUExceptionInfoModule.m in Sources */,
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
 				E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */,
+				E2CDA6A41D3905D60079F784 /* prng.c in Sources */,
+				E2CDA6B11D3905D60079F784 /* unzip.c in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
 				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
+				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
+				E2CDA6981D3905D60079F784 /* aeskey.c in Sources */,
+				E2CDA6B31D3905D60079F784 /* zip.c in Sources */,
 				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
+				E2CDA69E1D3905D60079F784 /* entropy.c in Sources */,
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
 				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
+				E2CDA6A61D3905D60079F784 /* pwd2key.c in Sources */,
 				E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
+				E2CDA6AD1D3905D60079F784 /* ioapi.c in Sources */,
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
 				E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */,
+				E2CDA69A1D3905D60079F784 /* aestab.c in Sources */,
+				E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */,
 				E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */,
+				E2CDA6A01D3905D60079F784 /* fileenc.c in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */,
@@ -665,7 +832,9 @@
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
 				E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
+				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
 				E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */,
+				E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
