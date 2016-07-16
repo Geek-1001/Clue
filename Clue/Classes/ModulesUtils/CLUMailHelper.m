@@ -7,6 +7,7 @@
 //
 
 #import "CLUMailHelper.h"
+#import "CLUReportFileManager.h"
 
 @interface CLUMailHelper()
 
@@ -27,7 +28,14 @@
     if (option.email) {
         [_mailComposeViewController setToRecipients:@[option.email]];
     }
-    // TODO: set attachment. Make zip and attach
+    BOOL isZipFileCreatedSuccessfully = [[CLUReportFileManager sharedManager] createZipReportFile];
+    if (isZipFileCreatedSuccessfully) {
+        NSURL *reportZipURL = [[CLUReportFileManager sharedManager] reportZipURL];
+        NSData *reportZipData = [NSData dataWithContentsOfURL:reportZipURL];
+        if (reportZipData) {
+            [_mailComposeViewController addAttachmentData:reportZipData mimeType:@"application/zip" fileName:@"report.clue.zip"];
+        }
+    }
     
     return self;
 }
@@ -41,7 +49,9 @@
     if (!viewController) {
         return;
     }
-    [viewController presentViewController:_mailComposeViewController animated:YES completion:nil];
+    if ([MFMailComposeViewController canSendMail]) {
+        [viewController presentViewController:_mailComposeViewController animated:YES completion:nil];
+    }
 }
 
 - (void)setMailDelegate:(id <MFMailComposeViewControllerDelegate>)delegate {
@@ -52,7 +62,7 @@
 
 - (NSString *)currentReportSubject {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY-MM-DD HH:SS"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSDate *currentDate = [NSDate date];
     NSString *currentDateString = [formatter stringFromDate:currentDate];
     NSString *subject = [[NSString alloc] initWithFormat:@"Clue Bug Report %@", currentDateString];
