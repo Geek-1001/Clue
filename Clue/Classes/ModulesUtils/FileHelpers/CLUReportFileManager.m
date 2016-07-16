@@ -7,6 +7,7 @@
 //
 
 #import "CLUReportFileManager.h"
+#import "SSZipArchive.h"
 
 @implementation CLUReportFileManager
 
@@ -18,8 +19,11 @@
     NSString *reportFileName = [self currentReportFileName];
     _reportDirectoryURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:reportFileName]
                                      isDirectory:YES];
+    _reportZipURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"report.clue.zip"]
+                               isDirectory:NO];
     _recordableModulesDirectoryURL = [_reportDirectoryURL URLByAppendingPathComponent:@"Modules" isDirectory:YES];
     _infoModulesDirectoryURL = [_reportDirectoryURL URLByAppendingPathComponent:@"Info" isDirectory:YES];
+    
     return self;
 }
 
@@ -47,10 +51,18 @@
 }
 
 - (BOOL)removeReportFile {
+    return [self removeFileWithURL:_reportDirectoryURL];
+}
+
+- (BOOL)removeReportZipFile {
+    return [self removeFileWithURL:_reportZipURL];
+}
+
+- (BOOL)removeFileWithURL:(NSURL *)fileURL {
     BOOL status = NO;
-    if (_reportDirectoryURL) {
+    if (fileURL) {
         NSError *error;
-        status = [[NSFileManager defaultManager] removeItemAtURL:_reportDirectoryURL error:&error];
+        status = [[NSFileManager defaultManager] removeItemAtURL:fileURL error:&error];
     }
     return status;
 }
@@ -61,6 +73,14 @@
     [reportName setString:UUID];
     [reportName appendString:@".clue"];
     return reportName;
+}
+
+- (BOOL)createZipReportFile {
+    NSString *reportPath = [_reportDirectoryURL path];
+    NSString *reportZipPath = [_reportZipURL path];
+    BOOL status = [SSZipArchive createZipFileAtPath:reportZipPath withContentsOfDirectory:reportPath];
+    
+    return status;
 }
 
 @end

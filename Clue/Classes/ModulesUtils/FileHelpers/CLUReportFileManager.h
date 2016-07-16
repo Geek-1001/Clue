@@ -13,9 +13,12 @@
 @property (nonatomic, readonly) NSURL *recordableModulesDirectoryURL;
 @property (nonatomic, readonly) NSURL *infoModulesDirectoryURL;
 @property (nonatomic, readonly) NSURL *reportDirectoryURL;
+@property (nonatomic, readonly) NSURL *reportZipURL;
 
 + (instancetype)sharedManager;
 - (BOOL)createReportFile;
 - (BOOL)removeReportFile;
+- (BOOL)removeReportZipFile;
+- (BOOL)createZipReportFile;
 
 @end
