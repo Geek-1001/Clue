@@ -82,7 +82,6 @@
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */; };
 		E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */; };
-		E2CDA5C11D38EC480079F784 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CDA6111D3903110079F784 /* libz.tbd */; };
 		E2CDA6951D3905D60079F784 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6711D3905D60079F784 /* aes.h */; };
 		E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6721D3905D60079F784 /* aes_via_ace.h */; };
@@ -119,6 +118,8 @@
 		E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6921D3905D60079F784 /* SSZipArchive.h */; };
 		E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6931D3905D60079F784 /* SSZipArchive.m */; };
 		E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6941D3905D60079F784 /* ZipArchive.h */; };
+		E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */; };
+		E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,6 +258,8 @@
 		E2CDA6921D3905D60079F784 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		E2CDA6931D3905D60079F784 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		E2CDA6941D3905D60079F784 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUMailDelegate.h; path = Classes/ModulesUtils/CLUMailDelegate.h; sourceTree = "<group>"; };
+		E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUMailDelegate.m; path = Classes/ModulesUtils/CLUMailDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +479,8 @@
 				E24AEDFB1D06DCE1001F31FF /* GestureRecognizers */,
 				E29233D31D358B6300DA88C2 /* CLUMailHelper.h */,
 				E29233D41D358B6300DA88C2 /* CLUMailHelper.m */,
+				E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */,
+				E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */,
 			);
 			name = ModulesUtils;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
 				E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */,
 				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
+				E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */,
 				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
 				E2CDA6A51D3905D60079F784 /* prng.h in Headers */,
@@ -834,6 +840,7 @@
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
 				E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */,
+				E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */,
 				E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
