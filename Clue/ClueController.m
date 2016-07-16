@@ -19,6 +19,8 @@
 #import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
 #import "CLUExceptionInfoModule.h"
+#import "CLUMailHelper.h"
+#import "CLUMailDelegate.h"
 
 @interface ClueController()
 
@@ -26,10 +28,13 @@
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CLUOptions *options;
 @property (nonatomic) CLUReportComposer *reportComposer;
+@property (nonatomic) CLUMailDelegate *mailDelegate;
 
 @end
 
-@implementation ClueController
+@implementation ClueController {
+    dispatch_queue_t _waitVideoRenderingQueue;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -42,6 +47,8 @@
     _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
     [_reportComposer setInfoModules:infoModulesArray];
     NSSetUncaughtExceptionHandler(&didReceiveUncaughtException);
+    _waitVideoRenderingQueue = dispatch_queue_create("ClueController.waitVideoRenderingQueue", DISPATCH_QUEUE_SERIAL);
+    _mailDelegate = [[CLUMailDelegate alloc] init];
     
     return self;
 }
@@ -96,8 +103,7 @@ void didReceiveUncaughtException(NSException *exception) {
     [exceptionModule setException:exception];
     [exceptionModule recordInfoData];
     
-    dispatch_queue_t stopRecodingQueue = dispatch_queue_create("ClueController.stopRecodingQueue", DISPATCH_QUEUE_SERIAL);
-    dispatch_sync(stopRecodingQueue, ^{
+    dispatch_sync(_waitVideoRenderingQueue, ^{
         [self stopRecording];
         // Crazy hack! If exception occurs wait till video writer finish async handler -[AVAssetWriter finishWritingWithCompletionHandler]
         // TODO: come up with better approach
@@ -129,6 +135,18 @@ void didReceiveUncaughtException(NSException *exception) {
         _isRecording = NO;
         [_reportComposer stopRecording];
     }
+    // Delay before zipping report, video rendering have to end properly
+    dispatch_async(_waitVideoRenderingQueue, ^{
+        // TODO: come up with better approach
+        [NSThread sleepForTimeInterval:4];
+        
+        CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
+        [mailHelper setMailDelegate:_mailDelegate];
+        // TODO: test it on real device. Mail isn't working on simulator
+        //[mailHelper showMailComposeWindow];
+        [[CLUReportFileManager sharedManager] removeReportFile];
+        //[[CLUReportFileManager sharedManager] removeReportZipFile];
+    });
 }
 
 - (NSMutableArray *)configureRecordableModules {
