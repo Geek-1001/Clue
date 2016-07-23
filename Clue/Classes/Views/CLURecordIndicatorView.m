@@ -84,6 +84,8 @@
 
 - (void)startCountdownTimerWithMaxTime:(NSDateComponents *)maxTime {
     _currentTime = maxTime;
+    NSString *initialTime = [self convertToStringWithDateComponent:maxTime];
+    _titleLabel.text = initialTime;
     _secondsTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                      target:self
                                                    selector:@selector(timerTickTock)
@@ -114,16 +116,23 @@
 }
 
 - (void)timerTickTock {
-    if (_currentTime) {
+    if (!_currentTime) {
         return;
     }
-    
     _currentTime.second = _currentTime.second - 1;
+    NSString *currentTimeLeft = [self convertToStringWithDateComponent:_currentTime];
+    _titleLabel.text = currentTimeLeft;
+}
+
+- (NSString *)convertToStringWithDateComponent:(NSDateComponents *)dateComponent {
+    if (!dateComponent) {
+        return @"";
+    }
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDate *date = [gregorianCalendar dateFromComponents:_currentTime];
+    NSDate *date = [gregorianCalendar dateFromComponents:dateComponent];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"mm:ss";
-    _titleLabel.text = [formatter stringFromDate:date];
+    return [formatter stringFromDate:date];
 }
 
 @end
