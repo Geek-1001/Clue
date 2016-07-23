@@ -15,6 +15,7 @@
                                 withMaxTime:(NSDateComponents *)maxTime
                                      target:(id)target
                                   andAction:(SEL)action;
++ (void)switchRecordIndicatorToWaitingMode;
 + (void)hideRecordIndicator;
 
 + (UIViewController *)currentViewController;

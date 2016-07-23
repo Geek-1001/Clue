@@ -40,6 +40,15 @@
     [indicatorView startCountdownTimerWithMaxTime:maxTime];
 }
 
++ (void)switchRecordIndicatorToWaitingMode {
+    CLURecordIndicatorViewManager *viewManager = [CLURecordIndicatorViewManager sharedManager];
+    CLURecordIndicatorView *indicatorView = viewManager.indicatorView;
+    if (indicatorView) {
+        [indicatorView stopCountdownTimer];
+        [indicatorView setWaitingMode:YES];
+    }
+}
+
 + (void)hideRecordIndicator {
     CLURecordIndicatorViewManager *viewManager = [CLURecordIndicatorViewManager sharedManager];
     CLURecordIndicatorView *indicatorView = viewManager.indicatorView;
