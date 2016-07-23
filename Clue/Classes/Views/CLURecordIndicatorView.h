@@ -14,6 +14,7 @@
 
 - (instancetype)initWithViewController:(UIViewController *)viewController;
 - (void)setTarget:(id)target andAction:(SEL)action;
+- (void)setWaitingMode:(BOOL)isWaitingMode;
 
 - (void)startCountdownTimerWithMaxTime:(NSDateComponents *)maxTime;
 - (void)stopCountdownTimer;

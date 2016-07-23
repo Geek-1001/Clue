@@ -21,6 +21,8 @@
 @property (nonatomic) id target;
 @property (nonatomic) SEL action;
 
+@property (nonatomic) BOOL isWaitingMode;
+
 @end
 
 @implementation CLURecordIndicatorView
@@ -32,6 +34,7 @@
     }
     
     _viewController = viewController;
+    _isWaitingMode = NO;
     
     _gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTapOnView:)];
     [self addGestureRecognizer:_gestureRecognizer];
@@ -39,13 +42,37 @@
     [self setBackgroundColor:[UIColor colorWithRed:251/255.0 green:105/255.0 blue:97/255.0 alpha:1]];
     
     _titleLabel = [[UILabel alloc] init];
-    [_titleLabel setText:@"00:00"];
     [_titleLabel setTextColor:[UIColor whiteColor]];
     [_titleLabel setBackgroundColor:[UIColor clearColor]];
     [_titleLabel setFont:[UIFont systemFontOfSize:14]];
     _titleLabel.numberOfLines = 0;
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [self addSubview:_titleLabel];
+    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = CGRectGetWidth(screenBounds);
+    CGFloat actualHeight = [self updateTitleLabel];
+    CGFloat topPosition = -actualHeight;
+    
+    self.frame = CGRectMake(0.0, topPosition, screenWidth, actualHeight);
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    return self;
+}
+
+- (void)setWaitingMode:(BOOL)isWaitingMode {
+    _isWaitingMode = isWaitingMode;
+    if (isWaitingMode) {
+        [self updateTitleLabel];
+    }
+}
+
+- (CGFloat)updateTitleLabel {
+    if (_isWaitingMode) {
+        [_titleLabel setText:@"Wait..."];
+    } else {
+        [_titleLabel setText:@"00:00"];
+    }
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screenBounds);
@@ -61,14 +88,9 @@
                                    titleLabelContentRect.size.width,
                                    0.0);
     [_titleLabel sizeToFit];
-    
     CGFloat actualHeight = padding + titleLabelContentRect.size.height + padding;
-    CGFloat topPosition = -actualHeight;
     
-    self.frame = CGRectMake(0.0, topPosition, screenWidth, actualHeight);
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    
-    return self;
+    return actualHeight;
 }
 
 - (CGFloat)padding {
