@@ -21,6 +21,7 @@
 #import "CLUExceptionInfoModule.h"
 #import "CLUMailHelper.h"
 #import "CLUMailDelegate.h"
+#import "CLURecordIndicatorViewManager.h"
 
 @interface ClueController()
 
@@ -127,6 +128,13 @@ void didReceiveUncaughtException(NSException *exception) {
     if (!_isRecording) {
         _isRecording = YES;
         [_reportComposer startRecording];
+        
+        UIViewController *currentViewController = [CLURecordIndicatorViewManager currentViewController];
+        NSDateComponents *maxTime = [CLURecordIndicatorViewManager defaultMaxTime];
+        [CLURecordIndicatorViewManager showRecordIndicatorInViewController:currentViewController
+                                                               withMaxTime:maxTime
+                                                                    target:self
+                                                                 andAction:@selector(stopRecording)];
     }
 }
 
@@ -134,19 +142,24 @@ void didReceiveUncaughtException(NSException *exception) {
     if (_isRecording) {
         _isRecording = NO;
         [_reportComposer stopRecording];
-    }
-    // Delay before zipping report, video rendering have to end properly
-    dispatch_async(_waitVideoRenderingQueue, ^{
-        // TODO: come up with better approach
-        [NSThread sleepForTimeInterval:4];
         
-        CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
-        [mailHelper setMailDelegate:_mailDelegate];
-        // TODO: test it on real device. Mail isn't working on simulator
-        //[mailHelper showMailComposeWindow];
-        [[CLUReportFileManager sharedManager] removeReportFile];
-        //[[CLUReportFileManager sharedManager] removeReportZipFile];
-    });
+        [CLURecordIndicatorViewManager switchRecordIndicatorToWaitingMode];
+        // Delay before zipping report, video rendering have to end properly
+        dispatch_async(_waitVideoRenderingQueue, ^{
+            // TODO: come up with better approach
+            [NSThread sleepForTimeInterval:4];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [CLURecordIndicatorViewManager hideRecordIndicator];
+            });
+            
+            CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
+            [mailHelper setMailDelegate:_mailDelegate];
+            // TODO: test it on real device. Mail isn't working on simulator
+            //[mailHelper showMailComposeWindow];
+            [[CLUReportFileManager sharedManager] removeReportFile];
+            //[[CLUReportFileManager sharedManager] removeReportZipFile];
+        });
+    }
 }
 
 - (NSMutableArray *)configureRecordableModules {
