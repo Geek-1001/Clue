@@ -82,6 +82,8 @@
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */; };
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
+		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; };
+		E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */; };
 		E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */; };
 		E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */; };
 		E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CDA6111D3903110079F784 /* libz.tbd */; };
@@ -224,6 +226,8 @@
 		E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUVideoWriter.m; path = Classes/Writers/CLUVideoWriter.m; sourceTree = "<group>"; };
 		E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLURecordIndicatorView.h; path = Classes/Views/CLURecordIndicatorView.h; sourceTree = "<group>"; };
 		E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLURecordIndicatorView.m; path = Classes/Views/CLURecordIndicatorView.m; sourceTree = "<group>"; };
+		E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLURecordIndicatorViewManager.h; path = Classes/ModulesUtils/CLURecordIndicatorViewManager.h; sourceTree = "<group>"; };
+		E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLURecordIndicatorViewManager.m; path = Classes/ModulesUtils/CLURecordIndicatorViewManager.m; sourceTree = "<group>"; };
 		E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewStructureWriter.h; path = Classes/Writers/CLUViewStructureWriter.h; sourceTree = "<group>"; };
 		E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUViewStructureWriter.m; path = Classes/Writers/CLUViewStructureWriter.m; sourceTree = "<group>"; };
 		E2CDA6111D3903110079F784 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -487,6 +491,8 @@
 				E29233D41D358B6300DA88C2 /* CLUMailHelper.m */,
 				E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */,
 				E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */,
+				E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */,
+				E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */,
 			);
 			name = ModulesUtils;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
 				E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */,
 				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
+				E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */,
 				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
 				E2CDA6A51D3905D60079F784 /* prng.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
@@ -840,6 +847,7 @@
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
+				E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */,
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
 				E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */,
