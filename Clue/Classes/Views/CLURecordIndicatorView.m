@@ -116,7 +116,7 @@
     
     NSUInteger stopTimerDelay = (maxTime.minute * 60) + maxTime.second;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, stopTimerDelay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [self stopCountdownTimer];
+        [self performViewTargetAndAction];
     });
 }
 
@@ -129,6 +129,10 @@
 }
 
 - (void)userTapOnView:(UITapGestureRecognizer *)gestureRecognizer {
+    [self performViewTargetAndAction];
+}
+
+- (void)performViewTargetAndAction {
     [self stopCountdownTimer];
     if (_target && _action) {
         IMP imp = [_target methodForSelector:_action];
