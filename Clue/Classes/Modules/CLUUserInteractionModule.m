@@ -10,6 +10,10 @@
 #import "CLUDataWriter.h"
 #import "CLUGeneralGestureRecognizer.h"
 
+#define kTOUCH_BEGAN_EVENT @"Began"
+#define kTOUCH_MOVED_EVENT @"Moved"
+#define kTOUCH_ENDED_EVENT @"Ended"
+
 @interface CLUUserInteractionModule()
 
 @property (nonatomic) CLUGeneralGestureRecognizer *gestureRecognizer;
@@ -49,16 +53,15 @@
 }
 
 - (void)touchesBegan:(NSArray<CLUTouch *> *)touches {
-    // TODO: set touch type value as a const string
-    [self addOneTimeTouchs:touches forType:@"began"];
+    [self addOneTimeTouchs:touches forType:kTOUCH_BEGAN_EVENT];
 }
 
 - (void)touchesMoved:(NSArray<CLUTouch *> *)touches {
-    [self addOneTimeTouchs:touches forType:@"moved"];
+    [self addOneTimeTouchs:touches forType:kTOUCH_MOVED_EVENT];
 }
 
 - (void)touchesEnded:(NSArray<CLUTouch *> *)touches {
-    [self addOneTimeTouchs:touches forType:@"ended"];
+    [self addOneTimeTouchs:touches forType:kTOUCH_ENDED_EVENT];
 }
 
 - (void)addOneTimeTouchs:(NSArray<CLUTouch *> *)touches forType:(nonnull NSString *)type {
