@@ -13,5 +13,9 @@
 
 - (instancetype)initWithOutputURL:(NSURL *)outputURL;
 - (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary withTimeInterval:(CFTimeInterval)timeInterval;
+- (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary
+                            forKey:(NSString *)viewKey
+                  withTimeInterval:(CFTimeInterval)timeInterval
+                            forKey:(NSString *)timestampKey;
 
 @end
