@@ -18,7 +18,7 @@
 @property (nonatomic) NSDateComponents *currentTime;
 @property (nonatomic) NSTimer *secondsTimer;
 
-@property (nonatomic) id target;
+@property (nonatomic, weak) id target;
 @property (nonatomic) SEL action;
 
 @property (nonatomic) BOOL isWaitingMode;
