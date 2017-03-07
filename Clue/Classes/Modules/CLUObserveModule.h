@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CLURecordableModule.h"
 
+#define TIMESTAMP_KEY @"timestamp"
+
 @interface CLUObserveModule : NSObject <CLURecordableModule>
 
 @property (nonatomic, readonly) BOOL isRecording;

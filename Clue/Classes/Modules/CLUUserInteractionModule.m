@@ -68,7 +68,7 @@
     @synchronized (self) {
         NSMutableDictionary *touchDictionary = [[NSMutableDictionary alloc] init];
         [touchDictionary setObject:type forKey:@"type"];
-        [touchDictionary setObject:@(self.currentTimeStamp) forKey:@"timestamp"];
+        [touchDictionary setObject:@(self.currentTimeStamp) forKey:TIMESTAMP_KEY];
         
         NSMutableArray *touchArray = [[NSMutableArray alloc] init];
         for (CLUTouch *touch in touches) {

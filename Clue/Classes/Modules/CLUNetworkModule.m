@@ -37,7 +37,7 @@
 - (void)addNetworkOperationToBufferWithLabel:(nonnull NSString *)label properties:(nullable NSArray<NSDictionary *> *)properties {
     @synchronized (self) {
         NSMutableDictionary *networkDictionary = [[NSMutableDictionary alloc] init];
-        [networkDictionary setObject:@(self.currentTimeStamp) forKey:@"timestamp"];
+        [networkDictionary setObject:@(self.currentTimeStamp) forKey:TIMESTAMP_KEY];
         [networkDictionary setObject:label forKey:@"label"];
         
         if (properties && [properties count] > 0) {
