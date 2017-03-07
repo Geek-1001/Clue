@@ -71,7 +71,7 @@
     if (_isWaitingMode) {
         [_titleLabel setText:@"Wait..."];
     } else {
-        [_titleLabel setText:@"00:00"];
+        [_titleLabel setText:@"Recording..."];
     }
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -98,22 +98,12 @@
 }
 
 - (void)setTarget:(id)target andAction:(SEL)action {
-    if (target && action) {
-        _target = target;
-        _action = action;
-    }
+    _target = target;
+    _action = action;
 }
 
 - (void)startCountdownTimerWithMaxTime:(NSDateComponents *)maxTime {
     _currentTime = maxTime;
-    NSString *initialTime = [self convertToStringWithDateComponent:maxTime];
-    _titleLabel.text = initialTime;
-    _secondsTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                     target:self
-                                                   selector:@selector(timerTickTock)
-                                                   userInfo:nil
-                                                    repeats:YES];
-    
     NSUInteger stopTimerDelay = (maxTime.minute * 60) + maxTime.second;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, stopTimerDelay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self performViewTargetAndAction];
@@ -139,26 +129,6 @@
         void (*func)(id, SEL) = (void *)imp;
         func(_target, _action);
     }
-}
-
-- (void)timerTickTock {
-    if (!_currentTime) {
-        return;
-    }
-    _currentTime.second = _currentTime.second - 1;
-    NSString *currentTimeLeft = [self convertToStringWithDateComponent:_currentTime];
-    _titleLabel.text = currentTimeLeft;
-}
-
-- (NSString *)convertToStringWithDateComponent:(NSDateComponents *)dateComponent {
-    if (!dateComponent) {
-        return @"";
-    }
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDate *date = [gregorianCalendar dateFromComponents:dateComponent];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"mm:ss";
-    return [formatter stringFromDate:date];
 }
 
 @end
