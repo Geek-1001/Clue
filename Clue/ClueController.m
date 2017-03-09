@@ -200,8 +200,8 @@ void didReceiveUncaughtException(NSException *exception) {
 - (CLUViewStructureModule *)configureViewStructureModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_view.json"];
-    CLUViewStructureWriter *viewStructureWriter = [[CLUViewStructureWriter alloc] initWithOutputURL:outputURL];
-    CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:viewStructureWriter];
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:dataWriter];
     return viewStructureModule;
 }
 
