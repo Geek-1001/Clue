@@ -36,18 +36,14 @@
         [super startRecording];
         [_gestureRecognizer setObserverDelegate:self];
         #warning If some window will be destroyed how to deattach gesture recognizer from it? Possible memory leak!
-        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
-            [window addGestureRecognizer:_gestureRecognizer];
-        }
+        [[[UIApplication sharedApplication] keyWindow] addGestureRecognizer:_gestureRecognizer];
     }
 }
 
 - (void)stopRecording {
     if (self.isRecording) {
-        [super isRecording];
-        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
-            [window removeGestureRecognizer:_gestureRecognizer];
-        }
+        [super stopRecording];
+        [[[UIApplication sharedApplication] keyWindow] removeGestureRecognizer:_gestureRecognizer];
         [_gestureRecognizer removeObserverDelegate];
     }
 }
