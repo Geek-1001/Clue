@@ -11,7 +11,6 @@
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
-#import "CLUViewStructureWriter.h"
 #import "CLUViewStructureModule.h"
 #import "CLUUserInteractionModule.h"
 #import "CLUNetworkModule.h"

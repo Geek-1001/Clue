@@ -84,8 +84,6 @@
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
 		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; };
 		E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */; };
-		E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */; };
-		E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */; };
 		E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CDA6111D3903110079F784 /* libz.tbd */; };
 		E2CDA6951D3905D60079F784 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6711D3905D60079F784 /* aes.h */; };
 		E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6721D3905D60079F784 /* aes_via_ace.h */; };
@@ -228,8 +226,6 @@
 		E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLURecordIndicatorView.m; path = Classes/Views/CLURecordIndicatorView.m; sourceTree = "<group>"; };
 		E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLURecordIndicatorViewManager.h; path = Classes/ModulesUtils/CLURecordIndicatorViewManager.h; sourceTree = "<group>"; };
 		E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLURecordIndicatorViewManager.m; path = Classes/ModulesUtils/CLURecordIndicatorViewManager.m; sourceTree = "<group>"; };
-		E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUViewStructureWriter.h; path = Classes/Writers/CLUViewStructureWriter.h; sourceTree = "<group>"; };
-		E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUViewStructureWriter.m; path = Classes/Writers/CLUViewStructureWriter.m; sourceTree = "<group>"; };
 		E2CDA6111D3903110079F784 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E2CDA6711D3905D60079F784 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		E2CDA6721D3905D60079F784 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
@@ -545,8 +541,6 @@
 			children = (
 				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
 				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
-				E2C0FF121CFD824800DB89CE /* CLUViewStructureWriter.h */,
-				E2C0FF131CFD824800DB89CE /* CLUViewStructureWriter.m */,
 				E278B7DF1D035DC90083E951 /* CLUDataWriter.h */,
 				E278B7E01D035DC90083E951 /* CLUDataWriter.m */,
 			);
@@ -658,7 +652,6 @@
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
 				E2CDA69B1D3905D60079F784 /* aestab.h in Headers */,
 				E2CDA69C1D3905D60079F784 /* brg_endian.h in Headers */,
-				E2C0FF141CFD824800DB89CE /* CLUViewStructureWriter.h in Headers */,
 				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
 				E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */,
 				E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */,
@@ -837,7 +830,6 @@
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
 				E2CDA6AD1D3905D60079F784 /* ioapi.c in Sources */,
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
-				E2C0FF151CFD824800DB89CE /* CLUViewStructureWriter.m in Sources */,
 				E2CDA69A1D3905D60079F784 /* aestab.c in Sources */,
 				E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */,
 				E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */,
