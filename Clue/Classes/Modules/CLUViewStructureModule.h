@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CLURecordableModule.h"
+#import "CLUObserveModule.h"
 
-@interface CLUViewStructureModule : NSObject <CLURecordableModule>
-
-@property (nonatomic, readonly) BOOL isRecording;
+@interface CLUViewStructureModule : CLUObserveModule
 
 @end

@@ -9,58 +9,45 @@
 #import "CLUViewStructureModule.h"
 #import "UIView+CLUViewRecordableAdditions.h"
 #import <UIKit/UIKit.h>
-#import "CLUViewStructureWriter.h"
+
+#define DEFAULT_VIEW_KEY @"view"
 
 @interface CLUViewStructureModule()
 
-@property (nonatomic) CLUViewStructureWriter *viewStructureWriter;
 @property (nonatomic) NSDictionary *lastRecordedViewStructure;
 
 @end
 
-@implementation CLUViewStructureModule {
-    dispatch_queue_t _recordQueue;
-    dispatch_semaphore_t _frameRecordingSemaphore;
-}
+@implementation CLUViewStructureModule
 
-- (instancetype)initWithWriter:(CLUViewStructureWriter *)writer {
-    self = [super  init];
-    if (!self) {
-        return nil;
-    }
-    _viewStructureWriter = writer;
-    _isRecording = NO;
-    _recordQueue = dispatch_queue_create("CLUViewStructureModule.record_queue", DISPATCH_QUEUE_SERIAL);
-    dispatch_set_target_queue(_recordQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0));
-    _frameRecordingSemaphore = dispatch_semaphore_create(1);
-    
-    return self;
-}
+#pragma mark - View Structure Encoding
 
-- (void)startRecording {
-    if (!_isRecording) {
-        _isRecording = YES;
-        [_viewStructureWriter startWriting];
-    }
-}
-
-- (void)stopRecording {
-    if (_isRecording) {
-        _isRecording = NO;
-        [_viewStructureWriter finishWriting];
-    }
-}
-
-- (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
-    if (dispatch_semaphore_wait(_frameRecordingSemaphore, DISPATCH_TIME_NOW) != 0) {
+- (void)addViewStructureProperties:(NSDictionary *)propertiesDictionary
+                            forKey:(NSString *)viewKey
+                  withTimeInterval:(CFTimeInterval)timeInterval
+                            forKey:(NSString *)timestampKey {
+    if (!propertiesDictionary) {
         return;
     }
     
-    dispatch_async(_recordQueue, ^{
-        if (![_viewStructureWriter isReadyForWriting]) {
-            return;
-        }
+    NSMutableDictionary *rootViewDictionary = [[NSMutableDictionary alloc] init];
+    [rootViewDictionary setValue:[NSNumber numberWithDouble:timeInterval] forKey:timestampKey];
+    [rootViewDictionary setValue:propertiesDictionary forKey:viewKey];
+    
+    NSError *error;
+    BOOL isPropertiesDictionaryValid = [NSJSONSerialization isValidJSONObject:rootViewDictionary];
+    if (!isPropertiesDictionaryValid) {
+        // TODO: notify about error
+        return;
+    }
+    NSData *viewPropertiesData = [NSJSONSerialization dataWithJSONObject:rootViewDictionary options:0 error:&error];
+    [self addData:viewPropertiesData];
+}
 
+#pragma mark - Recordable Module Delegate
+
+- (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
+    @synchronized (self) {
         NSDictionary *currentViewStructure;
         for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
             UIViewController *rootViewController = window.rootViewController;
@@ -70,14 +57,15 @@
                 }
             }
         }
-        
         if (!_lastRecordedViewStructure || ![_lastRecordedViewStructure isEqualToDictionary:currentViewStructure]) {
-            [_viewStructureWriter addViewStructureProperties:currentViewStructure withTimeInterval:timestamp];
+            [self addViewStructureProperties:currentViewStructure
+                                      forKey:DEFAULT_VIEW_KEY
+                            withTimeInterval:timestamp
+                                      forKey:TIMESTAMP_KEY];
             _lastRecordedViewStructure = currentViewStructure;
         }
-        
-        dispatch_semaphore_signal(_frameRecordingSemaphore);
-    });    
+        [super addNewFrameWithTimestamp:timestamp];
+    }
 }
 
 @end
