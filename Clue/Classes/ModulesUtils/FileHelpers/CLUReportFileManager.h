@@ -20,5 +20,6 @@
 - (BOOL)removeReportFile;
 - (BOOL)removeReportZipFile;
 - (BOOL)createZipReportFile;
+- (BOOL)isReportZipFileAvailable;
 
 @end

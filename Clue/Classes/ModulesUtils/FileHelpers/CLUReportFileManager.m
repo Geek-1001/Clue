@@ -36,6 +36,13 @@
     return instance;
 }
 
+- (BOOL)isReportZipFileAvailable {
+    if (!_reportZipURL) {
+        return NO;
+    }
+    return [[NSFileManager defaultManager] fileExistsAtPath:_reportZipURL.path];
+}
+
 - (BOOL)createReportFile {
     for (NSURL *currentURL in @[_reportDirectoryURL, _recordableModulesDirectoryURL, _infoModulesDirectoryURL]) {
         NSError *error;
