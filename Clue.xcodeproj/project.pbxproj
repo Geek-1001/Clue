@@ -57,6 +57,7 @@
 		E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E01D035DC90083E951 /* CLUDataWriter.m */; };
 		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
 		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
+		E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
 		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
 		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
@@ -199,6 +200,7 @@
 		E278B7E01D035DC90083E951 /* CLUDataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUDataWriter.m; path = Classes/Writers/CLUDataWriter.m; sourceTree = "<group>"; };
 		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUUserInteractionModule.h; path = Classes/Modules/CLUUserInteractionModule.h; sourceTree = "<group>"; };
 		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUUserInteractionModule.m; path = Classes/Modules/CLUUserInteractionModule.m; sourceTree = "<group>"; };
+		E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDataWriterTests.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		E272DD901CD5223300F1FECA /* ClueTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2AD27931E729AB00062FE3D /* Classes */,
 				E272DD911CD5223300F1FECA /* ClueTests.m */,
 				E272DD931CD5223300F1FECA /* Info.plist */,
 			);
@@ -545,6 +548,22 @@
 				E278B7E01D035DC90083E951 /* CLUDataWriter.m */,
 			);
 			name = Writers;
+			sourceTree = "<group>";
+		};
+		E2AD27931E729AB00062FE3D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E2AD27941E729ACD0062FE3D /* Writers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E2AD27941E729ACD0062FE3D /* Writers */ = {
+			isa = PBXGroup;
+			children = (
+				E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */,
+			);
+			path = Writers;
 			sourceTree = "<group>";
 		};
 		E2CDA66F1D3905D60079F784 /* SSZipArchive */ = {
@@ -858,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E272DD921CD5223300F1FECA /* ClueTests.m in Sources */,
+				E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
