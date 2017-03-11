@@ -105,6 +105,7 @@ void didReceiveUncaughtException(NSException *exception) {
     
     dispatch_sync(_waitVideoRenderingQueue, ^{
         [self stopRecording];
+        [[CLUReportFileManager sharedManager] createZipReportFile];
         // Crazy hack! If exception occurs wait till video writer finish async handler -[AVAssetWriter finishWritingWithCompletionHandler]
         // TODO: come up with better approach
         [NSThread sleepForTimeInterval:4];
