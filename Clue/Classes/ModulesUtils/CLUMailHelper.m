@@ -40,15 +40,7 @@
     return self;
 }
 
-- (void)showMailComposeWindow {
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    if (!keyWindow) {
-        return;
-    }
-    UIViewController *viewController = [keyWindow rootViewController];
-    if (!viewController) {
-        return;
-    }
+- (void)showMailComposeWindowWithViewController:(UIViewController *)viewController {
     if ([MFMailComposeViewController canSendMail]) {
         [viewController presentViewController:_mailComposeViewController animated:YES completion:nil];
     }

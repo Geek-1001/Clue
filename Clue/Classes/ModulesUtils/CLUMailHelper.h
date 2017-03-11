@@ -13,7 +13,7 @@
 @interface CLUMailHelper : NSObject
 
 - (instancetype)initWithOption:(CLUOptions *)option;
-- (void)showMailComposeWindow;
+- (void)showMailComposeWindowWithViewController:(UIViewController *)viewController;
 - (void)setMailDelegate:(id <MFMailComposeViewControllerDelegate>)delegate;
 
 @end
