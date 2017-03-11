@@ -161,6 +161,35 @@ void didReceiveUncaughtException(NSException *exception) {
     }
 }
 
+- (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+        successActionTitle:(NSString *)successActionTitle
+        failureActionTitle:(NSString *)failureActionTitle
+            successHandler:(void (^)())success
+            failureHandler:(void (^)())failure
+          inViewController:(UIViewController *)viewController {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *successAction = [UIAlertAction actionWithTitle:successActionTitle
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             if (success) {
+                                                                 success();
+                                                             }
+                                                         }];
+    UIAlertAction *failureAction = [UIAlertAction actionWithTitle:failureActionTitle
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                              if (failure) {
+                                                                  failure();
+                                                              }
+                                                          }];
+    [alertController addAction:successAction];
+    [alertController addAction:failureAction];
+    [viewController presentViewController:alertController animated:YES completion:nil];
+}
+
 - (NSMutableArray *)configureRecordableModules {
     CLUVideoModule *videoModul = [self configureVideoModule];
     CLUViewStructureModule *viewStructureModule = [self configureViewStructureModule];
