@@ -45,6 +45,10 @@
 }
 
 - (void)finishWriting {
+    [self finishWritingWithHandler:nil];
+}
+
+- (void)finishWritingWithHandler:(void (^)(void))completionHandler {
     [_videoWriterInput markAsFinished];
     [_videoWriter finishWritingWithCompletionHandler:^{
         _videoWriterAdaptor = nil;
@@ -52,6 +56,9 @@
         _videoWriter = nil;
         CGColorSpaceRelease(_colorSpace);
         CVPixelBufferPoolRelease(_outputBufferPool);
+        if (completionHandler) {
+            completionHandler();
+        }
     }];
 }
 
