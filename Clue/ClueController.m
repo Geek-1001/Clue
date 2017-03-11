@@ -144,20 +144,27 @@ void didReceiveUncaughtException(NSException *exception) {
         
         [CLURecordIndicatorViewManager switchRecordIndicatorToWaitingMode];
         // Delay before zipping report, video rendering have to end properly
+        ClueController __weak *weakSelf = self;
         dispatch_async(_waitVideoRenderingQueue, ^{
             // TODO: come up with better approach
             [NSThread sleepForTimeInterval:4];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [CLURecordIndicatorViewManager hideRecordIndicator];
             });
-            
-            CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
-            [mailHelper setMailDelegate:_mailDelegate];
-            // TODO: test it on real device. Mail isn't working on simulator
-            //[mailHelper showMailComposeWindow];
-            [[CLUReportFileManager sharedManager] removeReportFile];
-            //[[CLUReportFileManager sharedManager] removeReportZipFile];
+            [weakSelf sendReportWithEmailService];
         });
+    }
+}
+
+- (void)sendReportWithEmailService {
+    UIViewController *currentViewController = [CLURecordIndicatorViewManager currentViewController];
+    CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
+    [mailHelper setMailDelegate:_mailDelegate];
+    // TODO: test it on real device. Mail isn't working on simulator
+    if (currentViewController) {
+        [mailHelper showMailComposeWindowWithViewController:currentViewController];
+        [[CLUReportFileManager sharedManager] removeReportFile];
+        [[CLUReportFileManager sharedManager] removeReportZipFile];
     }
 }
 
