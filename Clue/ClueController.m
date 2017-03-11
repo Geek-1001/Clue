@@ -124,11 +124,25 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (void)startRecording {
+    UIViewController *currentViewController = [CLURecordIndicatorViewManager currentViewController];
+    // If user has previous report file (caused by exception) suggest him to resend it
+    if ([[CLUReportFileManager sharedManager] isReportZipFileAvailable]) {
+        [self showAlertWithTitle:@"Send Previous Clue Report"
+                         message:@"Do you want to send your previous Clue Report caused by internal excpetion?"
+              successActionTitle:@"Send Report"
+              failureActionTitle:@"Delete Report"
+                  successHandler:^{
+                      [self sendReportWithEmailService];
+                  } failureHandler:^{
+                      [[CLUReportFileManager sharedManager] removeReportZipFile];
+                  }
+                inViewController:currentViewController];
+        return;
+    }
+    
     if (!_isRecording) {
         _isRecording = YES;
         [_reportComposer startRecording];
-        
-        UIViewController *currentViewController = [CLURecordIndicatorViewManager currentViewController];
         NSDateComponents *maxTime = [CLURecordIndicatorViewManager defaultMaxTime];
         [CLURecordIndicatorViewManager showRecordIndicatorInViewController:currentViewController
                                                                withMaxTime:maxTime
