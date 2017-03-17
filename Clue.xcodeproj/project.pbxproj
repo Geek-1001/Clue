@@ -45,7 +45,6 @@
 		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E272DD8D1CD5223300F1FECA /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
-		E272DD921CD5223300F1FECA /* ClueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DD911CD5223300F1FECA /* ClueTests.m */; };
 		E272DDA51CD522F000F1FECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DDA41CD522F000F1FECA /* main.m */; };
 		E272DDA81CD522F000F1FECA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DDA71CD522F000F1FECA /* AppDelegate.m */; };
 		E272DDAB1CD522F000F1FECA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E272DDAA1CD522F000F1FECA /* ViewController.m */; };
@@ -185,7 +184,6 @@
 		E272DD851CD5223300F1FECA /* Clue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
 		E272DD871CD5223300F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E272DD8C1CD5223300F1FECA /* ClueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E272DD911CD5223300F1FECA /* ClueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueTests.m; sourceTree = "<group>"; };
 		E272DD931CD5223300F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E272DDA11CD522F000F1FECA /* ClueExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClueExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E272DDA41CD522F000F1FECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				E2AD27931E729AB00062FE3D /* Classes */,
-				E272DD911CD5223300F1FECA /* ClueTests.m */,
 				E272DD931CD5223300F1FECA /* Info.plist */,
 			);
 			path = ClueTests;
@@ -890,7 +887,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E272DD921CD5223300F1FECA /* ClueTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */,
