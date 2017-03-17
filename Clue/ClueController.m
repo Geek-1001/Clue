@@ -174,12 +174,10 @@ void didReceiveUncaughtException(NSException *exception) {
 - (void)sendReportWithEmailService {
     UIViewController *currentViewController = [CLURecordIndicatorViewManager currentViewController];
     CLUMailHelper *mailHelper = [[CLUMailHelper alloc] initWithOption:_options];
-    [mailHelper setMailDelegate:_mailDelegate];
+     [mailHelper setMailDelegate:_mailDelegate];
     // TODO: test it on real device. Mail isn't working on simulator
     if (currentViewController) {
         [mailHelper showMailComposeWindowWithViewController:currentViewController];
-        [[CLUReportFileManager sharedManager] removeReportFile];
-        [[CLUReportFileManager sharedManager] removeReportZipFile];
     }
 }
 
