@@ -16,4 +16,7 @@
 - (NSDictionary *)clue_fontPropertyDictionaryForFont:(UIFont *)font;
 - (NSDictionary *)clue_attributedTextPropertyDictionaryForAttributedString:(NSAttributedString *)attributedText;
 
+- (NSDictionary *)clue_layoutMarginsPropertyDictionary;
+- (NSDictionary *)clue_frameProprtyDictionary;
+
 @end
