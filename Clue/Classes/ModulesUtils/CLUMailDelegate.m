@@ -7,27 +7,23 @@
 //
 
 #import "CLUMailDelegate.h"
+#import "CLUReportFileManager.h"
 
 @implementation CLUMailDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(nullable NSError *)error {
-    // TODO: handle mail response
     switch (result) {
-        case MFMailComposeResultCancelled:
-            break;
-            
-        case MFMailComposeResultSaved:
-            break;
-            
         case MFMailComposeResultSent:
+            // Remove old report file in case of successful mail sending
+            [[CLUReportFileManager sharedManager] removeReportFile];
+            [[CLUReportFileManager sharedManager] removeReportZipFile];
             break;
             
+        case MFMailComposeResultCancelled:
+        case MFMailComposeResultSaved:
         case MFMailComposeResultFailed:
-            break;
-            
-        default:
             break;
     }
 }
