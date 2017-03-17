@@ -9,9 +9,6 @@
 #import <XCTest/XCTest.h>
 #import "CLUGeneralGestureRecognizer.h"
 
-@interface CLUGeneralGestureRecognizerTests : XCTestCase
-@end
-
 @interface CLUTestUserInteractionObserver : NSObject <CLUInteractionObserverDelegate>
 typedef NS_ENUM(NSInteger, CLUTestUserInteractionObserverEventType) {
     CLUTestUserInteractionTouchBegan,
@@ -23,52 +20,82 @@ typedef NS_ENUM(NSInteger, CLUTestUserInteractionObserverEventType) {
 @property (nonatomic) CLUTestUserInteractionObserverEventType currentEventType;
 @end
 
+@interface CLUGeneralGestureRecognizerTests : XCTestCase
+@property (nonatomic) CLUTestUserInteractionObserver *testUserInteractionObserver;
+@property (nonatomic) CLUGeneralGestureRecognizer *gestureRecognizer;
+@property (nonatomic) UIView *testView;
+@property (nonatomic) UITouch *testTouch;
+@property (nonatomic) UITouch *testNextTouch;
+@property (nonatomic) UIEvent *testEvent;
+@end
+
 @implementation CLUGeneralGestureRecognizerTests
 
-- (void)testTouches {
-    // Initialize test variables
-    UIView *testView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    CLUTestUserInteractionObserver *testUserInteractionObserver = [[CLUTestUserInteractionObserver alloc] init];
-    UITouch *testTouch = [[UITouch alloc] init];
-    UITouch *testNextTouch = [[UITouch alloc] init];
-    UIEvent *testEvent = [[UIEvent alloc] init];
+- (void)setUp {
+    [super setUp];
+    _testView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    _testUserInteractionObserver = [[CLUTestUserInteractionObserver alloc] init];
+    _testTouch = [[UITouch alloc] init];
+    _testNextTouch = [[UITouch alloc] init];
+    _testEvent = [[UIEvent alloc] init];
+    
+    _gestureRecognizer = [[CLUGeneralGestureRecognizer alloc] init];
+    [_gestureRecognizer setObserverDelegate:_testUserInteractionObserver];
+}
 
-    // Initialize Gesture Recognizer
-    CLUGeneralGestureRecognizer *gestureRecognizer = [[CLUGeneralGestureRecognizer alloc] init];
-    XCTAssertNotNil(gestureRecognizer, @"Gesture Recognizer failed to initialize");
-    [gestureRecognizer setObserverDelegate:testUserInteractionObserver];
+- (void)tearDown {
+    [_gestureRecognizer removeObserverDelegate];
+    _testTouch = nil;
+    _testNextTouch = nil;
+    _testEvent = nil;
+    [super tearDown];
+}
+
+- (void)testGestureRecognizerAttachToView {
+    // Tests Attach Gesture Recognizer to Test View
+    [_testView addGestureRecognizer:_gestureRecognizer];
+    XCTAssertEqual([_testView.gestureRecognizers count], 1, @"Undefined gesture recognizer attached to Test View");
+    XCTAssertEqual(_gestureRecognizer.view, _testView, @"Gesture recognizer attached to wrong view");
     
-    // Attach Gesture Recognizer to Test View
-    [testView addGestureRecognizer:gestureRecognizer];
-    XCTAssertEqual([testView.gestureRecognizers count], 1, @"Undefined gesture recognizer attached to Test View");
-    XCTAssertEqual(gestureRecognizer.view, testView, @"Gesture recognizer attached to wrong view");
-    
+    // Tests Dettach Gesture Recognizer from Test View
+    [_testView removeGestureRecognizer:_gestureRecognizer];
+    XCTAssertEqual([_testView.gestureRecognizers count], 0, @"Gesture recognizer didn't dettached from Test View");
+    XCTAssertNil(_gestureRecognizer.view, @"gesture Recognizer still has reference to view");
+}
+
+- (void)testTouchBegun {
     // Check if Gesture Recognizer enabled
-    XCTAssertTrue(gestureRecognizer.enabled, @"Gesture Recognizer is not enabled");
+    XCTAssertTrue(_gestureRecognizer.enabled, @"Gesture Recognizer is not enabled");
     
     // Test Touch Began event
-    [gestureRecognizer touchesBegan:[NSSet setWithObject:testTouch] withEvent:testEvent];
-    XCTAssertNotNil(testUserInteractionObserver.currentTouches, @"Current touches are invalid (touch began)");
-    XCTAssertEqual([testUserInteractionObserver.currentTouches count], 1, @"Wrong amount of touches were found (touch began)");
-    XCTAssertEqual(testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchBegan, @"Wrong touch type (touch began)");
+    [_gestureRecognizer touchesBegan:[NSSet setWithObject:_testTouch] withEvent:_testEvent];
+    XCTAssertNotNil(_testUserInteractionObserver.currentTouches, @"Current touches are invalid (touch began)");
+    XCTAssertEqual([_testUserInteractionObserver.currentTouches count], 1, @"Wrong amount of touches were found (touch began)");
+    XCTAssertEqual(_testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchBegan, @"Wrong touch type (touch began)");
+}
+
+- (void)testTouchEnded {
+    // Check if Gesture Recognizer enabled
+    XCTAssertTrue(_gestureRecognizer.enabled, @"Gesture Recognizer is not enabled");
     
     // Test Touch Ended event
-    [gestureRecognizer touchesEnded:[NSSet setWithObject:testTouch] withEvent:testEvent];
-    XCTAssertEqual([testUserInteractionObserver.currentTouches count], 1, @"Wrong amount of touches were found (touch ended)");
-    XCTAssertEqual(testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchEnded, @"Wrong touch type (touch ended)");
+    [_gestureRecognizer touchesEnded:[NSSet setWithObject:_testTouch] withEvent:_testEvent];
+    XCTAssertEqual([_testUserInteractionObserver.currentTouches count], 1, @"Wrong amount of touches were found (touch ended)");
+    XCTAssertEqual(_testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchEnded, @"Wrong touch type (touch ended)");
+}
+
+- (void)testTouchMoved {
+    // Check if Gesture Recognizer enabled
+    XCTAssertTrue(_gestureRecognizer.enabled, @"Gesture Recognizer is not enabled");
     
     // Test Touch Moved event
     // Every moved events are recording to buffer in order to relese this buffer user needs to perform Touch Ended event anfter Touch Moved
     // If this buffer isn't empty - gesture recognizer will call touchMoved: observer's method and after it - touchEnded:
-    [gestureRecognizer touchesMoved:[NSSet setWithObjects:testTouch, testNextTouch, nil] withEvent:testEvent];
-    [gestureRecognizer touchesEnded:[NSSet setWithObject:testTouch] withEvent:testEvent];
-    XCTAssertNotNil(testUserInteractionObserver.currentMovedTouchesBuffer, @"Moved touches buffer is invalid (touch moved)");
-    XCTAssertEqual([testUserInteractionObserver.currentMovedTouchesBuffer count], 2, @"Wrong amount of touches were found (touch moved)");
-    XCTAssertEqual(testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchEnded, @"Wrong touch type (touch ended after moved)");
-    
-    // Remove gesture recognizer from test view and remove observer
-    [testView removeGestureRecognizer:gestureRecognizer];
-    [gestureRecognizer removeObserverDelegate];
+    [_gestureRecognizer touchesMoved:[NSSet setWithObjects:_testTouch, _testNextTouch, nil] withEvent:_testEvent];
+    [_gestureRecognizer touchesEnded:[NSSet setWithObject:_testTouch] withEvent:_testEvent];
+    XCTAssertNotNil(_testUserInteractionObserver.currentMovedTouchesBuffer, @"Moved touches buffer is invalid (touch moved)");
+    XCTAssertEqual([_testUserInteractionObserver.currentMovedTouchesBuffer count], 2, @"Wrong amount of touches were found (touch moved)");
+    XCTAssertEqual(_testUserInteractionObserver.currentEventType, CLUTestUserInteractionTouchEnded, @"Wrong touch type (touch ended after moved)");
 }
 
 @end
