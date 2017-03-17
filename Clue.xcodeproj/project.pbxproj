@@ -40,6 +40,7 @@
 		E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */; };
 		E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */; };
 		E241F46B1E7BDE000075EF2C /* CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */; };
+		E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */; };
 		E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */; };
 		E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */; };
 		E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */; };
@@ -185,6 +186,7 @@
 		E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUErrorNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUCommunicationNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUExceptionAdditions.m; sourceTree = "<group>"; };
+		E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModuleTests.m; sourceTree = "<group>"; };
 		E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUInteractionObserverDelegate.h; path = Classes/Protocols/CLUInteractionObserverDelegate.h; sourceTree = "<group>"; };
 		E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUGeneralGestureRecognizer.h; path = Classes/ModulesUtils/GestureRecognizers/CLUGeneralGestureRecognizer.h; sourceTree = "<group>"; };
 		E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUGeneralGestureRecognizer.m; path = Classes/ModulesUtils/GestureRecognizers/CLUGeneralGestureRecognizer.m; sourceTree = "<group>"; };
@@ -335,6 +337,14 @@
 				E21840D71CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E241F46C1E7BE0EC0075EF2C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E24AEDFB1D06DCE1001F31FF /* GestureRecognizers */ = {
@@ -593,6 +603,7 @@
 		E2AD27931E729AB00062FE3D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E241F46C1E7BE0EC0075EF2C /* Modules */,
 				E24E2D6F1E74C12600804E13 /* Extensions */,
 				E24E2D6C1E74893400804E13 /* ModulesUtils */,
 				E2AD27941E729ACD0062FE3D /* Writers */,
@@ -927,6 +938,7 @@
 				E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */,
 				E241F4651E7B37770075EF2C /* CLUTouchUserInteractionAdditions.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
+				E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */,
 				E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */,
