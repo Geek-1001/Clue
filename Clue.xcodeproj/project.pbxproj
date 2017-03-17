@@ -41,6 +41,7 @@
 		E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEE001D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h */; };
 		E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */; };
 		E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */; };
+		E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */; };
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,6 +179,7 @@
 		E24AEE001D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITouch+CLUUserInteractionAdditions.h"; path = "Classes/Extensions/UITouch+CLUUserInteractionAdditions.h"; sourceTree = "<group>"; };
 		E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITouch+CLUUserInteractionAdditions.m"; path = "Classes/Extensions/UITouch+CLUUserInteractionAdditions.m"; sourceTree = "<group>"; };
 		E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUGeneralGestureRecognizerTests.m; sourceTree = "<group>"; };
+		E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUIViewAdditionsTests.m; sourceTree = "<group>"; };
 		E258F3FD1CE3D037001E9F92 /* CLUOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUOptions.h; path = Classes/Models/CLUOptions.h; sourceTree = "<group>"; };
 		E258F3FE1CE3D037001E9F92 /* CLUOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUOptions.m; path = Classes/Models/CLUOptions.m; sourceTree = "<group>"; };
 		E272DD821CD5223300F1FECA /* Clue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +338,14 @@
 				E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */,
 			);
 			path = ModulesUtils;
+			sourceTree = "<group>";
+		};
+		E24E2D6F1E74C12600804E13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E258F3F81CE3CD6A001E9F92 /* Extensions */ = {
@@ -562,6 +572,7 @@
 		E2AD27931E729AB00062FE3D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E24E2D6F1E74C12600804E13 /* Extensions */,
 				E24E2D6C1E74893400804E13 /* ModulesUtils */,
 				E2AD27941E729ACD0062FE3D /* Writers */,
 			);
@@ -887,6 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */,
