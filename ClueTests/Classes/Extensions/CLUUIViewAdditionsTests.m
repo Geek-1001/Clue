@@ -57,39 +57,19 @@
     // Test Color Property Dictionary
     NSDictionary *colorDictionary = [_testView clue_colorPropertyDictionaryForColor:testColor];
     XCTAssertNotNil(colorDictionary, @"Color Property Dictionary is invalid");
-    XCTAssertEqual([colorDictionary count], [testColorDictionary count], @"Wrong amount of items in Color Proprty Dictionary");
-    
-    // Test Values and Keys inside Color Property Dictionary
-    for (NSString *currentTestKey in testColorDictionary.allKeys) {
-        NSNumber *currentTestValue = [testColorDictionary objectForKey:currentTestKey];
-        
-        NSNumber *objectForKey = [colorDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object with key:%@ is invalid in Color Property Dictionary", currentTestKey);
-        XCTAssertEqual([objectForKey floatValue], [currentTestValue floatValue],
-                       @"Color value for key:%@ is incorrect in Color Property Dictionary", currentTestKey);
-    }
+    XCTAssertTrue([colorDictionary isEqualToDictionary:testColorDictionary], @"Color dictionary is not equal to test data");
 }
 
 - (void)testViewSizePropertyDictionary {
     // Initialize test variables
     CGSize testSize = CGSizeMake(100, 200);
-    NSDictionary *testSizeDictionary = @{@"width" : @(testSize.width),
-                                         @"height" : @(testSize.height)};
+    NSDictionary *testSizeDictionary = @{@"width" : @(100),
+                                         @"height" : @(200)};
     
     // Test Size Property Dictionary
     NSDictionary *sizeDictionary = [_testView clue_sizePropertyDictionaryForSize:testSize];
     XCTAssertNotNil(sizeDictionary, @"Size Property Dictionary is invalid");
-    XCTAssertEqual([sizeDictionary count], [testSizeDictionary count], @"Wrong amount of items in Size Proprty Dictionary");
-    
-    // Test Keys and Values in Size Property Dictionary
-    for (NSString *currentTestKey in testSizeDictionary.allKeys) {
-        NSNumber *currentTestValue = [testSizeDictionary objectForKey:currentTestKey];
-        
-        NSNumber *objectForKey = [sizeDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object with key:%@ is invalid in Size Property Dictionary", currentTestKey);
-        XCTAssertEqual([objectForKey floatValue], [currentTestValue floatValue],
-                       @"Size value for key:%@ is incorrect in Size Property Dictionary", currentTestKey);
-    }
+    XCTAssertTrue([sizeDictionary isEqualToDictionary:testSizeDictionary], @"Size Dictionary is not equal to test data");
 }
 
 - (void)testViewFontPropertyDictionary {
@@ -144,17 +124,7 @@
     NSDictionary *attributedStringDictionary = [_testView
                                                 clue_attributedTextPropertyDictionaryForAttributedString:testAttributedString];
     XCTAssertNotNil(attributedStringDictionary, @"Attributed String Property Dictionary is invalid");
-    XCTAssertEqual([attributedStringDictionary count], [testAttributedStringDictionary count], @"Wrong amount of items in Font Proprty Dictionary");
-    
-    // Test Keys and Values in Attributed String Property Dictionary
-    for (NSString *currentTestKey in testAttributedStringDictionary.allKeys) {
-        NSString *currentTestValue = [testAttributedStringDictionary objectForKey:currentTestKey];
-        
-        NSString *objectForKey = [attributedStringDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object with key:%@ is invalid in Attributed String Property Dictionary", currentTestKey);
-        XCTAssertEqualObjects(objectForKey, currentTestValue,
-                              @"Size value for key:%@ is incorrect in Attributed String Property Dictionary", currentTestKey);
-    }
+    XCTAssertTrue([attributedStringDictionary isEqualToDictionary:testAttributedStringDictionary], @"Attributes String is not equal to test data");
 }
 
 - (void)testViewPropertiesDictionary {
@@ -201,18 +171,8 @@
     // Test Layout Margin Property Dictionary
     NSDictionary *layoutMarginDictionary = [_testView clue_layoutMarginsPropertyDictionary];
     XCTAssertNotNil(layoutMarginDictionary, @"Layout Margin Property Dictionary is invalid");
-    XCTAssertEqual([layoutMarginDictionary count], [testLayoutMarginDictionary count],
-                   @"Layout Margin Property Dictionary has wrong amount of items");
-    
-    // Tests keys and values in Layout Margin Property Dictionary
-    for (NSString *currentTestKey in testLayoutMarginDictionary.allKeys) {
-        NSNumber *currentTestValue = [testLayoutMarginDictionary objectForKey:currentTestKey];
-        
-        NSNumber *objectForKey = [layoutMarginDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object for key:%@ is invalid in Layout Margin Property Dictionary", currentTestKey);
-        XCTAssertEqual(objectForKey.floatValue, currentTestValue.floatValue,
-                       @"Object for key:%@ is incorrect in Layout Margin Property Dictionary", currentTestKey);
-    }
+    XCTAssertTrue([layoutMarginDictionary isEqualToDictionary:testLayoutMarginDictionary],
+                  @"Layout Margin Dictionary is not equal to test data");
 }
 
 - (void)testFramePropertyDictionary {
@@ -225,18 +185,7 @@
     // Test Frame Property Dictionary
     NSDictionary *frameDictionary = [_testView clue_frameProprtyDictionary];
     XCTAssertNotNil(frameDictionary, @"Frame Property Dictionary is invalid");
-    XCTAssertEqual([frameDictionary count], [testFrameDictionary count],
-                   @"Frame Property Dictionary has wrong amount of items inside");
-    
-    // Tests keys and value in Frame Property Dictionary
-    for (NSString *currentTestKey in testFrameDictionary.allKeys) {
-        NSNumber *currentTestValue = [testFrameDictionary objectForKey:currentTestKey];
-        
-        NSNumber *objectForKey = [frameDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object for key:%@ is invalid in Frame Property Dictionary", currentTestKey);
-        XCTAssertEqual(objectForKey.floatValue, currentTestValue.floatValue,
-                       @"Object for key:%@ is incorrect in Frame Property Dictionary", currentTestKey);
-    }
+    XCTAssertTrue([frameDictionary isEqualToDictionary:testFrameDictionary], @"Frame Dictionary is not equal to test data");
 }
 
 @end

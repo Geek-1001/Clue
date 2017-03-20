@@ -44,16 +44,7 @@
     // Test Request Property Dictionary
     NSDictionary *requestDictionary = [request clue_requestProperties];
     XCTAssertNotNil(requestDictionary, @"Request Dictionary is invalid");
-    XCTAssertEqual([requestDictionary count], [testRequestDictionary count], @"Request dictionary has wrong amount of items inside");
-    
-    // Test keys and values in Request dictionary
-    for (NSString *currentTestKey in testRequestDictionary.allKeys) {
-        NSObject *testObject = [testRequestDictionary objectForKey:currentTestKey];
-        
-        NSObject *objectForKey = [requestDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object for key:%@ is invalid in URL Request dictionary", currentTestKey);
-        XCTAssertEqualObjects(objectForKey, testObject, @"Object for key:%@ is incorrect in URL Request dictionary", currentTestKey);
-    }
+    XCTAssertTrue([requestDictionary isEqualToDictionary:testRequestDictionary], @"Request Dictionary is not equal to test data");
 }
 
 - (void)testHTTPURLResponseProperty {
@@ -73,16 +64,8 @@
     // Test HTTP URL Response Property Dictionry
     NSDictionary *responseDictionary = [response clue_responseProperties];
     XCTAssertNotNil(responseDictionary, @"HTTP URL Response dictionary is invalid");
-    XCTAssertEqual([responseDictionary count], [testResponseDictionary count], @"HTTP URL Response dictionary has wrong amount of items inside");
-    
-    // Test keys and values in HTTP URL Response dictionary
-    for (NSString *currentTestKey in testResponseDictionary.allKeys) {
-        NSObject *testObject = [testResponseDictionary objectForKey:currentTestKey];
-        
-        NSObject *objectForKey = [responseDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object for key:%@ is invalid in HTTP URL Response dictionary", currentTestKey);
-        XCTAssertEqualObjects(objectForKey, testObject, @"Object for key:%@ is incorrect in HTTP URL Response dictionary", currentTestKey);
-    }
+    XCTAssertTrue([responseDictionary isEqualToDictionary:testResponseDictionary],
+                  @"HTTP URL Response dictionary is not equal to test data");
 }
 
 - (void)testURLResponseProperty {
@@ -99,16 +82,7 @@
     // Test URL Response Dictionary
     NSDictionary *responseDictionary = [response clue_responseProperties];
     XCTAssertNotNil(responseDictionary, @"URL Response dictionary is invalid");
-    XCTAssertEqual([responseDictionary count], [testResponseDictionary count], @"URL Response dictionary has wrong amount of items inside");
-    
-    // Test keys and values in URL Repose dictionary
-    for (NSString *currentTestKey in testResponseDictionary.allKeys) {
-        NSObject *testObject = [testResponseDictionary objectForKey:currentTestKey];
-        
-        NSObject *objectForKey = [responseDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(objectForKey, @"Object for key:%@ is invalid in URL Response dictionary", currentTestKey);
-        XCTAssertEqualObjects(objectForKey, testObject, @"Object for key:%@ is incorrect in URL Response dictionary", currentTestKey);
-    }
+    XCTAssertTrue([responseDictionary isEqualToDictionary:testResponseDictionary], @"URL Reponse dictionary is not equal to test data");
 }
 
 @end
