@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "CLUInfoModule.h"
 
+/**
+ `CLUDeviceInfoModule` is a info module (with static, one-time informations) for current devices' information recording on start.
+ */
 @interface CLUDeviceInfoModule : NSObject <CLUInfoModule>
 
 @end

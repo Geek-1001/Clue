@@ -9,8 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "CLUInfoModule.h"
 
+/**
+ `CLUExceptionInfoModule` is a info module (with static, one-time informations) for unexpected exception recording if occurred.
+ */
 @interface CLUExceptionInfoModule : NSObject <CLUInfoModule>
 
+/**
+ This `NSException` exception object will be be recorded
+ */
 @property (nonatomic) NSException *exception;
 
 @end
