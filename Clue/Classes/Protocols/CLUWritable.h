@@ -8,11 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ `CLUWritable` protocol describe writers (like `CLUDataWriter` or `CLUVideoWriter`) which needs to actually write new data to specific file (could be text file, video file etc.)
+ */
 @protocol CLUWritable <NSObject>
 
 @required
+
+/**
+ Get writer status, whether Writer is ready to write new data or not
+ 
+ @return BOOL value which specify whether Writer is ready to write new data or not
+ */
 - (BOOL)isReadyForWriting;
+
+/**
+ Finish actual writing with all necessary cleanup
+ */
 - (void)finishWriting;
+
+/**
+ Start actual writing with all necessary preparations
+ */
 - (void)startWriting;
 
 @end

@@ -8,12 +8,40 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ `CLUNetworkObserverDelegate` protocol describe delegate methods which will handle all network operations events sent by custom `NSURLProtocol` (see `CLUURLProtocol` and `CLUURLProtocolConfiguration`)
+ */
 @protocol CLUNetworkObserverDelegate <NSObject>
 
 @required
+
+/**
+ Tells current delegate object that some network request was redirected
+ 
+ @param response Actual `NSHTTPURLResponse` response from redirected network request
+ @param request New `NSURLRequest` request (redirect from old request to new one)
+ */
 - (void)networkRequestDidRedirectWithResponse:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request;
+
+/**
+ Tells current delegate object that some network request did complete with specific `NSError` error
+ 
+ @param error `NSError` error object which should explain why network request failed
+ */
 - (void)networkRequestDidCompleteWithError:(NSError *)error;
+
+/**
+ Tells current delegate object that network request did receive `NSURLResponse` response
+
+ @param response `NSURLResponse` response for some network request sent earlier
+ */
 - (void)networkRequestDidReceiveResponse:(NSURLResponse *)response;
+
+/**
+ Tells current delegate object that network request did receive `NSData` data
+
+ @param data `NSData` data for some network request sent earlier
+ */
 - (void)networkRequestDidReceiveData:(NSData *)data;
 
 @end
