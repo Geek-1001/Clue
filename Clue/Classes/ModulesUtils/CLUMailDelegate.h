@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <MessageUI/MessageUI.h>
 
+/**
+ `CLUMailDelegate` is delegate class to handle responses/events from mail composer modal view.
+ For report mail sending. If mail sending was successful - remove old report .clue file and report .zip file
+ */
 @interface CLUMailDelegate : NSObject <MFMailComposeViewControllerDelegate>
 
 @end
