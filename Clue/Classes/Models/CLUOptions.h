@@ -30,6 +30,6 @@
  
  @return instance of `CLUOptions`
  */
-+ (instancetype)initWithEmail:(NSString *)email;
++ (instancetype)optionsWithEmail:(NSString *)email;
 
 @end
