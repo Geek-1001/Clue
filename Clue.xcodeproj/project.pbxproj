@@ -132,6 +132,12 @@
 		E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6921D3905D60079F784 /* SSZipArchive.h */; };
 		E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6931D3905D60079F784 /* SSZipArchive.m */; };
 		E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6941D3905D60079F784 /* ZipArchive.h */; };
+		E2D9A43E1E8F0EC20099B0AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A43D1E8F0EC20099B0AA /* AppDelegate.swift */; };
+		E2D9A4401E8F0EC20099B0AA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A43F1E8F0EC20099B0AA /* MasterViewController.swift */; };
+		E2D9A4421E8F0EC20099B0AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A4411E8F0EC20099B0AA /* DetailViewController.swift */; };
+		E2D9A4451E8F0EC20099B0AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4431E8F0EC20099B0AA /* Main.storyboard */; };
+		E2D9A4471E8F0EC20099B0AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4461E8F0EC20099B0AA /* Assets.xcassets */; };
+		E2D9A44A1E8F0EC20099B0AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4481E8F0EC20099B0AA /* LaunchScreen.storyboard */; };
 		E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */; };
 		E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */; };
 /* End PBXBuildFile section */
@@ -145,6 +151,13 @@
 			remoteInfo = Clue;
 		};
 		E272DDB81CD5230300F1FECA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E272DD791CD5223300F1FECA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E272DD811CD5223300F1FECA;
+			remoteInfo = Clue;
+		};
+		E2D9A44F1E8F0F000099B0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E272DD791CD5223300F1FECA /* Project object */;
 			proxyType = 1;
@@ -286,6 +299,14 @@
 		E2CDA6921D3905D60079F784 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		E2CDA6931D3905D60079F784 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		E2CDA6941D3905D60079F784 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		E2D9A43B1E8F0EC10099B0AA /* ClueSwiftExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClueSwiftExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D9A43D1E8F0EC20099B0AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2D9A43F1E8F0EC20099B0AA /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		E2D9A4411E8F0EC20099B0AA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E2D9A4441E8F0EC20099B0AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2D9A4461E8F0EC20099B0AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2D9A4491E8F0EC20099B0AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2D9A44B1E8F0EC20099B0AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUMailDelegate.h; path = Classes/ModulesUtils/CLUMailDelegate.h; sourceTree = "<group>"; };
 		E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLUMailDelegate.m; path = Classes/ModulesUtils/CLUMailDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +329,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E272DD9E1CD522F000F1FECA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D9A4381E8F0EC10099B0AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,6 +435,7 @@
 				E272DD841CD5223300F1FECA /* Clue */,
 				E272DD901CD5223300F1FECA /* ClueTests */,
 				E272DDA21CD522F000F1FECA /* ClueExampleApp */,
+				E2D9A43C1E8F0EC20099B0AA /* ClueSwiftExampleApp */,
 				E272DD831CD5223300F1FECA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -417,6 +446,7 @@
 				E272DD821CD5223300F1FECA /* Clue.framework */,
 				E272DD8C1CD5223300F1FECA /* ClueTests.xctest */,
 				E272DDA11CD522F000F1FECA /* ClueExampleApp.app */,
+				E2D9A43B1E8F0EC10099B0AA /* ClueSwiftExampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -689,6 +719,20 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		E2D9A43C1E8F0EC20099B0AA /* ClueSwiftExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				E2D9A43D1E8F0EC20099B0AA /* AppDelegate.swift */,
+				E2D9A43F1E8F0EC20099B0AA /* MasterViewController.swift */,
+				E2D9A4411E8F0EC20099B0AA /* DetailViewController.swift */,
+				E2D9A4431E8F0EC20099B0AA /* Main.storyboard */,
+				E2D9A4461E8F0EC20099B0AA /* Assets.xcassets */,
+				E2D9A4481E8F0EC20099B0AA /* LaunchScreen.storyboard */,
+				E2D9A44B1E8F0EC20099B0AA /* Info.plist */,
+			);
+			path = ClueSwiftExampleApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -813,23 +857,47 @@
 			productReference = E272DDA11CD522F000F1FECA /* ClueExampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E2D9A43A1E8F0EC10099B0AA /* ClueSwiftExampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2D9A44C1E8F0EC20099B0AA /* Build configuration list for PBXNativeTarget "ClueSwiftExampleApp" */;
+			buildPhases = (
+				E2D9A4371E8F0EC10099B0AA /* Sources */,
+				E2D9A4381E8F0EC10099B0AA /* Frameworks */,
+				E2D9A4391E8F0EC10099B0AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2D9A4501E8F0F000099B0AA /* PBXTargetDependency */,
+			);
+			name = ClueSwiftExampleApp;
+			productName = ClueSwiftExampleApp;
+			productReference = E2D9A43B1E8F0EC10099B0AA /* ClueSwiftExampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E272DD791CD5223300F1FECA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ahmed Sulaiman";
 				TargetAttributes = {
 					E272DD811CD5223300F1FECA = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 					};
 					E272DD8B1CD5223300F1FECA = {
 						CreatedOnToolsVersion = 7.3;
 					};
 					E272DDA01CD522F000F1FECA = {
 						CreatedOnToolsVersion = 7.3;
+					};
+					E2D9A43A1E8F0EC10099B0AA = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -849,6 +917,7 @@
 				E272DD811CD5223300F1FECA /* Clue */,
 				E272DD8B1CD5223300F1FECA /* ClueTests */,
 				E272DDA01CD522F000F1FECA /* ClueExampleApp */,
+				E2D9A43A1E8F0EC10099B0AA /* ClueSwiftExampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -880,6 +949,16 @@
 				E28610151CEFB9C300FA9BAF /* Karla-Regular.ttf in Resources */,
 				E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */,
 				E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D9A4391E8F0EC10099B0AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D9A44A1E8F0EC20099B0AA /* LaunchScreen.storyboard in Resources */,
+				E2D9A4471E8F0EC20099B0AA /* Assets.xcassets in Resources */,
+				E2D9A4451E8F0EC20099B0AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +1046,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E2D9A4371E8F0EC10099B0AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D9A4421E8F0EC20099B0AA /* DetailViewController.swift in Sources */,
+				E2D9A4401E8F0EC20099B0AA /* MasterViewController.swift in Sources */,
+				E2D9A43E1E8F0EC20099B0AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -979,6 +1068,11 @@
 			isa = PBXTargetDependency;
 			target = E272DD811CD5223300F1FECA /* Clue */;
 			targetProxy = E272DDB81CD5230300F1FECA /* PBXContainerItemProxy */;
+		};
+		E2D9A4501E8F0F000099B0AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E272DD811CD5223300F1FECA /* Clue */;
+			targetProxy = E2D9A44F1E8F0F000099B0AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -995,6 +1089,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				E272DDB21CD522F000F1FECA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E2D9A4431E8F0EC20099B0AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D9A4441E8F0EC20099B0AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2D9A4481E8F0EC20099B0AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D9A4491E8F0EC20099B0AA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1105,6 +1215,7 @@
 		E272DD971CD5223300F1FECA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1116,6 +1227,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.pt.Clue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1123,6 +1236,7 @@
 		E272DD981CD5223300F1FECA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1134,6 +1248,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.pt.Clue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1180,6 +1295,43 @@
 			};
 			name = Release;
 		};
+		E2D9A44D1E8F0EC20099B0AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				INFOPLIST_FILE = ClueSwiftExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.app.ClueSwiftExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E2D9A44E1E8F0EC20099B0AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				INFOPLIST_FILE = ClueSwiftExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.app.ClueSwiftExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1218,6 +1370,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E2D9A44C1E8F0EC20099B0AA /* Build configuration list for PBXNativeTarget "ClueSwiftExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2D9A44D1E8F0EC20099B0AA /* Debug */,
+				E2D9A44E1E8F0EC20099B0AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
