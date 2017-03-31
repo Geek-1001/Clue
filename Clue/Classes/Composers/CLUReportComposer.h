@@ -12,7 +12,7 @@
 #import "CLUInfoModule.h"
 
 /**
- `CLUReportComposer` is a class responsible for composing final Clue report from many pieces/modules. This call initialize all recordable and info modules and actually start recording. `CLUReportComposer` also calling `addNewFrameWithTimestamp:` method from `CLURecordableModule` protocol for every recordable module and `recordInfoData` method from `CLURecordableModule` protocol for every info module.
+ `CLUReportComposer` is a class responsible for composing final Clue report from many pieces/modules. This class initialize all recordable and info modules and actually start recording. `CLUReportComposer` also calling `addNewFrameWithTimestamp:` method from `CLURecordableModule` protocol for every recordable module and `recordInfoData` method from `CLUInfoModule` protocol for every info module.
  */
 @interface CLUReportComposer : NSObject
 
