@@ -132,6 +132,7 @@
 		E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6921D3905D60079F784 /* SSZipArchive.h */; };
 		E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6931D3905D60079F784 /* SSZipArchive.m */; };
 		E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6941D3905D60079F784 /* ZipArchive.h */; };
+		E2CEADBA1E8FFE8700CEF6AE /* CLUReportFileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CEADB91E8FFE8700CEF6AE /* CLUReportFileManagerTests.m */; };
 		E2CEADBF1E900C0400CEF6AE /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */; };
 		E2CEADC21E900C8700CEF6AE /* OCMockitoIOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2CEADC41E900D9400CEF6AE /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CEADC31E900D9400CEF6AE /* OCHamcrestIOS.framework */; };
@@ -315,6 +316,7 @@
 		E2CDA6921D3905D60079F784 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		E2CDA6931D3905D60079F784 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		E2CDA6941D3905D60079F784 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		E2CEADB91E8FFE8700CEF6AE /* CLUReportFileManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUReportFileManagerTests.m; sourceTree = "<group>"; };
 		E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMockitoIOS.framework; sourceTree = "<group>"; };
 		E2CEADC31E900D9400CEF6AE /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		E2D9A43B1E8F0EC10099B0AA /* ClueSwiftExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClueSwiftExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */,
+				E2CEADB91E8FFE8700CEF6AE /* CLUReportFileManagerTests.m */,
 			);
 			path = ModulesUtils;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CEADBA1E8FFE8700CEF6AE /* CLUReportFileManagerTests.m in Sources */,
 				E241F46B1E7BDE000075EF2C /* CLUExceptionAdditions.m in Sources */,
 				E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */,
 				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
