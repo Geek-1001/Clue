@@ -162,6 +162,15 @@
     } else if (rootViewController.presentedViewController) {
         UIViewController *presentedViewController = rootViewController.presentedViewController;
         return [self topViewControllerWithRootViewController:presentedViewController];
+    } else if ([rootViewController isKindOfClass:[UISplitViewController class]]) {
+        UISplitViewController *splitViewController = (UISplitViewController *) rootViewController;
+        NSArray *viewControllers = splitViewController.viewControllers;
+        if (viewControllers && [viewControllers count] > 0) {
+            // First view controller in UISplitViewController.viewControllers array is always "primary"
+            return [self topViewControllerWithRootViewController:[viewControllers firstObject]];
+        } else {
+            return splitViewController;
+        }
     } else {
         return rootViewController;
     }
