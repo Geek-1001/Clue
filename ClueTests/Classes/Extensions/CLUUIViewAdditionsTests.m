@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "UIView+CLUViewRecordableAdditions.h"
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+#import <OCMockitoIOS/OCMockitoIOS.h>
 
 @interface CLUViewRecordableAdditions : XCTestCase
 
@@ -73,46 +75,22 @@
 }
 
 - (void)testViewFontPropertyDictionary {
-    // Initialize test variables
-    // TODO: mock font to make it system independent. To check actual content of the dictionary
-    UIFont *testFont = [UIFont systemFontOfSize:13];
-    NSArray<NSString *> *testAllKeys = @[@"familyName", @"fontName",
-                                         @"pointSize", @"lineHeight"];
+    // Initialize test variables (mock UIFont instance)
+    UIFont *testFont = mock([UIFont class]);
+    [given(testFont.familyName) willReturn:@"TestFontFamily"];
+    [given(testFont.fontName) willReturn:@"TestFontName"];
+    [given(testFont.pointSize) willReturn:@10];
+    [given(testFont.lineHeight) willReturn:@13];
+
+    NSDictionary *testFontDictionary = @{@"familyName" : @"TestFontFamily",
+                                         @"fontName" : @"TestFontName",
+                                         @"pointSize" : @10,
+                                         @"lineHeight" : @13};
     
     // Test Font Property Dictionary
     NSDictionary *fontDictionary = [_testView clue_fontPropertyDictionaryForFont:testFont];
     XCTAssertNotNil(fontDictionary, @"Font Property Dictionary is invalid");
-    XCTAssertEqual([fontDictionary count], [testAllKeys count], @"Wrong amount of items in Font Proprty Dictionary");
-    
-    // Test Keys and Values in Font Property Dictionary
-    for (int itemIndex = 0; itemIndex < [fontDictionary count]; itemIndex++) {
-        NSString *currentTestKey = testAllKeys[itemIndex];
-        
-        if ([currentTestKey isEqualToString:@"familyName"]) {
-            NSString *testFontFamilyName = testFont.familyName;
-            NSString *fontFamilyName = [fontDictionary objectForKey:currentTestKey];
-            XCTAssertNotNil(fontFamilyName, @"Font Family Name is invalid in Font Property Dictionary");
-            XCTAssertTrue([fontFamilyName isEqualToString:testFontFamilyName], @"Font Family Name is incorrect in Font Property Dictionary");
-            
-        } else if ([currentTestKey isEqualToString:@"fontName"]) {
-            NSString *testFontName = testFont.fontName;
-            NSString *fontName = [fontDictionary objectForKey:currentTestKey];
-            XCTAssertNotNil(fontName, @"Font Name is invalid in Font Property Dictionary");
-            XCTAssertTrue([fontName isEqualToString:testFontName], @"Font Name is incorrect in Font Property Dictionary");
-            
-        } else if ([currentTestKey isEqualToString:@"pointSize"]) {
-            NSNumber *testPointSize = @(testFont.pointSize);
-            NSNumber *pointSize = [fontDictionary objectForKey:currentTestKey];
-            XCTAssertNotNil(pointSize, @"Point Size is invalid in Font Proprty Dictionary");
-            XCTAssertEqual(pointSize.floatValue, testPointSize.floatValue, @"Font point size is incorrect in Font Property Dictionary");
-            
-        } else if ([currentTestKey isEqualToString:@"lineHeight"]) {
-            NSNumber *testLineHeight = @(testFont.lineHeight);
-            NSNumber *lineHeight = [fontDictionary objectForKey:currentTestKey];
-            XCTAssertNotNil(lineHeight, @"Line Height is invalid in Font Proprty Dictionary");
-            XCTAssertEqual(lineHeight.floatValue, testLineHeight.floatValue, @"Font line height is incorrect in Font Property Dictionary");
-        }
-    }
+    XCTAssertTrue([fontDictionary isEqualToDictionary:testFontDictionary], @"Font Dictionary is not equal to test data");
 }
 
 - (void)testViewAttributedTextPropertyDictionary {
@@ -129,26 +107,39 @@
 
 - (void)testViewPropertiesDictionary {
     // Initialize test variables
-    // TODO: test actual values not only presence of this value in final dictionary
-    NSArray<NSString *> *testAllPropertiesKeys = @[@"frame", @"backgroundColor",
-                                                   @"hidden", @"userInteractionEnabled",
-                                                   @"layoutMargins", @"tag", @"focused"];
-    
+    NSDictionary *testPropertiesDictionary = @{@"frame" : @{
+                                                            @"x" : @0,
+                                                            @"y" : @0,
+                                                            @"width" : @100,
+                                                            @"height" : @100
+                                                           },
+                                              @"backgroundColor" : @{
+                                                                    @"red" : @1,
+                                                                    @"green" : @0,
+                                                                    @"blue" : @0,
+                                                                    @"alpha" : @1
+                                                                    },
+                                               @"hidden" : @0,
+                                               @"userInteractionEnabled" : @1,
+                                               @"layoutMargins" : @{
+                                                                    @"left" : @15,
+                                                                    @"top" : @10,
+                                                                    @"right" : @25,
+                                                                    @"bottom" : @20
+                                                                    },
+                                               @"tag" : @1,
+                                               @"focused" : @0};
+
     // Test View Property Dictionary
     NSDictionary *viewPropertyDictionary = [_testView clue_viewPropertiesDictionary];
     XCTAssertNotNil(viewPropertyDictionary, @"View Property Dictionary is invalid");
     XCTAssertEqual([viewPropertyDictionary count], 3,
                    @"View Property Dictionary have wrong amount of items inside, should be 2 (class, properties and subviews)");
     
+    // Test properties sub dictionary and its content
     NSDictionary *propertiesDictionary = [viewPropertyDictionary objectForKey:@"properties"];
     XCTAssertNotNil(propertiesDictionary, @"View Property Dictionary don't have Properties subdictionary");
-    XCTAssertEqual([propertiesDictionary count], [testAllPropertiesKeys count], @"View Properties sub dictionary has wrong amount of items inside");
-    
-    // Test Properties sub dictionary
-    for (NSString *currentTestKey in testAllPropertiesKeys) {
-        NSObject *currentObjectForKey = [propertiesDictionary objectForKey:currentTestKey];
-        XCTAssertNotNil(currentObjectForKey, @"Object for key:%@ is invalid in Properties sub dictionary", currentTestKey);
-    }
+    XCTAssertTrue([propertiesDictionary isEqualToDictionary:testPropertiesDictionary], @"View Property Dictionary is not equal to test data");
     
     // Test Subviews sub dictionary
     NSDictionary *subviewsDictionary = [viewPropertyDictionary objectForKey:@"subviews"];
