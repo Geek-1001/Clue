@@ -132,6 +132,9 @@
 		E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6921D3905D60079F784 /* SSZipArchive.h */; };
 		E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CDA6931D3905D60079F784 /* SSZipArchive.m */; };
 		E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6941D3905D60079F784 /* ZipArchive.h */; };
+		E2CEADBF1E900C0400CEF6AE /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */; };
+		E2CEADC21E900C8700CEF6AE /* OCMockitoIOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2CEADC41E900D9400CEF6AE /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CEADC31E900D9400CEF6AE /* OCHamcrestIOS.framework */; };
 		E2D9A43E1E8F0EC20099B0AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A43D1E8F0EC20099B0AA /* AppDelegate.swift */; };
 		E2D9A4401E8F0EC20099B0AA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A43F1E8F0EC20099B0AA /* MasterViewController.swift */; };
 		E2D9A4421E8F0EC20099B0AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A4411E8F0EC20099B0AA /* DetailViewController.swift */; };
@@ -165,6 +168,19 @@
 			remoteInfo = Clue;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2CEADC01E900C7200CEF6AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E2CEADC21E900C8700CEF6AE /* OCMockitoIOS.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLUInfoModule.h; path = Classes/Protocols/CLUInfoModule.h; sourceTree = "<group>"; };
@@ -299,6 +315,8 @@
 		E2CDA6921D3905D60079F784 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		E2CDA6931D3905D60079F784 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		E2CDA6941D3905D60079F784 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMockitoIOS.framework; sourceTree = "<group>"; };
+		E2CEADC31E900D9400CEF6AE /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		E2D9A43B1E8F0EC10099B0AA /* ClueSwiftExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClueSwiftExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D9A43D1E8F0EC20099B0AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D9A43F1E8F0EC20099B0AA /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -324,7 +342,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CEADC41E900D9400CEF6AE /* OCHamcrestIOS.framework in Frameworks */,
 				E272DD8D1CD5223300F1FECA /* Clue.framework in Frameworks */,
+				E2CEADBF1E900C0400CEF6AE /* OCMockitoIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +485,7 @@
 		E272DD901CD5223300F1FECA /* ClueTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2CEADBB1E900BE600CEF6AE /* Frameworks */,
 				E2AD27931E729AB00062FE3D /* Classes */,
 				E272DD931CD5223300F1FECA /* Info.plist */,
 			);
@@ -719,6 +740,15 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		E2CEADBB1E900BE600CEF6AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2CEADC31E900D9400CEF6AE /* OCHamcrestIOS.framework */,
+				E2CEADBD1E900C0400CEF6AE /* OCMockitoIOS.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		E2D9A43C1E8F0EC20099B0AA /* ClueSwiftExampleApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +858,7 @@
 				E272DD881CD5223300F1FECA /* Sources */,
 				E272DD891CD5223300F1FECA /* Frameworks */,
 				E272DD8A1CD5223300F1FECA /* Resources */,
+				E2CEADC01E900C7200CEF6AE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1256,6 +1287,10 @@
 		E272DD9A1CD5223300F1FECA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClueTests/Frameworks",
+				);
 				INFOPLIST_FILE = ClueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.pt.ClueTests;
@@ -1266,6 +1301,10 @@
 		E272DD9B1CD5223300F1FECA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClueTests/Frameworks",
+				);
 				INFOPLIST_FILE = ClueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.pt.ClueTests;
@@ -1378,6 +1417,7 @@
 				E2D9A44E1E8F0EC20099B0AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
