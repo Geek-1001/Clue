@@ -7,12 +7,19 @@
 //
 
 #import "ViewController.h"
+#import <Clue/Clue.h>
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+// Handle shake gesture to start/stop recording
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    [ClueController sharedInstance] 
+    [[ClueController sharedInstance] handleShake:motion];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +33,12 @@
     [self setupIcons];
     [self setupLogo];
 }
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+#pragma mark - Setup UI
 
 - (void)setupLoginForm {
     CGSize viewSize = [UIApplication sharedApplication].delegate.window.bounds.size;
@@ -41,6 +54,8 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont fontWithName:@"Karla-Bold" size:13.0]];
     [button addTarget:self action:@selector(loginButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(loginButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(loginButtonTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
     [self.view addSubview:button];
 }
 
@@ -101,10 +116,28 @@
 }
 
 - (void)loginButtonClick:(UIButton *)sender {
+    [self restoreLoginButtonStyle:sender];
     NSURLRequest *request = [self requestWithPath:@"http://apple.com" HTTPMethod:@"GET" andData:nil];
     [self performRequest:request completion:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
-        // Do something here
-        NSLog(@"tst");
+        // Do something
+    }];
+}
+
+- (void)loginButtonTouchDown:(UIButton *)sender {
+    [sender setBackgroundColor:[UIColor colorWithRed:184.0/255.0 green:166.0/255.0 blue:228.0/255.0 alpha:0.7]];
+    [UIView animateWithDuration:0.1 animations:^{
+        sender.transform = CGAffineTransformMakeScale(0.9, 0.9);
+    }];
+}
+
+- (void)loginButtonTouchUpOutside:(UIButton *)sender {
+    [self restoreLoginButtonStyle:sender];
+}
+
+- (void)restoreLoginButtonStyle:(UIButton *)button {
+    [button setBackgroundColor:[UIColor colorWithRed:184.0/255.0 green:166.0/255.0 blue:228.0/255.0 alpha:1.000]];
+    [UIView animateWithDuration:0.1 animations:^{
+        button.transform = CGAffineTransformMakeScale(1, 1);
     }];
 }
 
