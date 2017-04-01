@@ -9,6 +9,7 @@
 #import "CLUViewStructureModule.h"
 #import "UIView+CLUViewRecordableAdditions.h"
 #import <UIKit/UIKit.h>
+#import "CLURecordIndicatorViewManager.h"
 
 #define DEFAULT_VIEW_KEY @"view"
 
@@ -49,13 +50,9 @@
 - (void)addNewFrameWithTimestamp:(CFTimeInterval)timestamp {
     @synchronized (self) {
         NSDictionary *currentViewStructure;
-        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
-            UIViewController *rootViewController = window.rootViewController;
-            if (rootViewController) {
-                if ([rootViewController.view class] == [UIView class]) {
-                    currentViewStructure = [rootViewController.view clue_viewPropertiesDictionary];
-                }
-            }
+        UIViewController *rootViewController = [CLURecordIndicatorViewManager currentViewController];
+        if (rootViewController && [rootViewController.view isKindOfClass:[UIView class]]) {
+            currentViewStructure = [rootViewController.view clue_viewPropertiesDictionary];
         }
         if (!_lastRecordedViewStructure || ![_lastRecordedViewStructure isEqualToDictionary:currentViewStructure]) {
             [self addViewStructureProperties:currentViewStructure
