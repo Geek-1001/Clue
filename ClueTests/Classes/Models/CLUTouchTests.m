@@ -8,21 +8,22 @@
 
 #import <XCTest/XCTest.h>
 #import "CLUTouch.h"
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+#import <OCMockitoIOS/OCMockitoIOS.h>
 
 @interface CLUTouchTests : XCTestCase
 @property (nonatomic) UITouch *testTouch;
-@end
-
-@interface UITouch (Testable)
-@property NSInteger tapCount;
-- (instancetype)initWithTapCount:(NSInteger)tapCount;
 @end
 
 @implementation CLUTouchTests
 
 - (void)setUp {
     [super setUp];
-    _testTouch = [[UITouch alloc] initWithTapCount:2];
+    _testTouch = mock([UITouch class]);
+    [given([_testTouch tapCount]) willReturn:@2];
+    CGPoint testLocationInWindow = CGPointMake(10, 5);
+    [given([_testTouch locationInView:nil]) willReturnStruct:&testLocationInWindow
+                                                    objCType:@encode(CGPoint)];
 }
 
 - (void)tearDown {
@@ -34,17 +35,19 @@
     // Create CLUTouch object from UITouch object
     CLUTouch *touch = [[CLUTouch alloc] initWithTouch:_testTouch];
     XCTAssertNotNil(touch, @"CLU Touch object is invalid");
-    XCTAssertEqual(touch.tapCount, _testTouch.tapCount, @"CLU Touch object has incorect tapCount");
-    XCTAssertEqual(touch.locationInWindow.x, [_testTouch locationInView:nil].x, @"CLU Touch object has incorect locationInWindow X coordinate");
-    XCTAssertEqual(touch.locationInWindow.y, [_testTouch locationInView:nil].y, @"CLU Touch object has incorect locationInWindow Y coordinate");
+    XCTAssertEqual(touch.tapCount, 2, @"CLU Touch object has incorect tapCount");
+    XCTAssertEqual(touch.locationInWindow.x, 10,
+                   @"CLU Touch object has incorect locationInWindow X coordinate");
+    XCTAssertEqual(touch.locationInWindow.y, 5,
+                   @"CLU Touch object has incorect locationInWindow Y coordinate");
 }
 
 - (void)testProperties {
     // Initialize test variables
     NSDictionary *testTouchDictionary = @{@"tapCount" : @(2),
                                           @"locationInWindow" : @{
-                                                  @"x" : @(0),
-                                                  @"y" : @(0)
+                                                  @"x" : @(10),
+                                                  @"y" : @(5)
                                                   }
                                           };
     
@@ -56,21 +59,6 @@
     NSDictionary *touchDictionary = [touch properties];
     XCTAssertNotNil(touchDictionary, @"Touch Dictionary is invalid");
     XCTAssertTrue([touchDictionary isEqualToDictionary:testTouchDictionary], @"Touch Dictionary is incorrect");
-}
-
-@end
-
-@implementation UITouch (Testable)
-
-@dynamic tapCount;
-
-- (instancetype)initWithTapCount:(NSInteger)tapCount {
-    self = [super init];
-    if (self == nil) {
-        return nil;
-    }
-    self.tapCount = tapCount;
-    return self;
 }
 
 @end
