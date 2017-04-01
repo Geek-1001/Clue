@@ -42,6 +42,8 @@
  Get current `UIViewController` which is on top of view controller's stack if there is some available.
  
  @return Current top `UIViewController` object. Derived from `UIApplication.keyWindow` and `NSWindow.rootViewController` property of this window. If `UIApplication.keyWindow` and `NSWindow.rootViewController` unavailable method returns nil
+ 
+ TODO: This method used by different classes, it not only related to record indicator. Needs to be moved to different entity (not `CLURecordIndicatorViewManager`)
  */
 + (UIViewController *)currentViewController;
 
