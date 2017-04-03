@@ -18,7 +18,14 @@
  */
 @interface CLUTouch : NSObject
 
+/**
+ The current location of the touch in the coordinate system of the screen
+ */
 @property (nonatomic, readonly) CGPoint locationInWindow;
+
+/**
+ Amount of touch down within a certain point within a certain amount of time
+ */
 @property (nonatomic, readonly) NSInteger tapCount;
 
 /**
