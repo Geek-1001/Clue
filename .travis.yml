@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8.2
-xcode_project: Clue.xcodeproj
-xcode_scheme: ClueTests
-xcode_sdk: iphonesimulator10.1
+script:
+  - xctool -project Clue.xcodeproj -scheme Clue -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO
+  - xctool test -project Clue.xcodeproj -scheme ClueTests -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO
