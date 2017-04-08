@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   # TODO: add docuemntation url
   # s.documentation_url = "http://www.example.com/docs.html"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Ahmed Sulaiman" => "demhasul@gmail.com" }
+  s.author             = { "Ahmed Sulaiman" => "ahmed.sulajman@gmail.com" }
   s.social_media_url   = "http://twitter.com/ahmed_sulajman"
   s.platform     = :ios
   s.ios.deployment_target = "9.0"
