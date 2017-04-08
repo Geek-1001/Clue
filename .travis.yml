@@ -1,5 +1,4 @@
 language: objective-c
 osx_image: xcode8.2
 script:
-  - xctool -project Clue.xcodeproj -scheme Clue -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO
-  - xctool test -project Clue.xcodeproj -scheme ClueTests -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO
+  - xcodebuild test -project Clue.xcodeproj -scheme ClueTests -destination "platform=iOS Simulator,name=iPhone 7,OS=10.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO  
