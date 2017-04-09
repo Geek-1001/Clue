@@ -17,10 +17,9 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Ahmed Sulaiman" => "ahmed.sulajman@gmail.com" }
   s.social_media_url   = "http://twitter.com/ahmed_sulajman"
-  s.platform     = :ios
-  s.ios.deployment_target = "9.0"
+  s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/Geek-1001/Clue.git", :tag => "#{s.version}" }
-  s.source_files  = "Clue/Classes/**/*.{h,m}", "Clue/*.{h,m}"
+  s.source_files  = "Clue/Classes/**/*.{h,m}", "Clue/*.{h,m}", "Clue/Frameworks/**/*.{h,m,c}"
   s.public_header_files = "Clue/*.h", "Clue/Classes/Models/CLUOptions.h"
   s.module_name = "Clue"
   s.frameworks  = "Foundation", "UIKit", "MessageUI", "AVFoundation"
