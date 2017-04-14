@@ -154,6 +154,8 @@ Love this part. Clue designed in a way that you can tweak whatever you want and 
 
 Unfortunately Clue built with Objective-C (at least for the first iteration. I’m considering to rewrite some parts to Swift, for sure)  so all internals wasn’t design to be Swift compatible. (If you can fix it — contributions are welcome!)
 
+For more details please check out [full documentation](https://geek-1001.github.io/Clue/) and code examples below.
+
 
 ### Basic architecture and structures:
 
