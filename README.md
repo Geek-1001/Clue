@@ -455,6 +455,7 @@ Obviously you can view .clue report files with whatever method you want since it
 ## 🛣️ Roadmap
 - [x] Build basic modules for Network, View Structure, User Interactions and Video
 - [x] Send final report file via email
+- [ ] Skip recordable property if this property is invalid
 - [ ] Integrate Nonnull and Nullable annotations
 - [ ] Migrate some parts of the framework to Swift
 - [ ] Add more useful recordable/info modules
