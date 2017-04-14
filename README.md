@@ -293,6 +293,87 @@ That’s it. Now you have logs inside your .clue report file as well as other us
 You can literally build any module you want which can record any possible data inside your .clue bug report file.
 
 
+### New Info Module Example
+Now let’s assume you want to add info module which will collect some initial data at the beginning of report recording for current users's location and write in into json file inside .clue report file.
+First of you need to create new info module class and declare `CLUInfoModule` protocol in the header file.
+
+>`CLUInfoModule` protocol describe info modules (like Device Info module or Exception module), static one-time modules which needs to write their data only once during recording. Every info modules have to implement this protocol to be able to work normally inside the system
+
+```objective-c
+@interface CLULocationInfoModule : NSObject <CLUInfoModule>
+@end
+```
+
+Next we need to implement some methods from `CLUInfoModule` protocol:
+
+```objective-c
+@interface CLULocationInfoModule()
+@property (nonatomic) CLUDataWriter *writer; // Just keep reference to Writer object from initialization
+@end
+
+@implementation CLULocationInfoModule
+
+// If you will write just text data into json file you can use CLUDataWriter as an argument for this method. CLUDataWriter implements CLUWritable protocol so you can write any NSData object into output file
+- (instancetype)initWithWriter:(id <CLUWritable>)writer {    
+    // Basic initialization stuff
+    _writer = writer;
+    return self;
+}
+
+// This method will be called once at recording startup. Here you can add all your required data (in our case user's location) into report file
+- (void)recordInfoData {
+    NSData *locationData = [self retrieveLocationData];
+
+    // Add location data to the output file via Writer object
+    [_writer startWriting];
+    [_writer addData:locationData];
+    [_writer finishWriting];
+}
+
+@end
+```
+
+To make it work you also need to plug your new info module into the system of modules (just like recordable module) using `CLUReportComposer`.
+
+> `CLUReportComposer` is a class responsible for composing final Clue report from many modules. This class initialize all recordable and info modules and actually start recording. Also this class is calling `addNewFrameWithTimestamp:` method for every recordable module during recording and `recordInfoData` method from `CLURecordableModule` protocol for every info module only once at record launch.  
+
+So in `ClueController` you need to add your new info module in this method
+
+```objective-c
+- (NSMutableArray *)configureInfoModules {
+    CLUDeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
+
+    // Initialize your info module just like other info modules above
+    CLULocationInfoModule *locationModule = [self configureLocationModule];
+
+    NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:deviceModule, /* HERE goes your info module ,*/  nil];
+    return modulesArray;
+}
+```
+
+Here is configuration method example:
+
+```objective-c
+- (void)configureLocationModule {
+    // Get directory URL for all info modules inside .clue file
+    NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
+
+    // Specify URL for output json file
+    NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_location.json"];
+
+    // Initialize CLUDataWriter with specific output file URL
+    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+
+    // Initialize CLULocationInfoModule with specific Writer
+    CLULocationInfoModule *locationModule = [[CLULogsModule alloc] initWithWriter:dataWriter];
+
+    return locationModule;
+}
+```
+
+That’s it. Now you have location information inside your .clue report file.
+
+
 ### How to add custom View object parsing
 Clue records views' structure. This means that Clue needs to parse all properties and subviews for every visible View (and invisible as well) on the screen to be able to represent whole views' structure at the current time.
 
