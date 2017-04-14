@@ -150,7 +150,7 @@ The current version of Clue (and the `master` branch) is compatible with Xcode 8
 <br>
 
 ## 🛠️ Hackable
-Love this part. Clue designed in a way that you can tweet whatever you want and add more functionalities to report recording process (and I encourage you to do so) so it will fit into your custom needs. For example you want to track your custom logs during recording. Just create a separate module for that and plug it to recording process (I’ll explain this in details below)
+Love this part. Clue designed in a way that you can tweak whatever you want and add more functionalities to report recording process (and I encourage you to do so) so it will fit into your custom needs. For example you want to track your custom logs during recording. Just create a separate module for that and plug it to recording process (I’ll explain this in details below)
 
 Unfortunately Clue built with Objective-C (at least for the first iteration. I’m considering to rewrite some parts to Swift, for sure)  so all internals wasn’t design to be Swift compatible. (If you can fix it — contributions are welcome!)
 
@@ -186,7 +186,7 @@ If your Recordable Module needs to observe new data instead of writing new data 
 `CLUWritable` — is a protocol. It describes writers (like `CLUDataWriter` or `CLUVideoWriter`) which needs to actually write new data to specific file (could be text file, video file etc.)
 
 
-### New Module Example
+### New Recordable Module Example
 Let’s assume you want to add module which will intercept logs and write them into json file with specific timestamp inside .clue report file.
 First of you need to create new module class and subclass it from `CLUObserveModule` (we’re assuming here that we need to observe new logs and they are not available right away)
 
