@@ -18,15 +18,15 @@
     </a>
 </p>
 
-**Clue** is a simple smart-bug report framework for iOS, which allow your users to record full bug/crash report and send it to you as a single .clue file via email.  
+**Clue** is a simple smart-bug report framework for iOS, which allows your users to record full bug/crash report and send it to you as a single .clue file via email.  
 
 (which includes full video of the screen, views structure, all network operations and user interactions during recording)
 <br>
 
 ## 🕵️ Why
-As soon as you get new bug report from your users - you're not software engineer anymore but a true detective. Trying to get a clue why something went wrong in your app. Especially it’s true if you’re working in company where you need to talk to users directly.
+When you get a new bug report from your users - you're not a software engineer anymore. You become a true detective, trying to get a clue why something went wrong in your app. Especially it’s true if you’re working in the company, where you need to talk to users directly.
 
-I believe it’s a problem. What if you can fix bug/crash without trying to reproduce it. What if you can see all required information and exact cause of the problem right away without wasting your time figuring it out.
+I believe it’s a problem. What if you can fix bug/crash without trying to reproduce it? What if you can see all required information and exact cause of the problem right away, without wasting your time figuring it out? 
 <br>
 
 ## ℹ️ Description
@@ -146,7 +146,7 @@ ClueController.sharedInstance().disable()
 
 ## ✅ Platforms Support
 Clue supports iOS 9+ devices.
-The current version of Clue (and the `master` branch) is compatible with Xcode 8
+The current version of Clue (and the `master` branch) is compatible with Xcode 8.
 <br>
 
 ## 🛠️ Hackable
