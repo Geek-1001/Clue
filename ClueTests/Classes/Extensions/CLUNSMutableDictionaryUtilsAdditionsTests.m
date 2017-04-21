@@ -10,52 +10,40 @@
 #import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @interface CLUNSMutableDictionaryUtilsAdditionsTests : XCTestCase
-
+@property (nonatomic) NSMutableDictionary *dictionary;
 @end
 
 @implementation CLUNSMutableDictionaryUtilsAdditionsTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _dictionary = [NSMutableDictionary new];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    _dictionary = nil;
     [super tearDown];
 }
 
 - (void)testSetValidObjectForKey_ValidObject {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    XCTAssertNotNil(dictionary, @"Dictionary should be valid");
-    XCTAssertEqual(dictionary.count, 0, @"Dictionary should be empty");
-    
     NSString *testValidObject = @"valid-string-object";
-    [dictionary clue_setValidObject:testValidObject forKey:@"key"];
+    [_dictionary clue_setValidObject:testValidObject forKey:@"key"];
     
-    XCTAssertEqual(dictionary.count, 1, @"Dictionary should contain 1 object");
-    XCTAssertEqualObjects([dictionary objectForKey:@"key"], testValidObject,
+    XCTAssertEqual(_dictionary.count, 1, @"Dictionary should contain 1 object");
+    XCTAssertEqualObjects([_dictionary objectForKey:@"key"], testValidObject,
                           @"Dictionary should contain same test valid object");
 }
 
 - (void)testSetValidObjectForKey_InvalidObject {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    XCTAssertNotNil(dictionary, @"Dictionary should be valid");
-    XCTAssertEqual(dictionary.count, 0, @"Dictionary should be empty");
+    [_dictionary clue_setValidObject:nil forKey:@"key"];
     
-    [dictionary clue_setValidObject:nil forKey:@"key"];
-    
-    XCTAssertEqual(dictionary.count, 0,
+    XCTAssertEqual(_dictionary.count, 0,
     @"Dictionary should still be empty because new object was invalid");
 }
 
 - (void)testSetFilteredObjectForKeyWithFilterBlock {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    XCTAssertNotNil(dictionary, @"Dictionary should be valid");
-    XCTAssertEqual(dictionary.count, 0, @"Dictionary should be empty");
-    
     NSString *testObject = @"short-string"; // 12 symbols length
-    [dictionary clue_setFilteredObject:testObject forKey:@"key" withFilterBlock:^BOOL(id  _Nullable object) {
+    [_dictionary clue_setFilteredObject:testObject forKey:@"key" withFilterBlock:^BOOL(id  _Nullable object) {
         NSString *stringObject = (NSString *) object;
         if (stringObject == nil) {
             return NO;
@@ -66,8 +54,8 @@
             return YES;
         }
     }];
-    
-    XCTAssertEqual(dictionary.count, 0,
+
+    XCTAssertEqual(_dictionary.count, 0,
     @"Dictionary should still be empty because new object isn't confirms to filter's conditions");
 }
 
