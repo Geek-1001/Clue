@@ -7,6 +7,7 @@
 //
 
 #import "NSException+CLUExceptionAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation NSException (CLUExceptionAdditions)
 
@@ -15,16 +16,13 @@
         return nil;
     }
     NSMutableDictionary *exceptionProperties = [[NSMutableDictionary alloc] init];
-    [exceptionProperties setObject:self.name ? self.name : @""
-                            forKey:@"name"];
-    [exceptionProperties setObject:self.reason ? self.reason : @""
-                            forKey:@"reson"];
-    [exceptionProperties setObject:self.userInfo ? self.userInfo : @""
-                            forKey:@"userInfo"];
-    [exceptionProperties setObject:[self callStackReturnAddresses] ? [self callStackReturnAddresses] : @""
-                            forKey:@"callStackReturnAddresses"];
-    [exceptionProperties setObject:[self callStackSymbols] ? [self callStackSymbols] : @""
-                            forKey:@"callStackSymbols"];
+    [exceptionProperties clue_setValidObject:self.name forKey:@"name"];
+    [exceptionProperties clue_setValidObject:self.reason forKey:@"reson"];
+    [exceptionProperties clue_setValidObject:self.userInfo forKey:@"userInfo"];
+    [exceptionProperties clue_setValidObject:[self callStackReturnAddresses]
+                                      forKey:@"callStackReturnAddresses"];
+    [exceptionProperties clue_setValidObject:[self callStackSymbols]
+                                      forKey:@"callStackSymbols"];
     
     return exceptionProperties;
 }
