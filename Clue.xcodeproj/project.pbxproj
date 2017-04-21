@@ -48,6 +48,8 @@
 		E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */; };
 		E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */; };
 		E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */; };
+		E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; };
+		E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */; };
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -225,6 +227,8 @@
 		E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+CLUUserInteractionAdditions.m"; sourceTree = "<group>"; };
 		E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUGeneralGestureRecognizerTests.m; sourceTree = "<group>"; };
 		E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUIViewAdditionsTests.m; sourceTree = "<group>"; };
+		E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLUUtilsAdditions.h"; sourceTree = "<group>"; };
+		E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLUUtilsAdditions.m"; sourceTree = "<group>"; };
 		E258F3FD1CE3D037001E9F92 /* CLUOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUOptions.h; sourceTree = "<group>"; };
 		E258F3FE1CE3D037001E9F92 /* CLUOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUOptions.m; sourceTree = "<group>"; };
 		E272DD821CD5223300F1FECA /* Clue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -448,6 +452,8 @@
 				E23891461D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m */,
 				E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */,
 				E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */,
+				E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */,
+				E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -796,6 +802,7 @@
 				E2CDA6A91D3905D60079F784 /* sha1.h in Headers */,
 				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
 				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
+				E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */,
 				E2CDA6AE1D3905D60079F784 /* ioapi.h in Headers */,
 				E2CDA6B41D3905D60079F784 /* zip.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
@@ -1022,6 +1029,7 @@
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
 				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
+				E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */,
 				E2CDA6A61D3905D60079F784 /* pwd2key.c in Sources */,
 				E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */,
 				E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */,
