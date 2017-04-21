@@ -7,6 +7,7 @@
 //
 
 #import "UIView+CLUViewRecordableAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation UIView (CLUViewRecordableAdditions)
 
@@ -29,7 +30,7 @@
     NSDictionary *layoutMarginsProperty = [self clue_layoutMarginsPropertyDictionary];
     
     [propertiesDictionary setObject:framePropertyDictionary forKey:@"frame"];
-    [propertiesDictionary setObject:backgroundColorProperty forKey:@"backgroundColor"];
+    [propertiesDictionary clue_setValidObject:backgroundColorProperty forKey:@"backgroundColor"];
     [propertiesDictionary setObject:@(self.isHidden) forKey:@"hidden"];
     // TODO: add Layer parsing
     [propertiesDictionary setObject:@(self.isUserInteractionEnabled) forKey:@"userInteractionEnabled"];
@@ -50,6 +51,7 @@
     return rootDictionary;
 }
 
+// TODO: if color is nil – return nil
 - (NSDictionary *)clue_colorPropertyDictionaryForColor:(UIColor *)color {
     NSMutableDictionary *colorDictionary = [[NSMutableDictionary alloc] init];
     if (color) {
@@ -89,21 +91,23 @@
     return marginsDictionary;
 }
 
+// TODO: if font is nil – return nil
 - (NSDictionary *)clue_fontPropertyDictionaryForFont:(UIFont *)font {
     NSMutableDictionary *fontDictionary = [[NSMutableDictionary alloc] init];
     if (font) {
-        [fontDictionary setObject:font.familyName ? font.familyName : @"" forKey:@"familyName"];
-        [fontDictionary setObject:font.fontName ? font.fontName : @"" forKey:@"fontName"];
+        [fontDictionary clue_setValidObject:font.familyName forKey:@"familyName"];
+        [fontDictionary clue_setValidObject:font.fontName forKey:@"fontName"];
         [fontDictionary setObject:@(font.pointSize) forKey:@"pointSize"];
         [fontDictionary setObject:@(font.lineHeight) forKey:@"lineHeight"];
     }
     return fontDictionary;
 }
 
+// TODO: if attributedText is nil – return nil
 - (NSDictionary *)clue_attributedTextPropertyDictionaryForAttributedString:(NSAttributedString *)attributedText {
     NSMutableDictionary *attributedTextDictionary = [[NSMutableDictionary alloc] init];
     if (attributedText) {
-        [attributedTextDictionary setObject:[attributedText string] ? [attributedText string] : @"" forKey:@"string"];
+        [attributedTextDictionary clue_setValidObject:[attributedText string] forKey:@"string"];
     }
     // TODO: add Retrieving Attribute Information
     return attributedTextDictionary;
