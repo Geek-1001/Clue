@@ -9,6 +9,7 @@
 #import "CLUDeviceInfoModule.h"
 #import "CLUDataWriter.h"
 #import <UIKit/UIKit.h>
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @interface CLUDeviceInfoModule()
 @property (nonatomic) CLUDataWriter *writer;
@@ -48,7 +49,7 @@
     [deviceProperties setObject:device.systemName forKey:@"systemName"];
     [deviceProperties setObject:device.systemVersion forKey:@"systemVersion"];
     [deviceProperties setObject:device.model forKey:@"model"];
-    [deviceProperties setObject:device.identifierForVendor ? [device.identifierForVendor UUIDString] : @"" forKey:@"identifierForVendor"];
+    [deviceProperties clue_setValidObject:[device.identifierForVendor UUIDString] forKey:@"identifierForVendor"];
     [deviceProperties setObject:@(device.batteryLevel) forKey:@"batteryLevel"];
     [deviceProperties setObject:@(device.batteryState) forKey:@"batteryState"];
     
