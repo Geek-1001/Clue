@@ -8,6 +8,7 @@
 
 #import "UITextField+CLUViewRecordableAdditions.h"
 #import "UIView+CLUViewRecordableAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation UITextField (CLUViewRecordableAdditions)
 
@@ -25,12 +26,12 @@
     NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     NSDictionary *textColorDicitonary = [self clue_colorPropertyDictionaryForColor:[self textColor]];
 
-    [propertiesDictionary setObject:self.text ? self.text : @"" forKey:@"text"];
-    [propertiesDictionary setObject:attributedTextDictionary forKey:@"attributedText"];
-    [propertiesDictionary setObject:self.placeholder ? self.placeholder : @"" forKey:@"placeholder"];
-    [propertiesDictionary setObject:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
-    [propertiesDictionary setObject:fontDictionary forKey:@"font"];
-    [propertiesDictionary setObject:textColorDicitonary forKey:@"textColor"];
+    [propertiesDictionary clue_setValidObject:self.text forKey:@"text"];
+    [propertiesDictionary clue_setValidObject:attributedTextDictionary forKey:@"attributedText"];
+    [propertiesDictionary clue_setValidObject:self.placeholder forKey:@"placeholder"];
+    [propertiesDictionary clue_setValidObject:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
+    [propertiesDictionary clue_setValidObject:fontDictionary forKey:@"font"];
+    [propertiesDictionary clue_setValidObject:textColorDicitonary forKey:@"textColor"];
     [propertiesDictionary setObject:@(self.minimumFontSize) forKey:@"minimumFontSize"];
     [propertiesDictionary setObject:@(self.isEditing) forKey:@"editing"];
     [propertiesDictionary setObject:@(self.borderStyle) forKey:@"borderStyle"];
