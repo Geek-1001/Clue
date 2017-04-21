@@ -8,6 +8,7 @@
 
 #import "UILabel+CLUViewRecordableAdditions.h"
 #import "UIView+CLUViewRecordableAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation UILabel (CLUViewRecordableAdditions)
 
@@ -26,15 +27,15 @@
     NSDictionary *shadowColorDictionary = [self clue_colorPropertyDictionaryForColor:self.shadowColor];
     NSDictionary *shadowOffsetDictionary = [self clue_sizePropertyDictionaryForSize:self.shadowOffset];
     
-    [propertiesDictionary setObject:self.text ? self.text : @"" forKey:@"text"];
-    [propertiesDictionary setObject:attributedTextDictionary forKey:@"attributedText"];
-    [propertiesDictionary setObject:fontDictionary forKey:@"font"];
-    [propertiesDictionary setObject:textColorDictionary forKey:@"textColor"];
+    [propertiesDictionary clue_setValidObject:self.text forKey:@"text"];
+    [propertiesDictionary clue_setValidObject:attributedTextDictionary forKey:@"attributedText"];
+    [propertiesDictionary clue_setValidObject:fontDictionary forKey:@"font"];
+    [propertiesDictionary clue_setValidObject:textColorDictionary forKey:@"textColor"];
     [propertiesDictionary setObject:@(self.isEnabled) forKey:@"enabled"];
     [propertiesDictionary setObject:@(self.lineBreakMode) forKey:@"lineBreakMode"];
     [propertiesDictionary setObject:@(self.numberOfLines) forKey:@"numberOfLines"];
     [propertiesDictionary setObject:@(self.isHighlighted) forKey:@"highlighted"];
-    [propertiesDictionary setObject:shadowColorDictionary forKey:@"shadowColor"];
+    [propertiesDictionary clue_setValidObject:shadowColorDictionary forKey:@"shadowColor"];
     [propertiesDictionary setObject:shadowOffsetDictionary forKey:@"shadowOffset"];
     
     [rootDictionary setObject:propertiesDictionary forKey:@"properties"];
