@@ -7,6 +7,7 @@
 //
 
 #import "NSURLResponse+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation NSURLResponse (CLUNetworkAdditions)
 
@@ -16,8 +17,8 @@
     }
     NSMutableDictionary *responseProperties = [[NSMutableDictionary alloc] init];
     [responseProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
-    [responseProperties setObject:self.MIMEType ? self.MIMEType : @"" forKey:@"MIMEType"];
-    [responseProperties setObject:self.URL.absoluteString ? self.URL.absoluteString : @"" forKey:@"URL"];
+    [responseProperties clue_setValidObject:self.MIMEType forKey:@"MIMEType"];
+    [responseProperties clue_setValidObject:self.URL.absoluteString forKey:@"URL"];
     [responseProperties setObject:@(self.expectedContentLength) forKey:@"expectedContentLength"];
     
     return responseProperties;

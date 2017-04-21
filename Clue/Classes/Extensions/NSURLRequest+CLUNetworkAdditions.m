@@ -7,6 +7,7 @@
 //
 
 #import "NSURLRequest+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation NSURLRequest (CLUNetworkAdditions)
 
@@ -16,9 +17,9 @@
     }
     NSMutableDictionary *requestProperties = [[NSMutableDictionary alloc] init];
     [requestProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
-    [requestProperties setObject:self.URL.absoluteString ? self.URL.absoluteString : @"" forKey:@"URL"];
-    [requestProperties setObject:self.allHTTPHeaderFields ? self.allHTTPHeaderFields : @"" forKey:@"allHTTPHeaderFields"];
-    [requestProperties setObject:self.HTTPMethod ? self.HTTPMethod : @"" forKey:@"HTTPMethod"];
+    [requestProperties clue_setValidObject:self.URL.absoluteString forKey:@"URL"];
+    [requestProperties clue_setValidObject:self.allHTTPHeaderFields forKey:@"allHTTPHeaderFields"];
+    [requestProperties clue_setValidObject:self.HTTPMethod forKey:@"HTTPMethod"];
     [requestProperties setObject:@(self.HTTPShouldHandleCookies) forKey:@"HTTPShouldHandleCookies"];
     if (self.HTTPBody) {
         NSString *bodyString = [[NSString alloc] initWithData:self.HTTPBody encoding:NSUTF8StringEncoding];

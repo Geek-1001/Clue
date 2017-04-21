@@ -8,6 +8,7 @@
 
 #import "NSHTTPURLResponse+CLUNetworkAdditions.h"
 #import "NSURLResponse+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation NSHTTPURLResponse (CLUNetworkAdditions)
 
@@ -21,7 +22,7 @@
     [responseDictionary setObject:@(self.statusCode) forKey:@"statusCode"];
     [responseDictionary setObject:[NSHTTPURLResponse localizedStringForStatusCode:self.statusCode]
                           forKey:@"localizedStringForStatusCode"];
-    [responseDictionary setObject:self.allHeaderFields ? self.allHeaderFields : @"" forKey:@"allHeaderFields"];
+    [responseDictionary clue_setValidObject:self.allHeaderFields forKey:@"allHeaderFields"];
     
     return responseDictionary;
 }
