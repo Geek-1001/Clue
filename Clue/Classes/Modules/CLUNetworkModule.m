@@ -13,6 +13,7 @@
 #import "NSURLResponse+CLUNetworkAdditions.h"
 #import "NSHTTPURLResponse+CLUNetworkAdditions.h"
 #import "NSURLRequest+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation CLUNetworkModule
 
@@ -76,7 +77,7 @@
     // TODO: think about better approach for NSData
     NSMutableDictionary *dataProperties = [[NSMutableDictionary alloc] init];
     NSString *bodyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [dataProperties setObject:bodyString ? bodyString : @"" forKey:@"HTTPBody"];
+    [dataProperties clue_setValidObject:bodyString forKey:@"HTTPBody"];
     [self addNetworkOperationToBufferWithLabel:@"DidReceiveData" properties:@[dataProperties]];
 }
 
