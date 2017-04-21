@@ -7,6 +7,7 @@
 //
 
 #import "NSError+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
 
 @implementation NSError (CLUNetworkAdditions)
 
@@ -17,10 +18,10 @@
     NSMutableDictionary *errorProperties = [[NSMutableDictionary alloc] init];
     [errorProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
     [errorProperties setObject:@(self.code) forKey:@"code"];
-    [errorProperties setObject:self.domain ? self.domain : @"" forKey:@"domain"];
-    [errorProperties setObject:self.userInfo ? self.userInfo : @"" forKey:@"userInfo"];
-    [errorProperties setObject:self.localizedDescription ? self.localizedDescription : @"" forKey:@"localizedDescription"];
-    [errorProperties setObject:self.localizedFailureReason ? self.localizedFailureReason : @"" forKey:@"localizedFailureReason"];
+    [errorProperties clue_setValidObject:self.domain forKey:@"domain"];
+    [errorProperties clue_setValidObject:self.userInfo forKey:@"userInfo"];
+    [errorProperties clue_setValidObject:self.localizedDescription forKey:@"localizedDescription"];
+    [errorProperties clue_setValidObject:self.localizedFailureReason forKey:@"localizedFailureReason"];
     
     return errorProperties;
 }
