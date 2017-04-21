@@ -50,6 +50,7 @@
 		E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */; };
 		E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; };
 		E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */; };
+		E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCF1EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m */; };
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E258F3FE1CE3D037001E9F92 /* CLUOptions.m */; };
 		E272DD861CD5223300F1FECA /* Clue.h in Headers */ = {isa = PBXBuildFile; fileRef = E272DD851CD5223300F1FECA /* Clue.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -229,6 +230,7 @@
 		E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUIViewAdditionsTests.m; sourceTree = "<group>"; };
 		E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLUUtilsAdditions.h"; sourceTree = "<group>"; };
 		E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLUUtilsAdditions.m"; sourceTree = "<group>"; };
+		E24E6CCF1EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUNSMutableDictionaryUtilsAdditionsTests.m; sourceTree = "<group>"; };
 		E258F3FD1CE3D037001E9F92 /* CLUOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUOptions.h; sourceTree = "<group>"; };
 		E258F3FE1CE3D037001E9F92 /* CLUOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUOptions.m; sourceTree = "<group>"; };
 		E272DD821CD5223300F1FECA /* Clue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +434,7 @@
 				E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */,
 				E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */,
 				E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */,
+				E24E6CCF1EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1068,6 +1071,7 @@
 				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
 				E241F4631E7B333A0075EF2C /* CLUTextFieldViewRecordableAdditions.m in Sources */,
 				E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */,
+				E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */,
 				E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */,
 				E241F4651E7B37770075EF2C /* CLUTouchUserInteractionAdditions.m in Sources */,
 				E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */,
