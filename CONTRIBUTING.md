@@ -116,9 +116,9 @@ It a single class [`CLUReportComposer`](https://geek-1001.github.io/Clue/Classes
 
 
 ## Detailed Roadmap
-You can explore all tasks which you can implement [as issues here](#).
-All tasks currently in development [here](#).
-And all implemented tasks [here](#).
+You can explore all tasks which you can implement [as issues here](https://github.com/Geek-1001/Clue/issues?q=is%3Aopen+is%3Aissue+label%3Atask+label%3Aready-to-implementation).
+All tasks currently in development [here](https://github.com/Geek-1001/Clue/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Atask%20label%3Ain-development).
+And all implemented tasks [here](https://github.com/Geek-1001/Clue/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Atask).
 
 Here is general roadmap :
 - [ ] Skip invalid recordable properties instead of recording of empty string [Issue #4](https://github.com/Geek-1001/Clue/issues/4)
