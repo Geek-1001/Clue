@@ -22,9 +22,7 @@
                                                       userInfo:@{@"argumentName" : @"test-argument"}];
     NSDictionary *testExceptionDictionary = @{@"name" : @"NSInvalidArgumentException",
                                               @"reson" : @"Agruments are invalid",
-                                              @"userInfo" : @{@"argumentName" : @"test-argument"},
-                                              @"callStackReturnAddresses" : @"",
-                                              @"callStackSymbols" : @""};
+                                              @"userInfo" : @{@"argumentName" : @"test-argument"}};
     
     // Test Exception Property dictionary
     NSDictionary *exceptionDictionary = [exception clue_exceptionProperties];
