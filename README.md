@@ -26,7 +26,7 @@
 ## 🕵️ Why
 When you get a new bug report from your users - you're not a software engineer anymore. You become a true detective, trying to get a clue why something went wrong in your app. Especially it’s true if you’re working in the company, where you need to talk to users directly.
 
-I believe it’s a problem. What if you can fix bug/crash without trying to reproduce it? What if you can see all required information and exact cause of the problem right away, without wasting your time figuring it out? 
+I believe it’s a problem. What if you can fix bug/crash without trying to reproduce it? What if you can see all required information and exact cause of the problem right away, without wasting your time figuring it out?
 <br>
 
 ## ℹ️ Description
@@ -468,7 +468,7 @@ Obviously you can view .clue report files with whatever method you want since it
 
 ## 👩‍💻👨‍💻 Contribution
 Contributions are welcome! That's why Open Source is cool!
-Also **Contributions Guide** will be ready soon, but you can create an issue with your improvements or suggestion right now and we'll discuss it.
+Please check out the [Contributing Guide](https://github.com/Geek-1001/Clue/blob/master/CONTRIBUTING.md) for more details.
 <br>
 
 ## ☎️ Contacts
