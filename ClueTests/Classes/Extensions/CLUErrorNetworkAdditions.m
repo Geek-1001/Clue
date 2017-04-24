@@ -21,8 +21,7 @@
                                              code:123
                                          userInfo:nil];
     NSArray<NSString *> *testAllKeys = @[@"class", @"code", @"domain",
-                                         @"userInfo", @"localizedDescription",
-                                         @"localizedFailureReason"];
+                                         @"userInfo", @"localizedDescription"];
     
     // Test error dictionary
     NSDictionary *errorDictionary = [testError clue_errorProperties];
