@@ -54,7 +54,6 @@
                                                              HTTPVersion:@"1.0"
                                                             headerFields:@{@"test-header-name" : @"test-header-value"}];
     NSDictionary *testResponseDictionary = @{@"class" : @"NSHTTPURLResponse",
-                                             @"MIMEType" : @"", // if no MIME type
                                              @"URL" : @"test-url",
                                              @"expectedContentLength" : @(-1), // if no expected content length
                                              @"statusCode" : @(201),
