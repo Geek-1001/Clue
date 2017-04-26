@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CLUWritable.h"
+
+@class JSONWriter;
 
 /**
  `CLUInfoModule` protocol describe info modules (like Device Info module or Exception module), static one-time modules which needs to write their data only once during recording.
@@ -19,12 +20,12 @@
 @required
 
 /**
- Initialize info module with specific writer which implements `CLUWritable` protocol. So module will be able to record/write required information.
+ Initialize info module with specific `JSONWriter` instance. So module will be able to record/write required information.
  
- @param writer Writer object which implements `CLUWritable` protocol. Responsible for actual writing information to some specific file
+ @param writer `JSONWriter` instance responsible for actual writing information to some specific file
  @return New instance of info module
  */
-- (instancetype)initWithWriter:(id <CLUWritable>)writer;
+- (instancetype)initWithWriter:(JSONWriter *)writer;
 
 /**
  Record actual information once and cleanup everything

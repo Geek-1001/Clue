@@ -7,17 +7,18 @@
 //
 
 #import "CLUDeviceInfoModule.h"
-#import "CLUDataWriter.h"
 #import <UIKit/UIKit.h>
 #import "NSMutableDictionary+CLUUtilsAdditions.h"
 
+#import <Clue/Clue-Swift.h>
+
 @interface CLUDeviceInfoModule()
-@property (nonatomic) CLUDataWriter *writer;
+@property (nonatomic) JSONWriter *writer;
 @end
 
 @implementation CLUDeviceInfoModule
 
-- (instancetype)initWithWriter:(CLUDataWriter *)writer {
+- (instancetype)initWithWriter:(JSONWriter *)writer {
     self = [super init];
     if (!self || !writer) {
         return nil;
@@ -28,17 +29,9 @@
 
 - (void)recordInfoData {
     NSDictionary *deviceProperties = [self deviceProperties];
-    if ([NSJSONSerialization isValidJSONObject:deviceProperties]) {
-        NSError *error;
-        NSData *deviceData = [NSJSONSerialization dataWithJSONObject:deviceProperties options:0 error:&error];
-        if (!error && deviceData) {
-            [_writer startWriting];
-            [_writer addData:deviceData];
-            [_writer finishWriting];
-        }
-    } else {
-        NSLog(@"Device properties json is invalid");
-    }
+    [_writer startWriting];
+    [_writer appendWithJson:deviceProperties];
+    [_writer finishWriting];
 }
 
 - (NSDictionary *)deviceProperties {

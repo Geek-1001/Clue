@@ -37,14 +37,14 @@
 - (BOOL)isBufferEmpty;
 
 /**
- Add new `NSData` object to buffer, so it could be saved to file via Writer on next iteration of `addNewFrameWithTimestamp:` from `CLURecordableModule` protocol
+ Add new `NSDictionary` object to buffer, so it could be saved to file via Writer on next iteration of `addNewFrameWithTimestamp:` from `CLURecordableModule` protocol
 
- @param bufferItem `NSData` object which you need to save to buffer
+ @param bufferItem `NSDictionary` object which you need to save to buffer
  */
-- (void)addData:(NSData *)bufferItem;
+- (void)addData:(NSDictionary *)bufferItem;
 
 /**
- Remove all `NSData` entities from data buffer
+ Remove all `NSDictionary` entities from data buffer
  */
 - (void)clearBuffer;
 

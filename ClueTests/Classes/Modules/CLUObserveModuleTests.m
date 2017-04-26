@@ -8,7 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "CLUObserveModule.h"
-#import "CLUDataWriter.h"
+
+#import <Clue/Clue-Swift.h>
 
 @interface CLUObserveModuleTests : XCTestCase
 @property (nonatomic) CLUObserveModule *observeModule;
@@ -20,7 +21,7 @@
 - (void)setUp {
     [super setUp];
     _testOutputURL = [NSURL fileURLWithPath:@"test-file"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:_testOutputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:_testOutputURL];
     _observeModule = [[CLUObserveModule alloc] initWithWriter:dataWriter];
 }
 
@@ -35,7 +36,7 @@
 
 - (void)testAddDataToBuffer {
     // Initialize test variables
-    NSData *testData = [@"test-content" dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *testData = @{ @"key": @"test-content" };
     
     // Start recording
     [_observeModule startRecording];

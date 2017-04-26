@@ -14,13 +14,14 @@
 #import "CLUViewStructureModule.h"
 #import "CLUUserInteractionModule.h"
 #import "CLUNetworkModule.h"
-#import "CLUDataWriter.h"
 #import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
 #import "CLUExceptionInfoModule.h"
 #import "CLUMailHelper.h"
 #import "CLUMailDelegate.h"
 #import "CLURecordIndicatorViewManager.h"
+
+#import <Clue/Clue-Swift.h>
 
 @interface ClueController()
 
@@ -98,7 +99,7 @@ void didReceiveUncaughtException(NSException *exception) {
     
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_exception.json"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
     CLUExceptionInfoModule *exceptionModule = [[CLUExceptionInfoModule alloc] initWithWriter:dataWriter];
     [exceptionModule setException:exception];
     [exceptionModule recordInfoData];
@@ -244,7 +245,7 @@ void didReceiveUncaughtException(NSException *exception) {
 - (CLUViewStructureModule *)configureViewStructureModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_view.json"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
     CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:dataWriter];
     return viewStructureModule;
 }
@@ -252,7 +253,7 @@ void didReceiveUncaughtException(NSException *exception) {
 - (CLUUserInteractionModule *)configureUserInteractionModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_interaction.json"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
     CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
     return userInteractionModule;
 }
@@ -260,7 +261,7 @@ void didReceiveUncaughtException(NSException *exception) {
 - (CLUNetworkModule *)configureNetworkModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_network.json"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
     CLUNetworkModule *networkModule = [[CLUNetworkModule alloc] initWithWriter:dataWriter];
     return networkModule;
 }
@@ -270,7 +271,7 @@ void didReceiveUncaughtException(NSException *exception) {
 - (CLUDeviceInfoModule *)configureDeviceInfoModule {
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_device.json"];
-    CLUDataWriter *dataWriter = [[CLUDataWriter alloc] initWithOutputURL:outputURL];
+    JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
     CLUDeviceInfoModule *deviceModule = [[CLUDeviceInfoModule alloc] initWithWriter:dataWriter];
     return deviceModule;
 }

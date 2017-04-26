@@ -7,12 +7,13 @@
 //
 
 #import "CLUObserveModule.h"
-#import "CLUDataWriter.h"
+
+#import <Clue/Clue-Swift.h>
 
 @interface CLUObserveModule()
 
-@property (atomic) NSMutableArray<NSData *> *bufferArray;
-@property (nonatomic) CLUDataWriter *writer;
+@property (atomic) NSMutableArray<NSDictionary *> *bufferArray;
+@property (nonatomic) JSONWriter *writer;
 
 @end
 
@@ -21,7 +22,7 @@
     dispatch_semaphore_t _frameRecordingSemaphore;
 }
 
-- (instancetype)initWithWriter:(CLUDataWriter *)writer {
+- (instancetype)initWithWriter:(JSONWriter *)writer {
     self = [super init];
     if (!self) {
         return nil;
@@ -67,8 +68,8 @@
                 return;
             }
             
-            for (NSData *data in _bufferArray) {
-                [_writer addData:data];
+            for (NSDictionary *data in _bufferArray) {
+                [_writer appendWithJson:data];
             }
             
             [self clearBuffer];
@@ -87,7 +88,7 @@
     }
 }
 
-- (void)addData:(NSData *)bufferItem {
+- (void)addData:(NSDictionary *)bufferItem {
     @synchronized (self) {
         if (bufferItem) {
             [_bufferArray addObject:bufferItem];

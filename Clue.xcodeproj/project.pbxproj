@@ -69,13 +69,10 @@
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
 		E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DB1D03505F0083E951 /* CLUObserveModule.h */; };
 		E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7DC1D03505F0083E951 /* CLUObserveModule.m */; };
-		E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DF1D035DC90083E951 /* CLUDataWriter.h */; };
-		E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E01D035DC90083E951 /* CLUDataWriter.m */; };
 		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
 		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
 		E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */; };
 		E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */; };
-		E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
 		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
 		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
@@ -96,7 +93,7 @@
 		E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */; };
 		E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C881CED03F700A48C61 /* CLUVideoModule.h */; };
 		E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C891CED03F700A48C61 /* CLUVideoModule.m */; };
-		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; };
+		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */; };
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */; };
@@ -271,13 +268,10 @@
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E278B7DB1D03505F0083E951 /* CLUObserveModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUObserveModule.h; sourceTree = "<group>"; };
 		E278B7DC1D03505F0083E951 /* CLUObserveModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModule.m; sourceTree = "<group>"; };
-		E278B7DF1D035DC90083E951 /* CLUDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDataWriter.h; sourceTree = "<group>"; };
-		E278B7E01D035DC90083E951 /* CLUDataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDataWriter.m; sourceTree = "<group>"; };
 		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUUserInteractionModule.h; sourceTree = "<group>"; };
 		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUserInteractionModule.m; sourceTree = "<group>"; };
 		E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLULabelRecordableAdditions.m; sourceTree = "<group>"; };
 		E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUImageViewRecordableAdditions.m; sourceTree = "<group>"; };
-		E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDataWriterTests.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
@@ -681,8 +675,6 @@
 			children = (
 				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
 				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
-				E278B7DF1D035DC90083E951 /* CLUDataWriter.h */,
-				E278B7E01D035DC90083E951 /* CLUDataWriter.m */,
 				AF53145F1EB018E8005A5146 /* JSONWriter.swift */,
 				AF5314601EB018E8005A5146 /* JSONWriterError.swift */,
 			);
@@ -704,7 +696,6 @@
 		E2AD27941E729ACD0062FE3D /* Writers */ = {
 			isa = PBXGroup;
 			children = (
-				E2844B6F1E7211C2005BEFD6 /* CLUDataWriterTests.m */,
 				E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */,
 				AF5314651EB01931005A5146 /* JSONWriterErrorTests.swift */,
 				AF5314661EB01931005A5146 /* JSONWriterTests.swift */,
@@ -811,6 +802,7 @@
 				E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */,
 				E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */,
 				E2CDA69F1D3905D60079F784 /* entropy.h in Headers */,
+				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */,
 				E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */,
 				E2CDA6B01D3905D60079F784 /* mztools.h in Headers */,
@@ -844,7 +836,6 @@
 				E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */,
 				E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */,
 				E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */,
-				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
 				E2CDA6951D3905D60079F784 /* aes.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
 				E2CDA69B1D3905D60079F784 /* aestab.h in Headers */,
@@ -854,7 +845,6 @@
 				E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */,
 				E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */,
 				E2CDA6A31D3905D60079F784 /* hmac.h in Headers */,
-				E278B7E11D035DC90083E951 /* CLUDataWriter.h in Headers */,
 				E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */,
 				E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */,
 				E2CDA6991D3905D60079F784 /* aesopt.h in Headers */,
@@ -1086,7 +1076,6 @@
 				E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
-				E278B7E21D035DC90083E951 /* CLUDataWriter.m in Sources */,
 				E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */,
 				E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */,
 			);
@@ -1111,7 +1100,6 @@
 				E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */,
 				AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
-				E2844B701E7211C2005BEFD6 /* CLUDataWriterTests.m in Sources */,
 				E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- `CLUWritable` protocol describe writers (like `CLUDataWriter` or `CLUVideoWriter`) which needs to actually write new data to specific file (could be text file, video file etc.)
+ `CLUWritable` protocol describe writers (like `CLUVideoWriter`) which needs to actually write new data to specific file (could be text file, video file etc.)
  */
 @protocol CLUWritable <NSObject>
 

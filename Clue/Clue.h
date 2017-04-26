@@ -16,3 +16,5 @@ FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 
 #import <Clue/ClueController.h>
 #import <Clue/CLUOptions.h>
+
+#import <Clue/CLUWritable.h>
