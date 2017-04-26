@@ -30,24 +30,41 @@ public class JSONWriter: NSObject {
     }
 
     @discardableResult
-    public func append(json: Any) -> Int {
+    public func append(json: Any) -> Bool {
         guard JSONSerialization.isValidJSONObject(json) else {
             currentError = JSONWriterError.invalidObject(json)
-            return 0
+            handleStreamError()
+            return false
         }
         var error: NSError?
         if !isReadyForWriting() {
             startWriting()
         }
-        let bytes = JSONSerialization.writeJSONObject(json, to: outputStream, options: .prettyPrinted, error: &error)
-        if bytes == 0 {
+        let bytes = JSONSerialization.writeJSONObject(json, to: outputStream, options: [], error: &error)
+        guard bytes > 0 else {
             if let error = error {
                 currentError = JSONWriterError.failure(error)
             } else {
                 currentError = JSONWriterError.unknown
             }
+            handleStreamError()
+            return false
         }
-        return bytes
+
+        let lineSeparator = "\n"
+        guard let stringData = lineSeparator.data(using: .utf8) else {
+            currentError = JSONWriterError.invalidObject(lineSeparator)
+            handleStreamError()
+            return false
+        }
+        let dataBytes = stringData.withUnsafeBytes { outputStream.write($0, maxLength: stringData.count) }
+        if dataBytes != 1 {
+            currentError = JSONWriterError.unknown
+            handleStreamError()
+            return false
+        }
+
+        return true
     }
 }
 
@@ -85,7 +102,7 @@ extension JSONWriter: CLUWritable {
 // MARK: - Private Methods
 fileprivate extension JSONWriter {
     func handleStreamError() {
-        let error = outputStream.streamError
+        let error = outputStream.streamError ?? currentError
         print("Stream error: \(String(describing: error?.localizedDescription))")
     }
 }
