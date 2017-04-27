@@ -30,11 +30,11 @@ public class JSONWriter: NSObject {
     }
 
     @discardableResult
-    public func append(json: Any) -> Bool {
+    public func append(json: Any) -> Int {
         guard JSONSerialization.isValidJSONObject(json) else {
             currentError = JSONWriterError.invalidObject(json)
             handleStreamError()
-            return false
+            return 0
         }
         var error: NSError?
         if !isReadyForWriting() {
@@ -48,23 +48,23 @@ public class JSONWriter: NSObject {
                 currentError = JSONWriterError.unknown
             }
             handleStreamError()
-            return false
+            return bytes
         }
 
         let lineSeparator = "\n"
         guard let stringData = lineSeparator.data(using: .utf8) else {
             currentError = JSONWriterError.invalidObject(lineSeparator)
             handleStreamError()
-            return false
+            return bytes
         }
-        let dataBytes = stringData.withUnsafeBytes { outputStream.write($0, maxLength: stringData.count) }
-        if dataBytes != 1 {
+        let lineSeparatorBytes = stringData.withUnsafeBytes { outputStream.write($0, maxLength: stringData.count) }
+        if lineSeparatorBytes != 1 {
             currentError = JSONWriterError.unknown
             handleStreamError()
-            return false
+            return bytes
         }
 
-        return true
+        return bytes + lineSeparatorBytes
     }
 }
 
