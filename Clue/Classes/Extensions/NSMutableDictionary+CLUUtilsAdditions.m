@@ -16,6 +16,35 @@
     }];
 }
 
+- (void)clue_setValidAndNotEmptyString:(nullable NSString *)string forKey:(nonnull id)key {
+    [self clue_setValidAndNotEmptyObject:string forKey:key];
+}
+
+- (void)clue_setValidAndNotEmptyDictionary:(nullable NSDictionary *)dictionary forKey:(nonnull id)key {
+    [self clue_setValidAndNotEmptyObject:dictionary forKey:key];
+}
+
+- (void)clue_setValidAndNotEmptyArray:(nullable NSArray *)array forKey:(nonnull id)key {
+    [self clue_setValidAndNotEmptyObject:array forKey:key];
+}
+
+- (void)clue_setValidAndNotEmptyObject:(nullable id)object forKey:(nonnull id)key {
+    [self clue_setFilteredObject:object forKey:key withFilterBlock:^BOOL(id  _Nullable object) {
+        if (object == nil) {
+            return NO;
+        }
+        if ([object isKindOfClass:[NSString class]]) {
+            return ((NSString *) object).length != 0;
+        } else if ([object isKindOfClass:[NSDictionary class]]) {
+            return ((NSDictionary *) object).count != 0;
+        } else if ([object isKindOfClass:[NSArray class]]) {
+            return ((NSArray *) object).count != 0;
+        } else {
+            return NO;
+        }
+    }];
+}
+
 - (void)clue_setFilteredObject:(nullable id)object
                         forKey:(nonnull id<NSCopying>)key
                withFilterBlock:(BOOL (^ _Nonnull)(id _Nullable object))filterBlock {

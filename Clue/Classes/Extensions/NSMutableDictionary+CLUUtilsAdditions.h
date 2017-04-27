@@ -22,6 +22,30 @@
 - (void)clue_setValidObject:(nullable id)object forKey:(nonnull id)key;
 
 /**
+ Set only valid (not nil) and not empty string with key into current dictionary. If `string` is invalid or empty – method will skip this `string`
+
+ @param string Any string you want to add into current dictionary. Could be invalid or empty
+ @param key Any key for this new string. Should be valid.
+ */
+- (void)clue_setValidAndNotEmptyString:(nullable NSString *)string forKey:(nonnull id)key;
+
+/**
+ Set only valid (not nil) and not empty dictionary with key into current dictionary. If `dictionary` is invalid or empty – method will skip this `dictionary`
+
+ @param dictionary Any dictionary you want to add into current dictionary. Could be invalid or empty
+ @param key Any key for this new dictionary. Should be valid.
+ */
+- (void)clue_setValidAndNotEmptyDictionary:(nullable NSDictionary *)dictionary forKey:(nonnull id)key;
+
+/**
+ Set only valid (not nil) and not empty array with key into current dictionary. If `array` is invalid or empty – method will skip this `array`
+
+ @param array Any array you want to add into current dictionary. Could be invalid or empty
+ @param key Any key for this new dictionary. Should be valid.
+ */
+- (void)clue_setValidAndNotEmptyArray:(nullable NSArray *)array forKey:(nonnull id)key;
+
+/**
  Set only objects which are confirms to some specific conditions in `filterBlock`. If `filterBlock` returns `NO` – method will skip the object
  
  @param object Any object you want to add into dictionary. Could be invalid.
