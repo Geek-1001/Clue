@@ -59,4 +59,64 @@
     @"Dictionary should still be empty because new object isn't confirms to filter's conditions");
 }
 
+- (void)testSetValidAndNotEmptyString_EmptyString {
+    NSString *testString = @"";
+    [_dictionary clue_setValidAndNotEmptyString:testString forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no empty string in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyString_InvalidString {
+    [_dictionary clue_setValidAndNotEmptyString:nil forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no invalid string in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyString_ValidNotEmptyString {
+    NSString *testString = @"string";
+    [_dictionary clue_setValidAndNotEmptyString:testString forKey:@"key"];
+    
+    XCTAssertNotNil([_dictionary objectForKey:@"key"], @"There should be valid string in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyDictionary_EmptyDictionary {
+    NSDictionary *testDictionary = [NSDictionary new];
+    [_dictionary clue_setValidAndNotEmptyDictionary:testDictionary forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no empty dictionary in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyDictionary_InvalidDictionary {
+    [_dictionary clue_setValidAndNotEmptyDictionary:nil forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no invalid dictionary in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyDictionary_ValidNotEmptyDictionary {
+    NSDictionary *testDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"object", @"key", nil];
+    [_dictionary clue_setValidAndNotEmptyDictionary:testDictionary forKey:@"key"];
+    
+    XCTAssertNotNil([_dictionary objectForKey:@"key"], @"There should be valid dictionary in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyArray_EmptyArray {
+    NSArray *testArray = [NSArray new];
+    [_dictionary clue_setValidAndNotEmptyArray:testArray forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no empty array in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyArray_InvalidArray {
+    [_dictionary clue_setValidAndNotEmptyArray:nil forKey:@"key"];
+    
+    XCTAssertNil([_dictionary objectForKey:@"key"], @"There should be no invalid array in this dictionary");
+}
+
+- (void)testSetValidAndNotEmptyArray_ValidAndNotEmptyArray {
+    NSArray *testArray = [[NSArray alloc] initWithObjects:@"test-object-1", @"test-object-2", nil];
+    [_dictionary clue_setValidAndNotEmptyArray:testArray forKey:@"key"];
+    
+    XCTAssertNotNil([_dictionary objectForKey:@"key"], @"There should be valid and not emoty array in this dictionary");
+}
+
 @end
