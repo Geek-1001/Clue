@@ -20,8 +20,7 @@
     NSError *testError = [NSError errorWithDomain:NSCocoaErrorDomain
                                              code:123
                                          userInfo:nil];
-    NSArray<NSString *> *testAllKeys = @[@"class", @"code", @"domain",
-                                         @"userInfo", @"localizedDescription"];
+    NSArray<NSString *> *testAllKeys = @[@"class", @"code", @"domain", @"localizedDescription"];
     
     // Test error dictionary
     NSDictionary *errorDictionary = [testError clue_errorProperties];
