@@ -26,12 +26,12 @@
     NSDictionary *fontDictionary = [self clue_fontPropertyDictionaryForFont:self.font];
     NSDictionary *textColorDicitonary = [self clue_colorPropertyDictionaryForColor:[self textColor]];
 
-    [propertiesDictionary clue_setValidObject:self.text forKey:@"text"];
-    [propertiesDictionary clue_setValidObject:attributedTextDictionary forKey:@"attributedText"];
-    [propertiesDictionary clue_setValidObject:self.placeholder forKey:@"placeholder"];
-    [propertiesDictionary clue_setValidObject:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
-    [propertiesDictionary clue_setValidObject:fontDictionary forKey:@"font"];
-    [propertiesDictionary clue_setValidObject:textColorDicitonary forKey:@"textColor"];
+    [propertiesDictionary clue_setValidAndNotEmptyString:self.text forKey:@"text"];
+    [propertiesDictionary clue_setValidAndNotEmptyDictionary:attributedTextDictionary forKey:@"attributedText"];
+    [propertiesDictionary clue_setValidAndNotEmptyString:self.placeholder forKey:@"placeholder"];
+    [propertiesDictionary clue_setValidAndNotEmptyDictionary:attributedPlaceholderDictionary forKey:@"attributedPlaceholder"];
+    [propertiesDictionary clue_setValidAndNotEmptyDictionary:fontDictionary forKey:@"font"];
+    [propertiesDictionary clue_setValidAndNotEmptyDictionary:textColorDicitonary forKey:@"textColor"];
     [propertiesDictionary setObject:@(self.minimumFontSize) forKey:@"minimumFontSize"];
     [propertiesDictionary setObject:@(self.isEditing) forKey:@"editing"];
     [propertiesDictionary setObject:@(self.borderStyle) forKey:@"borderStyle"];

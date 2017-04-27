@@ -19,7 +19,7 @@
     [errorProperties setObject:NSStringFromClass([self class]) forKey:@"class"];
     [errorProperties setObject:@(self.code) forKey:@"code"];
     [errorProperties clue_setValidObject:self.domain forKey:@"domain"];
-    [errorProperties clue_setValidObject:self.userInfo forKey:@"userInfo"];
+    [errorProperties clue_setValidAndNotEmptyDictionary:self.userInfo forKey:@"userInfo"];
     [errorProperties clue_setValidObject:self.localizedDescription forKey:@"localizedDescription"];
     [errorProperties clue_setValidObject:self.localizedFailureReason forKey:@"localizedFailureReason"];
     

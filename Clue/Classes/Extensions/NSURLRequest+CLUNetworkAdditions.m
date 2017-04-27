@@ -23,7 +23,7 @@
     [requestProperties setObject:@(self.HTTPShouldHandleCookies) forKey:@"HTTPShouldHandleCookies"];
     if (self.HTTPBody) {
         NSString *bodyString = [[NSString alloc] initWithData:self.HTTPBody encoding:NSUTF8StringEncoding];
-        [requestProperties setObject:bodyString forKey:@"HTTPBody"];
+        [requestProperties clue_setValidObject:bodyString forKey:@"HTTPBody"];
     }
     
     return requestProperties;
