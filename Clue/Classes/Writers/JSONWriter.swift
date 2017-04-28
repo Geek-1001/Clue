@@ -2,7 +2,7 @@
 //  JSONWriter.swift
 //  Clue
 //
-//  Created by Prearo, Andrea on 4/25/17.
+//  Created by Andrea Prearo on 4/25/17.
 //  Copyright © 2017 Ahmed Sulaiman. All rights reserved.
 //
 
