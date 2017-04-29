@@ -35,14 +35,8 @@
     [rootViewDictionary setValue:[NSNumber numberWithDouble:timeInterval] forKey:timestampKey];
     [rootViewDictionary setValue:propertiesDictionary forKey:viewKey];
     
-    NSError *error;
-    BOOL isPropertiesDictionaryValid = [NSJSONSerialization isValidJSONObject:rootViewDictionary];
-    if (!isPropertiesDictionaryValid) {
-        // TODO: notify about error
-        return;
-    }
-    NSData *viewPropertiesData = [NSJSONSerialization dataWithJSONObject:rootViewDictionary options:0 error:&error];
-    [self addData:viewPropertiesData];
+    // TODO: notify about error
+    [self addData:rootViewDictionary];
 }
 
 #pragma mark - Recordable Module Delegate

@@ -7,16 +7,17 @@
 //
 
 #import "CLUExceptionInfoModule.h"
-#import "CLUDataWriter.h"
 #import "NSException+CLUExceptionAdditions.h"
 
+#import <Clue/Clue-Swift.h>
+
 @interface CLUExceptionInfoModule()
-@property (nonatomic) CLUDataWriter *writer;
+@property (nonatomic) JSONWriter *writer;
 @end
 
 @implementation CLUExceptionInfoModule
 
-- (instancetype)initWithWriter:(CLUDataWriter *)writer {
+- (instancetype)initWithWriter:(JSONWriter *)writer {
     self = [super init];
     if (!self || !writer) {
         return nil;
@@ -31,17 +32,9 @@
     }
     
     NSDictionary *exceptionProperties = [_exception clue_exceptionProperties];
-    if ([NSJSONSerialization isValidJSONObject:exceptionProperties]) {
-        NSError *error;
-        NSData *exceptionData = [NSJSONSerialization dataWithJSONObject:exceptionProperties options:0 error:&error];
-        if (!error && exceptionData) {
-            [_writer startWriting];
-            [_writer addData:exceptionData];
-            [_writer finishWriting];
-        }
-    } else {
-        NSLog(@"Exception properties json is invalid");
-    }
+    [_writer startWriting];
+    [_writer appendWithJson:exceptionProperties];
+    [_writer finishWriting];
 }
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import "CLUUserInteractionModule.h"
-#import "CLUDataWriter.h"
 #import "CLUGeneralGestureRecognizer.h"
+
+#import <Clue/Clue-Swift.h>
 
 #define kTOUCH_BEGAN_EVENT @"Began"
 #define kTOUCH_MOVED_EVENT @"Moved"
@@ -22,7 +23,7 @@
 
 @implementation CLUUserInteractionModule
 
-- (instancetype)initWithWriter:(CLUDataWriter *)writer {
+- (instancetype)initWithWriter:(JSONWriter *)writer {
     self = [super initWithWriter:writer];
     if (!self) {
         return nil;
@@ -73,13 +74,7 @@
         }
         [touchDictionary setObject:touchArray forKey:@"touches"];
         
-        if ([NSJSONSerialization isValidJSONObject:touchDictionary]) {
-            NSError *error;
-            NSData *touchData = [NSJSONSerialization dataWithJSONObject:touchDictionary options:0 error:&error];
-            [self addData:touchData];
-        } else {
-            NSLog(@"Touch properties json is invalid");
-        }
+        [self addData:touchDictionary];
     }
 }
 

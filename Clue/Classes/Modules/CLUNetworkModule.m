@@ -7,7 +7,6 @@
 //
 
 #import "CLUNetworkModule.h"
-#import "CLUDataWriter.h"
 #import "CLUURLProtocol.h"
 #import "NSError+CLUNetworkAdditions.h"
 #import "NSURLResponse+CLUNetworkAdditions.h"
@@ -45,15 +44,7 @@
             [networkDictionary setObject:properties forKey:@"properties"];
         }
         
-        if ([NSJSONSerialization isValidJSONObject:networkDictionary]) {
-            NSError *error;
-            NSData *networkData = [NSJSONSerialization dataWithJSONObject:networkDictionary options:0 error:&error];
-            if (!error) {
-                [self addData:networkData];
-            }
-        } else {
-            NSLog(@"Network properties json is invalid");
-        }
+        [self addData:networkDictionary];
     }
 }
 
