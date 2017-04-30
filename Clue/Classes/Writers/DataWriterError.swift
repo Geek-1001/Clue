@@ -10,25 +10,34 @@ import Foundation
 
 /// An error that can be returned from a `DataWriter` instance.
 ///
+/// - error: Internal error.
+/// - failure: Internal failure.
+/// - invalidData: Invalid data.
+/// - invalidJSON: Invalid JSON content.
 /// - unknown: Unknown error.
-/// - invalidObject: Invalid JSON content.
-/// - failure: internal failure.
 public enum DataWriterError: Error {
-    case unknown
+    case error(Error)
+    case failure(NSError)
     case invalidData(Data)
     case invalidJSON(Any)
-    case failure(NSError)
-    case error(Error)
+    case unknown
 }
 
 extension DataWriterError: Equatable {}
 
 public func == (lhs: DataWriterError, rhs: DataWriterError) -> Bool {
     switch lhs {
-    case .unknown:
+    case .error(let error):
         switch rhs {
-        case .unknown:
-            return true
+        case .error(let error2):
+            return String(describing: error) == String(describing: error2)
+        default:
+            return false
+        }
+    case .failure(let error):
+        switch rhs {
+        case .failure(let error2):
+            return error == error2
         default:
             return false
         }
@@ -46,17 +55,10 @@ public func == (lhs: DataWriterError, rhs: DataWriterError) -> Bool {
         default:
             return false
         }
-    case .failure(let error):
+    case .unknown:
         switch rhs {
-        case .failure(let error2):
-            return error == error2
-        default:
-            return false
-        }
-    case .error(let error):
-        switch rhs {
-        case .error(let error2):
-            return String(describing: error) == String(describing: error2)
+        case .unknown:
+            return true
         default:
             return false
         }
