@@ -8,14 +8,20 @@
 
 import Foundation
 
+/// The `JSONWriter` class encapsulates the details of writing JSON data.
 public class JSONWriter: NSObject {
     fileprivate let outputStream: OutputStream
     fileprivate var currentError: JSONWriterError?
 
+    /// The current error.
     public var error: JSONWriterError? {
         return currentError
     }
 
+    /// Initializes an output stream.
+    ///
+    /// - Parameter json: The JSON content to append.
+    /// - Returns: An initialized output stream for writing to a specified URL.
     public init?(outputURL: URL) {
         guard let outputStream = OutputStream(url: outputURL, append: true) else {
             return nil
@@ -29,6 +35,11 @@ public class JSONWriter: NSObject {
         finishWriting()
     }
 
+    /// Appends JSON content.
+    ///
+    /// - Parameter json: The JSON content to append.
+    /// - Returns: The number of bytes that were appended. In case the return value
+    ///             is zero, the `error` property will contain the current error.
     @discardableResult
     public func append(json: Any) -> Int {
         guard JSONSerialization.isValidJSONObject(json) else {

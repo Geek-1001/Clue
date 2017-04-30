@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// An error that can be returned from a `JSONWriter` instance. 
+///
+/// - unknown: Unknown error.
+/// - invalidObject: Invalid JSON content.
+/// - failure: internal failure.
 public enum JSONWriterError: Error {
     case unknown
     case invalidObject(Any)
