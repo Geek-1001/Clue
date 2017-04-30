@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
-		AF5314631EB018E8005A5146 /* JSONWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* JSONWriterError.swift */; };
-		AF5314671EB01931005A5146 /* JSONWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* JSONWriterErrorTests.swift */; };
+		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
+		AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */; };
 		AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314661EB01931005A5146 /* JSONWriterTests.swift */; };
 		AF79EA561EAFCD42002231B9 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		AF79EA571EAFCD42002231B9 /* Clue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -202,8 +202,8 @@
 
 /* Begin PBXFileReference section */
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
-		AF5314601EB018E8005A5146 /* JSONWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterError.swift; sourceTree = "<group>"; };
-		AF5314651EB01931005A5146 /* JSONWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterErrorTests.swift; sourceTree = "<group>"; };
+		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
+		AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterErrorTests.swift; sourceTree = "<group>"; };
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
 		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
@@ -676,7 +676,7 @@
 				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
 				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
 				AF53145F1EB018E8005A5146 /* JSONWriter.swift */,
-				AF5314601EB018E8005A5146 /* JSONWriterError.swift */,
+				AF5314601EB018E8005A5146 /* DataWriterError.swift */,
 			);
 			path = Writers;
 			sourceTree = "<group>";
@@ -697,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */,
-				AF5314651EB01931005A5146 /* JSONWriterErrorTests.swift */,
+				AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */,
 				AF5314661EB01931005A5146 /* JSONWriterTests.swift */,
 			);
 			path = Writers;
@@ -1044,7 +1044,7 @@
 				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
 				AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
-				AF5314631EB018E8005A5146 /* JSONWriterError.swift in Sources */,
+				AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */,
 				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
 				E2CDA6981D3905D60079F784 /* aeskey.c in Sources */,
 				E2CDA6B31D3905D60079F784 /* zip.c in Sources */,
@@ -1094,7 +1094,7 @@
 				E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */,
 				E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */,
 				E241F4651E7B37770075EF2C /* CLUTouchUserInteractionAdditions.m in Sources */,
-				AF5314671EB01931005A5146 /* JSONWriterErrorTests.swift in Sources */,
+				AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */,
 				E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
 				E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */,
