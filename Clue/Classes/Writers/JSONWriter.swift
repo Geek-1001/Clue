@@ -8,33 +8,8 @@
 
 import Foundation
 
-/// The `JSONWriter` class encapsulates the details of writing JSON data.
-public class JSONWriter: NSObject {
-    fileprivate let outputStream: OutputStream
-    fileprivate var currentError: JSONWriterError?
-
-    /// The current error.
-    public var error: JSONWriterError? {
-        return currentError
-    }
-
-    /// Initializes an output stream.
-    ///
-    /// - Parameter json: The JSON content to append.
-    /// - Returns: An initialized output stream for writing to a specified URL.
-    public init?(outputURL: URL) {
-        guard let outputStream = OutputStream(url: outputURL, append: true) else {
-            return nil
-        }
-        self.outputStream = outputStream
-        super.init()
-        self.outputStream.delegate = self
-    }
-
-    deinit {
-        finishWriting()
-    }
-
+/// The `JSONWriter` class encapsulates the details of writing JSON data to a stream.
+public class JSONWriter: DataWriter {
     /// Appends JSON content.
     ///
     /// - Parameter json: The JSON content to append.
@@ -43,7 +18,7 @@ public class JSONWriter: NSObject {
     @discardableResult
     public func append(json: Any) -> Int {
         guard JSONSerialization.isValidJSONObject(json) else {
-            currentError = JSONWriterError.invalidObject(json)
+            currentError = DataWriterError.invalidJSON(json)
             handleStreamError()
             return 0
         }
@@ -54,9 +29,9 @@ public class JSONWriter: NSObject {
         let bytes = JSONSerialization.writeJSONObject(json, to: outputStream, options: [], error: &error)
         guard bytes > 0 else {
             if let error = error {
-                currentError = JSONWriterError.failure(error)
+                currentError = DataWriterError.failure(error)
             } else {
-                currentError = JSONWriterError.unknown
+                currentError = DataWriterError.unknown
             }
             handleStreamError()
             return bytes
@@ -64,56 +39,17 @@ public class JSONWriter: NSObject {
 
         let lineSeparator = "\n"
         guard let stringData = lineSeparator.data(using: .utf8) else {
-            currentError = JSONWriterError.invalidObject(lineSeparator)
+            currentError = DataWriterError.invalidJSON(lineSeparator)
             handleStreamError()
             return bytes
         }
-        let lineSeparatorBytes = stringData.withUnsafeBytes { outputStream.write($0, maxLength: stringData.count) }
+        let lineSeparatorBytes = append(data: stringData)
         if lineSeparatorBytes != 1 {
-            currentError = JSONWriterError.unknown
+            currentError = DataWriterError.unknown
             handleStreamError()
             return bytes
         }
 
         return bytes + lineSeparatorBytes
-    }
-}
-
-// MARK: - JSONWriter + StreamDelegate
-extension JSONWriter: StreamDelegate {
-    public func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        case Stream.Event.errorOccurred:
-            handleStreamError()
-        default:
-            return
-        }
-    }
-}
-
-// MARK: - JSONWriter + CLUWritable
-extension JSONWriter: CLUWritable {
-    public func isReadyForWriting() -> Bool {
-        return outputStream.streamStatus == .open
-    }
-
-    public func startWriting() {
-        if outputStream.streamStatus != .open {
-            outputStream.open()
-        }
-    }
-
-    public func finishWriting() {
-        if outputStream.streamStatus != .closed {
-            outputStream.close()
-        }
-    }
-}
-
-// MARK: - Private Methods
-fileprivate extension JSONWriter {
-    func handleStreamError() {
-        let error = outputStream.streamError ?? currentError
-        print("Stream error: \(String(describing: error?.localizedDescription))")
     }
 }

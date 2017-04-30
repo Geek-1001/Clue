@@ -66,6 +66,6 @@ class JSONWriterTests: XCTestCase {
         let json = "Invalid JSON Content"
         let bytesCount = writer.append(json: json)
         XCTAssertEqual(bytesCount, 0)
-        XCTAssertEqual(writer.error, JSONWriterError.invalidObject(json))
+        XCTAssertEqual(writer.error, DataWriterError.invalidJSON(json))
     }
 }
