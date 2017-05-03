@@ -1,5 +1,5 @@
 //
-//  JSONWriterErrorTests.swift
+//  DataWriterErrorTests.swift
 //  Clue
 //
 //  Created by Andrea Prearo on 4/25/17.
@@ -11,15 +11,15 @@ import Foundation
 import XCTest
 @testable import Clue
 
-class JSONWriterErrorTests: XCTestCase {
+class DataWriterErrorTests: XCTestCase {
     func testSameInvalidObject() {
         let json = "This is not a valid JSON"
-        XCTAssertTrue(JSONWriterError.invalidObject(json) == JSONWriterError.invalidObject("This is not a valid JSON"))
+        XCTAssertTrue(DataWriterError.invalidJSON(json) == DataWriterError.invalidJSON("This is not a valid JSON"))
     }
 
     func testDifferentInvalidObject() {
         let json = "This is not a valid JSON"
-        XCTAssertFalse(JSONWriterError.invalidObject(json) == JSONWriterError.invalidObject("This is a different invalid JSON"))
+        XCTAssertFalse(DataWriterError.invalidJSON(json) == DataWriterError.invalidJSON("This is a different invalid JSON"))
     }
 
     func testSameFailure() {
@@ -27,7 +27,7 @@ class JSONWriterErrorTests: XCTestCase {
         let code = 123
         let error1 = NSError(domain: domain, code: code, userInfo: nil)
         let error2 = NSError(domain: "com.testdomain", code: 123, userInfo: nil)
-        XCTAssertTrue(JSONWriterError.failure(error1) == JSONWriterError.failure(error2))
+        XCTAssertTrue(DataWriterError.failure(error1) == DataWriterError.failure(error2))
     }
 
     func testDifferentFailureDomain() {
@@ -35,7 +35,7 @@ class JSONWriterErrorTests: XCTestCase {
         let code = 123
         let error1 = NSError(domain: domain, code: code, userInfo: nil)
         let error2 = NSError(domain: "com.newtestdomain", code: 123, userInfo: nil)
-        XCTAssertFalse(JSONWriterError.failure(error1) == JSONWriterError.failure(error2))
+        XCTAssertFalse(DataWriterError.failure(error1) == DataWriterError.failure(error2))
     }
 
     func testDifferentFailureCode() {
@@ -43,7 +43,7 @@ class JSONWriterErrorTests: XCTestCase {
         let code = 123
         let error1 = NSError(domain: domain, code: code, userInfo: nil)
         let error2 = NSError(domain: "com.testdomain", code: 1234, userInfo: nil)
-        XCTAssertFalse(JSONWriterError.failure(error1) == JSONWriterError.failure(error2))
+        XCTAssertFalse(DataWriterError.failure(error1) == DataWriterError.failure(error2))
     }
 
     func testDifferentFailureUserInfo() {
@@ -51,6 +51,6 @@ class JSONWriterErrorTests: XCTestCase {
         let code = 123
         let error1 = NSError(domain: domain, code: code, userInfo: nil)
         let error2 = NSError(domain: "com.testdomain", code: 123, userInfo: ["key": "some uesr info"])
-        XCTAssertFalse(JSONWriterError.failure(error1) == JSONWriterError.failure(error2))
+        XCTAssertFalse(DataWriterError.failure(error1) == DataWriterError.failure(error2))
     }
 }
