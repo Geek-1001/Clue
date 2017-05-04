@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15549A1EB568F1005D1046 /* DataWriter.swift */; };
+		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
 		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
 		AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */; };
@@ -204,6 +205,7 @@
 
 /* Begin PBXFileReference section */
 		AF15549A1EB568F1005D1046 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
+		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
 		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
 		AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterErrorTests.swift; sourceTree = "<group>"; };
@@ -393,6 +395,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF4FB5D21EBACC8B00FB9F0B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AF4FB5D31EBACCB500FB9F0B /* Result.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		E20F23451D31944400654690 /* FileHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +547,7 @@
 				E258F3F81CE3CD6A001E9F92 /* Extensions */,
 				E272DDBD1CD5300000F1FECA /* Views */,
 				E272DDBB1CD52FE300F1FECA /* Models */,
+				AF4FB5D21EBACC8B00FB9F0B /* Utils */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1044,6 +1055,7 @@
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
 				E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */,
 				E2CDA6A41D3905D60079F784 /* prng.c in Sources */,
+				AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */,
 				E2CDA6B11D3905D60079F784 /* unzip.c in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
 				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
