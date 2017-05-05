@@ -13,14 +13,15 @@ public class JSONWriter: DataWriter {
     /// Appends JSON content.
     ///
     /// - Parameter json: The JSON content to append.
-    /// - Returns: The number of bytes that were appended. In case the return value
-    ///             is zero, the `error` property will contain the current error.
+    /// - Returns: The result of writing to the stream. This will either be the
+    ///             number of bytes that were written, or an error. In case the return
+    ///             value is zero, the `error` property will contain the current error.
     @discardableResult
-    public func append(json: Any) -> Int {
+    public func append(json: Any) -> Result<Int, DataWriterError> {
         guard JSONSerialization.isValidJSONObject(json) else {
-            currentError = DataWriterError.invalidJSON(json)
-            handleStreamError()
-            return 0
+            let error = DataWriterError.invalidJSON(json)
+            setError(error)
+            return .failure(error)
         }
         var error: NSError?
         if !isReadyForWriting() {
@@ -34,22 +35,22 @@ public class JSONWriter: DataWriter {
                 currentError = DataWriterError.unknown
             }
             handleStreamError()
-            return bytes
+            return .failure(validError)
         }
 
         let lineSeparator = "\n"
         guard let stringData = lineSeparator.data(using: .utf8) else {
-            currentError = DataWriterError.invalidJSON(lineSeparator)
-            handleStreamError()
-            return bytes
+            let error = DataWriterError.invalidJSON(lineSeparator)
+            setError(error)
+            return .failure(error)
         }
-        let lineSeparatorBytes = append(data: stringData)
-        if lineSeparatorBytes != 1 {
-            currentError = DataWriterError.unknown
-            handleStreamError()
-            return bytes
+        let result = append(data: stringData)
+        if let resultBytes = result.value {
+            return .success(resultBytes)
+        } else if let resultError = result.error {
+            setError(resultError)
+            return .failure(resultError)
         }
-
-        return bytes + lineSeparatorBytes
+        return .failure(.unknown)
     }
 }

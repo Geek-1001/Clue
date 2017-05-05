@@ -24,6 +24,11 @@ public class DataWriter: NSObject {
         return DataWriterError.error(streamError)
     }
 
+    /// Returns the current error or `DataWriterError.unknown`.
+    var validError: DataWriterError {
+        return currentError ?? DataWriterError.unknown
+    }
+    
     /// Initializes an output stream.
     ///
     /// - Parameter outputURL: The URL for the output stream.
@@ -44,20 +49,21 @@ public class DataWriter: NSObject {
     /// Appends data to the stream.
     ///
     /// - Parameter data: The data to be written.
-    /// - Returns: The number of bytes that were written. In case the return value
-    ///             is zero, the `error` property will contain the current error.
+    /// - Returns: The result of writing to the stream. This will either be the
+    ///             number of bytes that were written, or an error. In case the return
+    ///             value is zero, the `error` property will contain the current error.
     @discardableResult
-    public func append(data: Data) -> Int {
+    public func append(data: Data) -> Result<Int, DataWriterError> {
         if !isReadyForWriting() {
             startWriting()
         }
         let bytes = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
         guard bytes > 0 else {
             handleStreamError()
-            return bytes
+            return .failure(validError)
         }
 
-        return bytes
+        return .success(bytes)
     }
 }
 
@@ -94,6 +100,11 @@ extension DataWriter: CLUWritable {
 
 // MARK: - Internal Methods
 extension DataWriter {
+    func setError(_ error: DataWriterError) {
+        currentError = error
+        handleStreamError()
+    }
+
     func handleStreamError() {
         let error = outputStream.streamError ?? currentError
         print("Stream error: \(String(describing: error?.localizedDescription))")
