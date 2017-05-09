@@ -14,6 +14,7 @@
 		AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */; };
 		AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314661EB01931005A5146 /* JSONWriterTests.swift */; };
 		AF67568A1EB674380057CA08 /* DataWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6756891EB674380057CA08 /* DataWriterTests.swift */; };
+		AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */; };
 		AF79EA561EAFCD42002231B9 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		AF79EA571EAFCD42002231B9 /* Clue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
@@ -211,6 +212,7 @@
 		AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterErrorTests.swift; sourceTree = "<group>"; };
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		AF6756891EB674380057CA08 /* DataWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterTests.swift; sourceTree = "<group>"; };
+		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
 		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
 		E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDeviceInfoModule.m; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */,
 				E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */,
 				E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */,
+				AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1095,6 +1098,7 @@
 				E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
+				AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */,
 				E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */,
 				E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */,
 			);
