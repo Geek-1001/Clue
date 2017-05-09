@@ -206,12 +206,12 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (NSMutableArray *)configureRecordableModules {
-    CLUVideoModule *videoModul = [self configureVideoModule];
+    CLUVideoModule *videoModule = [self configureVideoModule];
     ViewStructureModule *viewStructureModule = [self configureViewStructureModule];
     UserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
     NetworkModule *networkModule = [self configureNetworkModule];
     
-    NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:videoModul,
+    NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:videoModule,
                                     viewStructureModule,
                                     userInteractionModule,
                                     networkModule, nil];

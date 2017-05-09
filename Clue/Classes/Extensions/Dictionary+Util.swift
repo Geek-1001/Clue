@@ -2,7 +2,7 @@
 //  Dictionary+Util.swift
 //  Clue
 //
-//  Created by Prearo, Andrea on 5/8/17.
+//  Created by Andrea Prearo on 5/8/17.
 //  Copyright © 2017 Ahmed Sulaiman. All rights reserved.
 //
 
