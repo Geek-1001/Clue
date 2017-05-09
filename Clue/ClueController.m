@@ -12,7 +12,6 @@
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
 #import "CLUReportFileManager.h"
-#import "CLUExceptionInfoModule.h"
 #import "CLUMailHelper.h"
 #import "CLUMailDelegate.h"
 #import "CLURecordIndicatorViewManager.h"
@@ -96,8 +95,7 @@ void didReceiveUncaughtException(NSException *exception) {
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_exception.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUExceptionInfoModule *exceptionModule = [[CLUExceptionInfoModule alloc] initWithWriter:dataWriter];
-    [exceptionModule setException:exception];
+    ExceptionInfoModule *exceptionModule = [[ExceptionInfoModule alloc] initWithWriter:dataWriter exception:exception];
     [exceptionModule recordInfoData];
     
     dispatch_sync(_waitVideoRenderingQueue, ^{
