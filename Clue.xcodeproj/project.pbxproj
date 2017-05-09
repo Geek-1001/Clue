@@ -22,6 +22,7 @@
 		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
 		E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */; };
 		E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */; };
+		AFBD5DB41EC09C0D00858442 /* UserInteractionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */; };
 		AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */; };
 		E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23461D31947200654690 /* CLUReportFileManager.h */; };
 		E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23471D31947200654690 /* CLUReportFileManager.m */; };
@@ -72,8 +73,6 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
-		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
-		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
 		E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */; };
 		E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
@@ -212,6 +211,7 @@
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		AF6756891EB674380057CA08 /* DataWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterTests.swift; sourceTree = "<group>"; };
 		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
+		AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionModule.swift; sourceTree = "<group>"; };
 		AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModule.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
 		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
@@ -272,8 +272,6 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUUserInteractionModule.h; sourceTree = "<group>"; };
-		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUserInteractionModule.m; sourceTree = "<group>"; };
 		E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLULabelRecordableAdditions.m; sourceTree = "<group>"; };
 		E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUImageViewRecordableAdditions.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
@@ -653,14 +651,13 @@
 			children = (
 				E2A30C881CED03F700A48C61 /* CLUVideoModule.h */,
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
-				E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */,
-				E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */,
 				E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */,
 				E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */,
 				E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */,
 				E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */,
 				AF2B52631EBF9CC30026594F /* NetworkModule.swift */,
 				AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */,
+				AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */,
 				AF2B52611EBF97570026594F /* ViewStructureModule.swift */,
 			);
 			path = Modules;
@@ -1053,6 +1050,7 @@
 				E2CDA6B11D3905D60079F784 /* unzip.c in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
 				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
+				AFBD5DB41EC09C0D00858442 /* UserInteractionModule.swift in Sources */,
 				AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
 				AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */,
@@ -1064,7 +1062,6 @@
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
 				AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
-				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
 				E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */,
 				E2CDA6A61D3905D60079F784 /* pwd2key.c in Sources */,
 				E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */,

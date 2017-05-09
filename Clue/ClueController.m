@@ -11,7 +11,6 @@
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
-#import "CLUUserInteractionModule.h"
 #import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
 #import "CLUExceptionInfoModule.h"
@@ -211,8 +210,8 @@ void didReceiveUncaughtException(NSException *exception) {
 
 - (NSMutableArray *)configureRecordableModules {
     CLUVideoModule *videoModul = [self configureVideoModule];
-    CLUUserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
     ViewStructureModule *viewStructureModule = [self configureViewStructureModule];
+    UserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
     NetworkModule *networkModule = [self configureNetworkModule];
     
     NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:videoModul,
@@ -248,11 +247,11 @@ void didReceiveUncaughtException(NSException *exception) {
     return viewStructureModule;
 }
 
-- (CLUUserInteractionModule *)configureUserInteractionModule {
+- (UserInteractionModule *)configureUserInteractionModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_interaction.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
+    UserInteractionModule *userInteractionModule = [[UserInteractionModule alloc] initWithWriter:dataWriter];
     return userInteractionModule;
 }
 
