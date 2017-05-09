@@ -61,7 +61,6 @@
 		E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */; };
 		E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */; };
 		E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */; };
-		E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; };
 		E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */; };
 		E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCF1EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m */; };
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1030,7 +1029,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
-				E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Sources */,
 				E2CDA6971D3905D60079F784 /* aescrypt.c in Sources */,
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
 				E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */,
