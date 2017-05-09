@@ -21,27 +21,27 @@
  @param response Actual `NSHTTPURLResponse` response from redirected network request
  @param request New `NSURLRequest` request (redirect from old request to new one)
  */
-- (void)networkRequestDidRedirectWithResponse:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request;
+- (void)networkRequestDidRedirectWithResponse:(nonnull NSHTTPURLResponse *)response newRequest:(nonnull NSURLRequest *)request;
 
 /**
  Tells current delegate object that some network request did complete with specific `NSError` error
  
  @param error `NSError` error object which should explain why network request failed
  */
-- (void)networkRequestDidCompleteWithError:(NSError *)error;
+- (void)networkRequestDidCompleteWithError:(nullable NSError *)error;
 
 /**
  Tells current delegate object that network request did receive `NSURLResponse` response
 
  @param response `NSURLResponse` response for some network request sent earlier
  */
-- (void)networkRequestDidReceiveResponse:(NSURLResponse *)response;
+- (void)networkRequestDidReceiveResponse:(nonnull NSURLResponse *)response;
 
 /**
  Tells current delegate object that network request did receive `NSData` data
 
  @param data `NSData` data for some network request sent earlier
  */
-- (void)networkRequestDidReceiveData:(NSData *)data;
+- (void)networkRequestDidReceiveData:(nonnull NSData *)data;
 
 @end

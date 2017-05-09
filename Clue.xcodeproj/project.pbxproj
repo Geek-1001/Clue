@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15549A1EB568F1005D1046 /* DataWriter.swift */; };
 		AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52611EBF97570026594F /* ViewStructureModule.swift */; };
+		AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52631EBF9CC30026594F /* NetworkModule.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
 		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
@@ -37,8 +38,6 @@
 		E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */; };
 		E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA901CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h */; };
 		E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA911CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m */; };
-		E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891351D1BC90600D688CD /* CLUNetworkModule.h */; };
-		E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E23891361D1BC90600D688CD /* CLUNetworkModule.m */; };
 		E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891391D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h */; };
 		E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */; };
 		E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */; };
@@ -205,6 +204,7 @@
 /* Begin PBXFileReference section */
 		AF15549A1EB568F1005D1046 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		AF2B52611EBF97570026594F /* ViewStructureModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStructureModule.swift; sourceTree = "<group>"; };
+		AF2B52631EBF9CC30026594F /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
 		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
@@ -231,8 +231,6 @@
 		E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
 		E232BA901CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E232BA911CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
-		E23891351D1BC90600D688CD /* CLUNetworkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUNetworkModule.h; sourceTree = "<group>"; };
-		E23891361D1BC90600D688CD /* CLUNetworkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUNetworkModule.m; sourceTree = "<group>"; };
 		E23891391D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
 		E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+CLUNetworkAdditions.m"; sourceTree = "<group>"; };
 		E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
@@ -657,12 +655,11 @@
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
 				E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */,
 				E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */,
-				E23891351D1BC90600D688CD /* CLUNetworkModule.h */,
-				E23891361D1BC90600D688CD /* CLUNetworkModule.m */,
 				E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */,
 				E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */,
 				E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */,
 				E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */,
+				AF2B52631EBF9CC30026594F /* NetworkModule.swift */,
 				AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */,
 				AF2B52611EBF97570026594F /* ViewStructureModule.swift */,
 			);
@@ -1058,10 +1055,10 @@
 				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
 				AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
+				AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */,
 				AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */,
 				E2CDA6981D3905D60079F784 /* aeskey.c in Sources */,
 				E2CDA6B31D3905D60079F784 /* zip.c in Sources */,
-				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
 				AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */,
 				E2CDA69E1D3905D60079F784 /* entropy.c in Sources */,
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
