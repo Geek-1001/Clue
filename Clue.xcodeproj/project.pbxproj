@@ -16,12 +16,11 @@
 		AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */; };
 		AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314661EB01931005A5146 /* JSONWriterTests.swift */; };
 		AF67568A1EB674380057CA08 /* DataWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6756891EB674380057CA08 /* DataWriterTests.swift */; };
+		AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */; };
 		AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */; };
 		AF79EA561EAFCD42002231B9 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		AF79EA571EAFCD42002231B9 /* Clue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
-		E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */; };
-		E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */; };
 		AFBD5DB41EC09C0D00858442 /* UserInteractionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */; };
 		AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */; };
 		E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23461D31947200654690 /* CLUReportFileManager.h */; };
@@ -210,12 +209,11 @@
 		AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterErrorTests.swift; sourceTree = "<group>"; };
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		AF6756891EB674380057CA08 /* DataWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterTests.swift; sourceTree = "<group>"; };
+		AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoModule.swift; sourceTree = "<group>"; };
 		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
 		AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionModule.swift; sourceTree = "<group>"; };
 		AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModule.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
-		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
-		E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDeviceInfoModule.m; sourceTree = "<group>"; };
 		E20F23461D31947200654690 /* CLUReportFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUReportFileManager.h; sourceTree = "<group>"; };
 		E20F23471D31947200654690 /* CLUReportFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUReportFileManager.m; sourceTree = "<group>"; };
 		E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+CLUExceptionAdditions.h"; sourceTree = "<group>"; };
@@ -651,10 +649,9 @@
 			children = (
 				E2A30C881CED03F700A48C61 /* CLUVideoModule.h */,
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
-				E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */,
-				E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */,
 				E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */,
 				E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */,
+				AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */,
 				AF2B52631EBF9CC30026594F /* NetworkModule.swift */,
 				AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */,
 				AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */,
@@ -1070,6 +1067,7 @@
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
 				E2CDA69A1D3905D60079F784 /* aestab.c in Sources */,
 				E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */,
+				AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */,
 				E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */,
 				E2CDA6A01D3905D60079F784 /* fileenc.c in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
@@ -1083,7 +1081,6 @@
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
 				E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
-				E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
 				AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */,

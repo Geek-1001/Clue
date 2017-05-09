@@ -11,7 +11,6 @@
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
-#import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
 #import "CLUExceptionInfoModule.h"
 #import "CLUMailHelper.h"
@@ -222,7 +221,7 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (NSMutableArray *)configureInfoModules {
-    CLUDeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
+    DeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
     NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:deviceModule, nil];
     return modulesArray;
 }
@@ -265,11 +264,11 @@ void didReceiveUncaughtException(NSException *exception) {
 
 #pragma mark - Configure Info modules
 
-- (CLUDeviceInfoModule *)configureDeviceInfoModule {
+- (DeviceInfoModule *)configureDeviceInfoModule {
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_device.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUDeviceInfoModule *deviceModule = [[CLUDeviceInfoModule alloc] initWithWriter:dataWriter];
+    DeviceInfoModule *deviceModule = [[DeviceInfoModule alloc] initWithWriter:dataWriter];
     return deviceModule;
 }
 
