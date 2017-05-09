@@ -45,8 +45,8 @@ public class JSONWriter: DataWriter {
             return .failure(error)
         }
         let result = append(data: stringData)
-        if let resultBytes = result.value {
-            return .success(resultBytes)
+        if let lineSeparatorBytes = result.value {
+            return .success(bytes + lineSeparatorBytes)
         } else if let resultError = result.error {
             setError(resultError)
             return .failure(resultError)

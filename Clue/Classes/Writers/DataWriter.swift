@@ -58,7 +58,11 @@ public class DataWriter: NSObject {
             startWriting()
         }
         let bytes = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
-        guard bytes > 0 else {
+        if let error = error {
+            handleStreamError()
+            return .failure(error)
+        }
+        guard bytes > 0 || data.count == 0 else {
             handleStreamError()
             return .failure(validError)
         }

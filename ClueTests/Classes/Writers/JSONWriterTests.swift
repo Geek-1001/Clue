@@ -40,9 +40,9 @@ class JSONWriterTests: XCTestCase {
             return
         }
         let json = ["key1": "Test Data String Content"]
-        let bytesCount = writer.append(json: json)
+        let result = writer.append(json: json)
         let expectedBytesCount = try? JSONSerialization.data(withJSONObject: json, options: []).count + 1
-        XCTAssertEqual(bytesCount, expectedBytesCount)
+        XCTAssertEqual(result.value, expectedBytesCount)
     }
 
     func testAppendValidArray() {
@@ -53,9 +53,9 @@ class JSONWriterTests: XCTestCase {
         let json = (1..<11).map {
             return ["key\($0)": "Test Data String Content"]
         }
-        let bytesCount = writer.append(json: json)
+        let result = writer.append(json: json)
         let expectedBytesCount = try? JSONSerialization.data(withJSONObject: json, options: []).count + 1
-        XCTAssertEqual(bytesCount, expectedBytesCount)
+        XCTAssertEqual(result.value, expectedBytesCount)
     }
 
     func testAppendInvalidObject() {
@@ -64,8 +64,8 @@ class JSONWriterTests: XCTestCase {
             return
         }
         let json = "Invalid JSON Content"
-        let bytesCount = writer.append(json: json)
-        XCTAssertEqual(bytesCount, 0)
+        let result = writer.append(json: json)
+        XCTAssertNil(result.value)
         XCTAssertEqual(writer.error, DataWriterError.invalidJSON(json))
     }
 }
