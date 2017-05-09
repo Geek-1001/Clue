@@ -10,6 +10,7 @@
 		AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15549A1EB568F1005D1046 /* DataWriter.swift */; };
 		AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52611EBF97570026594F /* ViewStructureModule.swift */; };
 		AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52631EBF9CC30026594F /* NetworkModule.swift */; };
+		AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
 		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
@@ -53,7 +54,6 @@
 		E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */; };
 		E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */; };
 		E241F46B1E7BDE000075EF2C /* CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */; };
-		E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */; };
 		E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */; };
@@ -203,6 +203,7 @@
 		AF15549A1EB568F1005D1046 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		AF2B52611EBF97570026594F /* ViewStructureModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStructureModule.swift; sourceTree = "<group>"; };
 		AF2B52631EBF9CC30026594F /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
+		AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModuleTests.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
 		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
@@ -243,7 +244,6 @@
 		E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUErrorNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUCommunicationNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUExceptionAdditions.m; sourceTree = "<group>"; };
-		E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModuleTests.m; sourceTree = "<group>"; };
 		E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInteractionObserverDelegate.h; sourceTree = "<group>"; };
 		E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUGeneralGestureRecognizer.h; sourceTree = "<group>"; };
 		E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUGeneralGestureRecognizer.m; sourceTree = "<group>"; };
@@ -421,7 +421,7 @@
 		E241F46C1E7BE0EC0075EF2C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */,
+				AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1092,6 +1092,7 @@
 				E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */,
 				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
 				E241F4631E7B333A0075EF2C /* CLUTextFieldViewRecordableAdditions.m in Sources */,
+				AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */,
 				E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */,
 				E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */,
 				E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */,
@@ -1099,7 +1100,6 @@
 				AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */,
 				E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
-				E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */,
 				AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */,
