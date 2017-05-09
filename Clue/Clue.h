@@ -18,3 +18,18 @@ FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 #import <Clue/CLUOptions.h>
 
 #import <Clue/CLUWritable.h>
+#import "CLURecordableModule.h"
+#import "CLURecordIndicatorViewManager.h"
+#import "UIView+CLUViewRecordableAdditions.h"
+#import "CLUNetworkObserverDelegate.h"
+#import "CLUURLProtocol.h"
+#import "NSError+CLUNetworkAdditions.h"
+#import "NSURLResponse+CLUNetworkAdditions.h"
+#import "NSHTTPURLResponse+CLUNetworkAdditions.h"
+#import "NSURLRequest+CLUNetworkAdditions.h"
+#import "NSMutableDictionary+CLUUtilsAdditions.h"
+#import "CLUGeneralGestureRecognizer.h"
+#import "CLUInteractionObserverDelegate.h"
+#import "CLUTouch.h"
+#import "CLUInfoModule.h"
+#import "NSException+CLUExceptionAdditions.h"

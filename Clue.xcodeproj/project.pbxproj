@@ -20,6 +20,7 @@
 		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
 		E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */; };
 		E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */; };
+		AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */; };
 		E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23461D31947200654690 /* CLUReportFileManager.h */; };
 		E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23471D31947200654690 /* CLUReportFileManager.m */; };
 		E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */; };
@@ -71,8 +72,6 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
-		E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DB1D03505F0083E951 /* CLUObserveModule.h */; };
-		E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7DC1D03505F0083E951 /* CLUObserveModule.m */; };
 		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
 		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
 		E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */; };
@@ -213,6 +212,7 @@
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		AF6756891EB674380057CA08 /* DataWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterTests.swift; sourceTree = "<group>"; };
 		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
+		AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModule.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
 		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
 		E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDeviceInfoModule.m; sourceTree = "<group>"; };
@@ -274,8 +274,6 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E278B7DB1D03505F0083E951 /* CLUObserveModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUObserveModule.h; sourceTree = "<group>"; };
-		E278B7DC1D03505F0083E951 /* CLUObserveModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModule.m; sourceTree = "<group>"; };
 		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUUserInteractionModule.h; sourceTree = "<group>"; };
 		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUserInteractionModule.m; sourceTree = "<group>"; };
 		E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLULabelRecordableAdditions.m; sourceTree = "<group>"; };
@@ -661,8 +659,6 @@
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
 				E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */,
 				E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */,
-				E278B7DB1D03505F0083E951 /* CLUObserveModule.h */,
-				E278B7DC1D03505F0083E951 /* CLUObserveModule.m */,
 				E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */,
 				E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */,
 				E23891351D1BC90600D688CD /* CLUNetworkModule.h */,
@@ -671,6 +667,7 @@
 				E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */,
 				E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */,
 				E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */,
+				AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1061,7 +1058,6 @@
 				AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */,
 				E2CDA6B11D3905D60079F784 /* unzip.c in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
-				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
 				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
 				AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
@@ -1070,6 +1066,7 @@
 				E2CDA6981D3905D60079F784 /* aeskey.c in Sources */,
 				E2CDA6B31D3905D60079F784 /* zip.c in Sources */,
 				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
+				AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */,
 				E2CDA69E1D3905D60079F784 /* entropy.c in Sources */,
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
