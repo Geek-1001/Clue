@@ -11,12 +11,7 @@
 
 #import "CLUVideoWriter.h"
 #import "CLUVideoModule.h"
-#import "CLUViewStructureModule.h"
-#import "CLUUserInteractionModule.h"
-#import "CLUNetworkModule.h"
-#import "CLUDeviceInfoModule.h"
 #import "CLUReportFileManager.h"
-#import "CLUExceptionInfoModule.h"
 #import "CLUMailHelper.h"
 #import "CLUMailDelegate.h"
 #import "CLURecordIndicatorViewManager.h"
@@ -100,8 +95,7 @@ void didReceiveUncaughtException(NSException *exception) {
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_exception.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUExceptionInfoModule *exceptionModule = [[CLUExceptionInfoModule alloc] initWithWriter:dataWriter];
-    [exceptionModule setException:exception];
+    ExceptionInfoModule *exceptionModule = [[ExceptionInfoModule alloc] initWithWriter:dataWriter exception:exception];
     [exceptionModule recordInfoData];
     
     dispatch_sync(_waitVideoRenderingQueue, ^{
@@ -212,12 +206,12 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (NSMutableArray *)configureRecordableModules {
-    CLUVideoModule *videoModul = [self configureVideoModule];
-    CLUViewStructureModule *viewStructureModule = [self configureViewStructureModule];
-    CLUUserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
-    CLUNetworkModule *networkModule = [self configureNetworkModule];
+    CLUVideoModule *videoModule = [self configureVideoModule];
+    ViewStructureModule *viewStructureModule = [self configureViewStructureModule];
+    UserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
+    NetworkModule *networkModule = [self configureNetworkModule];
     
-    NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:videoModul,
+    NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:videoModule,
                                     viewStructureModule,
                                     userInteractionModule,
                                     networkModule, nil];
@@ -225,7 +219,7 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (NSMutableArray *)configureInfoModules {
-    CLUDeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
+    DeviceInfoModule *deviceModule = [self configureDeviceInfoModule];
     NSMutableArray *modulesArray = [[NSMutableArray alloc] initWithObjects:deviceModule, nil];
     return modulesArray;
 }
@@ -242,37 +236,37 @@ void didReceiveUncaughtException(NSException *exception) {
     return videoModule;
 }
 
-- (CLUViewStructureModule *)configureViewStructureModule {
+- (ViewStructureModule *)configureViewStructureModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_view.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUViewStructureModule *viewStructureModule = [[CLUViewStructureModule alloc] initWithWriter:dataWriter];
+    ViewStructureModule *viewStructureModule = [[ViewStructureModule alloc] initWithWriter:dataWriter];
     return viewStructureModule;
 }
 
-- (CLUUserInteractionModule *)configureUserInteractionModule {
+- (UserInteractionModule *)configureUserInteractionModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_interaction.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUUserInteractionModule *userInteractionModule = [[CLUUserInteractionModule alloc] initWithWriter:dataWriter];
+    UserInteractionModule *userInteractionModule = [[UserInteractionModule alloc] initWithWriter:dataWriter];
     return userInteractionModule;
 }
 
-- (CLUNetworkModule *)configureNetworkModule {
+- (NetworkModule *)configureNetworkModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_network.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUNetworkModule *networkModule = [[CLUNetworkModule alloc] initWithWriter:dataWriter];
+    NetworkModule *networkModule = [[NetworkModule alloc] initWithWriter:dataWriter];
     return networkModule;
 }
 
 #pragma mark - Configure Info modules
 
-- (CLUDeviceInfoModule *)configureDeviceInfoModule {
+- (DeviceInfoModule *)configureDeviceInfoModule {
     NSURL *infoModulesDirectory = [[CLUReportFileManager sharedManager] infoModulesDirectoryURL];
     NSURL *outputURL = [infoModulesDirectory URLByAppendingPathComponent:@"info_device.json"];
     JSONWriter *dataWriter = [[JSONWriter alloc] initWithOutputURL:outputURL];
-    CLUDeviceInfoModule *deviceModule = [[CLUDeviceInfoModule alloc] initWithWriter:dataWriter];
+    DeviceInfoModule *deviceModule = [[DeviceInfoModule alloc] initWithWriter:dataWriter];
     return deviceModule;
 }
 

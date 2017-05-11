@@ -21,20 +21,20 @@
 
  @param touches Array of `CLUTouch` touches object (which is just a proxy for `UITouch`)
  */
-- (void)touchesBegan:(NSArray<CLUTouch *> *)touches;
+- (void)touchesBegan:(nonnull NSArray<CLUTouch *> *)touches;
 
 /**
  Tells current delegate object that moved gesture occured. Called only once at the end of moved event.
 
  @param touches Array of `CLUTouch` touches object (which is just a proxy for `UITouch`)
  */
-- (void)touchesMoved:(NSArray<CLUTouch *> *)touches;
+- (void)touchesMoved:(nonnull NSArray<CLUTouch *> *)touches;
 
 /**
  Tells current delegate object that one or more fingers are raised
 
  @param touches Array of `CLUTouch` touches object (which is just a proxy for `UITouch`)
  */
-- (void)touchesEnded:(NSArray<CLUTouch *> *)touches;
+- (void)touchesEnded:(nonnull NSArray<CLUTouch *> *)touches;
 
 @end

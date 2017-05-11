@@ -8,56 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15549A1EB568F1005D1046 /* DataWriter.swift */; };
+		AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52611EBF97570026594F /* ViewStructureModule.swift */; };
+		AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52631EBF9CC30026594F /* NetworkModule.swift */; };
+		AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
 		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
 		AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */; };
 		AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314661EB01931005A5146 /* JSONWriterTests.swift */; };
 		AF67568A1EB674380057CA08 /* DataWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6756891EB674380057CA08 /* DataWriterTests.swift */; };
+		AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */; };
+		AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF121EC0C45400B8EA4D /* ExceptionInfoModule.swift */; };
+		AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */; };
 		AF79EA561EAFCD42002231B9 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		AF79EA571EAFCD42002231B9 /* Clue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; };
-		E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */; };
-		E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */; };
+		AFBD5DB21EC0947300858442 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFBD5DB41EC09C0D00858442 /* UserInteractionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */; };
+		AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */; };
+		E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F233F1D30F94700654690 /* CLUInfoModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E20F23461D31947200654690 /* CLUReportFileManager.h */; };
 		E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F23471D31947200654690 /* CLUReportFileManager.m */; };
-		E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */; };
+		E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */; };
 		E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D21CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h */; };
 		E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D31CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m */; };
 		E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E21840D61CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h */; };
 		E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E21840D71CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m */; };
-		E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = E22F60ED1D265DBE0062D6B8 /* CLUTouch.h */; };
+		E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = E22F60ED1D265DBE0062D6B8 /* CLUTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = E22F60EE1D265DBE0062D6B8 /* CLUTouch.m */; };
-		E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */; };
-		E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */; };
+		E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA891CF8214D00F5DB52 /* CLUViewRecordableProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA8C1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */; };
 		E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E232BA901CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h */; };
 		E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E232BA911CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m */; };
-		E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891351D1BC90600D688CD /* CLUNetworkModule.h */; };
-		E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E23891361D1BC90600D688CD /* CLUNetworkModule.m */; };
-		E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891391D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h */; };
+		E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891391D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */; };
-		E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */; };
+		E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E238913E1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m */; };
-		E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891411D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h */; };
+		E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891411D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E23891421D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m */; };
-		E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891451D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h */; };
+		E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E23891451D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E23891461D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m */; };
 		E241F4631E7B333A0075EF2C /* CLUTextFieldViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4621E7B333A0075EF2C /* CLUTextFieldViewRecordableAdditions.m */; };
 		E241F4651E7B37770075EF2C /* CLUTouchUserInteractionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4641E7B37770075EF2C /* CLUTouchUserInteractionAdditions.m */; };
 		E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */; };
 		E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */; };
 		E241F46B1E7BDE000075EF2C /* CLUExceptionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */; };
-		E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */; };
-		E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */; };
-		E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */; };
+		E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */; };
 		E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AEE001D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h */; };
 		E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AEE011D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m */; };
 		E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D6D1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m */; };
 		E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E2D701E74C1AF00804E13 /* CLUUIViewAdditionsTests.m */; };
-		E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; };
 		E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */; };
 		E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E6CCF1EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m */; };
 		E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E258F3FD1CE3D037001E9F92 /* CLUOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,10 +73,6 @@
 		E272DDAE1CD522F000F1FECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAC1CD522F000F1FECA /* Main.storyboard */; };
 		E272DDB01CD522F000F1FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E272DDAF1CD522F000F1FECA /* Assets.xcassets */; };
 		E272DDB31CD522F000F1FECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E272DDB11CD522F000F1FECA /* LaunchScreen.storyboard */; };
-		E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7DB1D03505F0083E951 /* CLUObserveModule.h */; };
-		E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7DC1D03505F0083E951 /* CLUObserveModule.m */; };
-		E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */; };
-		E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */; };
 		E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */; };
 		E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */; };
 		E28610121CEFB9C300FA9BAF /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */; };
@@ -84,16 +83,12 @@
 		E28CC08E1CEE214B00C9DFD9 /* CLUReportComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC08C1CEE214B00C9DFD9 /* CLUReportComposer.m */; };
 		E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */ = {isa = PBXBuildFile; fileRef = E28CC0931CEE619000C9DFD9 /* ClueController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC0941CEE619000C9DFD9 /* ClueController.m */; };
-		E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */; };
+		E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */; };
-		E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */; };
-		E29233D11D357DCA00DA88C2 /* CLUExceptionInfoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */; };
-		E29233D21D357DCA00DA88C2 /* CLUExceptionInfoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */; };
+		E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E29233D31D358B6300DA88C2 /* CLUMailHelper.h */; };
 		E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29233D41D358B6300DA88C2 /* CLUMailHelper.m */; };
-		E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */; };
-		E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */; };
-		E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */; };
+		E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C881CED03F700A48C61 /* CLUVideoModule.h */; };
 		E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C891CED03F700A48C61 /* CLUVideoModule.m */; };
 		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,7 +96,7 @@
 		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */; };
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
-		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; };
+		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */; };
 		E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */; };
 		E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C604981E80782900A0918D /* CLUTouchTests.m */; };
@@ -205,15 +200,21 @@
 
 /* Begin PBXFileReference section */
 		AF15549A1EB568F1005D1046 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
+		AF2B52611EBF97570026594F /* ViewStructureModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStructureModule.swift; sourceTree = "<group>"; };
+		AF2B52631EBF9CC30026594F /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
+		AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModuleTests.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
 		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
 		AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterErrorTests.swift; sourceTree = "<group>"; };
 		AF5314661EB01931005A5146 /* JSONWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriterTests.swift; sourceTree = "<group>"; };
 		AF6756891EB674380057CA08 /* DataWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterTests.swift; sourceTree = "<group>"; };
+		AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoModule.swift; sourceTree = "<group>"; };
+		AF73FF121EC0C45400B8EA4D /* ExceptionInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionInfoModule.swift; sourceTree = "<group>"; };
+		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
+		AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionModule.swift; sourceTree = "<group>"; };
+		AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModule.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
-		E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUDeviceInfoModule.h; sourceTree = "<group>"; };
-		E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUDeviceInfoModule.m; sourceTree = "<group>"; };
 		E20F23461D31947200654690 /* CLUReportFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUReportFileManager.h; sourceTree = "<group>"; };
 		E20F23471D31947200654690 /* CLUReportFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUReportFileManager.m; sourceTree = "<group>"; };
 		E21563981D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+CLUExceptionAdditions.h"; sourceTree = "<group>"; };
@@ -229,8 +230,6 @@
 		E232BA8D1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
 		E232BA901CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CLUViewRecordableAdditions.h"; sourceTree = "<group>"; };
 		E232BA911CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CLUViewRecordableAdditions.m"; sourceTree = "<group>"; };
-		E23891351D1BC90600D688CD /* CLUNetworkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUNetworkModule.h; sourceTree = "<group>"; };
-		E23891361D1BC90600D688CD /* CLUNetworkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUNetworkModule.m; sourceTree = "<group>"; };
 		E23891391D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
 		E238913A1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+CLUNetworkAdditions.m"; sourceTree = "<group>"; };
 		E238913D1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+CLUNetworkAdditions.h"; sourceTree = "<group>"; };
@@ -244,7 +243,6 @@
 		E241F4661E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUErrorNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F4681E7B3D990075EF2C /* CLUCommunicationNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUCommunicationNetworkAdditions.m; sourceTree = "<group>"; };
 		E241F46A1E7BDE000075EF2C /* CLUExceptionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUExceptionAdditions.m; sourceTree = "<group>"; };
-		E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModuleTests.m; sourceTree = "<group>"; };
 		E24AEDF91D06DA18001F31FF /* CLUInteractionObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInteractionObserverDelegate.h; sourceTree = "<group>"; };
 		E24AEDFC1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUGeneralGestureRecognizer.h; sourceTree = "<group>"; };
 		E24AEDFD1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUGeneralGestureRecognizer.m; sourceTree = "<group>"; };
@@ -272,10 +270,6 @@
 		E272DDAF1CD522F000F1FECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E272DDB21CD522F000F1FECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E272DDB41CD522F000F1FECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E278B7DB1D03505F0083E951 /* CLUObserveModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUObserveModule.h; sourceTree = "<group>"; };
-		E278B7DC1D03505F0083E951 /* CLUObserveModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUObserveModule.m; sourceTree = "<group>"; };
-		E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUUserInteractionModule.h; sourceTree = "<group>"; };
-		E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUUserInteractionModule.m; sourceTree = "<group>"; };
 		E28258BE1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLULabelRecordableAdditions.m; sourceTree = "<group>"; };
 		E28258C01E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUImageViewRecordableAdditions.m; sourceTree = "<group>"; };
 		E286100E1CEFB9C300FA9BAF /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
@@ -289,12 +283,8 @@
 		E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUURLProtocol.h; sourceTree = "<group>"; };
 		E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUURLProtocol.m; sourceTree = "<group>"; };
 		E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUNetworkObserverDelegate.h; sourceTree = "<group>"; };
-		E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUExceptionInfoModule.h; sourceTree = "<group>"; };
-		E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUExceptionInfoModule.m; sourceTree = "<group>"; };
 		E29233D31D358B6300DA88C2 /* CLUMailHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUMailHelper.h; sourceTree = "<group>"; };
 		E29233D41D358B6300DA88C2 /* CLUMailHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUMailHelper.m; sourceTree = "<group>"; };
-		E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUViewStructureModule.h; sourceTree = "<group>"; };
-		E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUViewStructureModule.m; sourceTree = "<group>"; };
 		E2A30C861CED01CB00A48C61 /* CLURecordableModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLURecordableModule.h; sourceTree = "<group>"; };
 		E2A30C881CED03F700A48C61 /* CLUVideoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUVideoModule.h; sourceTree = "<group>"; };
 		E2A30C891CED03F700A48C61 /* CLUVideoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUVideoModule.m; sourceTree = "<group>"; };
@@ -430,7 +420,7 @@
 		E241F46C1E7BE0EC0075EF2C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E241F46D1E7BE12D0075EF2C /* CLUObserveModuleTests.m */,
+				AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -487,6 +477,7 @@
 				E21563991D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m */,
 				E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */,
 				E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */,
+				AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -656,18 +647,12 @@
 			children = (
 				E2A30C881CED03F700A48C61 /* CLUVideoModule.h */,
 				E2A30C891CED03F700A48C61 /* CLUVideoModule.m */,
-				E29CE2A71CF7994C00C27384 /* CLUViewStructureModule.h */,
-				E29CE2A81CF7994C00C27384 /* CLUViewStructureModule.m */,
-				E278B7DB1D03505F0083E951 /* CLUObserveModule.h */,
-				E278B7DC1D03505F0083E951 /* CLUObserveModule.m */,
-				E278B7E31D036B5E0083E951 /* CLUUserInteractionModule.h */,
-				E278B7E41D036B5E0083E951 /* CLUUserInteractionModule.m */,
-				E23891351D1BC90600D688CD /* CLUNetworkModule.h */,
-				E23891361D1BC90600D688CD /* CLUNetworkModule.m */,
-				E20F23411D30FAB100654690 /* CLUDeviceInfoModule.h */,
-				E20F23421D30FAB100654690 /* CLUDeviceInfoModule.m */,
-				E29233CF1D357DCA00DA88C2 /* CLUExceptionInfoModule.h */,
-				E29233D01D357DCA00DA88C2 /* CLUExceptionInfoModule.m */,
+				AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */,
+				AF73FF121EC0C45400B8EA4D /* ExceptionInfoModule.swift */,
+				AF2B52631EBF9CC30026594F /* NetworkModule.swift */,
+				AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */,
+				AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */,
+				AF2B52611EBF97570026594F /* ViewStructureModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -816,59 +801,53 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
+				E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */,
+				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
+				E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */,
+				E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */,
+				AFBD5DB21EC0947300858442 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */,
+				E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */,
 				E238913F1D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.h in Headers */,
+				E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */,
+				E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */,
+				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
+				E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */,
+				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
+				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
+				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
+				E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */,
 				E232BA921CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.h in Headers */,
 				E2CDA69F1D3905D60079F784 /* entropy.h in Headers */,
 				E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */,
-				E278B7E51D036B5E0083E951 /* CLUUserInteractionModule.h in Headers */,
-				E23891431D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.h in Headers */,
 				E2CDA6B01D3905D60079F784 /* mztools.h in Headers */,
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
-				E23891471D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.h in Headers */,
-				E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */,
 				E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */,
-				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
-				E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */,
-				E23891371D1BC90600D688CD /* CLUNetworkModule.h in Headers */,
 				E2CDA6A51D3905D60079F784 /* prng.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
 				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */,
-				E24AEDFA1D06DA18001F31FF /* CLUInteractionObserverDelegate.h in Headers */,
 				E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */,
 				E2CDA6A71D3905D60079F784 /* pwd2key.h in Headers */,
 				E2CDA6A91D3905D60079F784 /* sha1.h in Headers */,
-				E232BA8A1CF8214D00F5DB52 /* CLUViewRecordableProperties.h in Headers */,
-				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
-				E24E6CCD1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */,
 				E2CDA6AE1D3905D60079F784 /* ioapi.h in Headers */,
 				E2CDA6B41D3905D60079F784 /* zip.h in Headers */,
 				E258F3FF1CE3D037001E9F92 /* CLUOptions.h in Headers */,
 				E21840D41CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.h in Headers */,
-				E29CE2A91CF7994C00C27384 /* CLUViewStructureModule.h in Headers */,
-				E20F23431D30FAB100654690 /* CLUDeviceInfoModule.h in Headers */,
 				E2CDA6AA1D3905D60079F784 /* Common.h in Headers */,
-				E2A30C871CED01CB00A48C61 /* CLURecordableModule.h in Headers */,
-				E20F23401D30F94700654690 /* CLUInfoModule.h in Headers */,
-				E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */,
-				E278B7DD1D03505F0083E951 /* CLUObserveModule.h in Headers */,
 				E2CDA6B51D3905D60079F784 /* SSZipArchive.h in Headers */,
 				E2CDA6951D3905D60079F784 /* aes.h in Headers */,
 				E28CC08D1CEE214B00C9DFD9 /* CLUReportComposer.h in Headers */,
 				E2CDA69B1D3905D60079F784 /* aestab.h in Headers */,
 				E2CDA69C1D3905D60079F784 /* brg_endian.h in Headers */,
-				E232BA8E1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.h in Headers */,
 				E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */,
 				E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */,
 				E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */,
 				E2CDA6A31D3905D60079F784 /* hmac.h in Headers */,
-				E24AEDFE1D06DD28001F31FF /* CLUGeneralGestureRecognizer.h in Headers */,
 				E2CDA6961D3905D60079F784 /* aes_via_ace.h in Headers */,
 				E2CDA6991D3905D60079F784 /* aesopt.h in Headers */,
 				E2CDA69D1D3905D60079F784 /* brg_types.h in Headers */,
 				E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */,
-				E238913B1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.h in Headers */,
-				E29233D11D357DCA00DA88C2 /* CLUExceptionInfoModule.h in Headers */,
 				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
 				E2CDA6AC1D3905D60079F784 /* crypt.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
@@ -1051,26 +1030,25 @@
 			files = (
 				E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */,
 				E2CDA6971D3905D60079F784 /* aescrypt.c in Sources */,
-				E29233D21D357DCA00DA88C2 /* CLUExceptionInfoModule.m in Sources */,
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
 				E215639B1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.m in Sources */,
 				E2CDA6A41D3905D60079F784 /* prng.c in Sources */,
 				AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */,
 				E2CDA6B11D3905D60079F784 /* unzip.c in Sources */,
 				E23891481D1BDF9300D688CD /* NSURLRequest+CLUNetworkAdditions.m in Sources */,
-				E278B7DE1D03505F0083E951 /* CLUObserveModule.m in Sources */,
 				E2CDA6A81D3905D60079F784 /* sha1.c in Sources */,
+				AFBD5DB41EC09C0D00858442 /* UserInteractionModule.swift in Sources */,
 				AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */,
 				E232BA931CF830DC00F5DB52 /* UILabel+CLUViewRecordableAdditions.m in Sources */,
+				AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */,
 				AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */,
-				E29CE2AA1CF7994C00C27384 /* CLUViewStructureModule.m in Sources */,
 				E2CDA6981D3905D60079F784 /* aeskey.c in Sources */,
 				E2CDA6B31D3905D60079F784 /* zip.c in Sources */,
-				E23891381D1BC90600D688CD /* CLUNetworkModule.m in Sources */,
+				AFD9F7121EBEC79E001EE2A7 /* ObserveModule.swift in Sources */,
 				E2CDA69E1D3905D60079F784 /* entropy.c in Sources */,
 				E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */,
+				AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */,
 				E23891441D1BDE0300D688CD /* NSHTTPURLResponse+CLUNetworkAdditions.m in Sources */,
-				E278B7E61D036B5E0083E951 /* CLUUserInteractionModule.m in Sources */,
 				E24E6CCE1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m in Sources */,
 				E2CDA6A61D3905D60079F784 /* pwd2key.c in Sources */,
 				E20F23491D31947300654690 /* CLUReportFileManager.m in Sources */,
@@ -1079,6 +1057,7 @@
 				E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */,
 				E2CDA69A1D3905D60079F784 /* aestab.c in Sources */,
 				E2CDA6B61D3905D60079F784 /* SSZipArchive.m in Sources */,
+				AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */,
 				E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */,
 				E2CDA6A01D3905D60079F784 /* fileenc.c in Sources */,
 				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
@@ -1086,15 +1065,16 @@
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */,
 				AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */,
+				AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
 				E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */,
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
 				E22F60F01D265DBE0062D6B8 /* CLUTouch.m in Sources */,
 				E258F4001CE3D037001E9F92 /* CLUOptions.m in Sources */,
-				E20F23441D30FAB100654690 /* CLUDeviceInfoModule.m in Sources */,
 				E24AEE031D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.m in Sources */,
 				E2CDA6A21D3905D60079F784 /* hmac.c in Sources */,
+				AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */,
 				E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */,
 				E2CDA6AF1D3905D60079F784 /* mztools.c in Sources */,
 			);
@@ -1110,6 +1090,7 @@
 				E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */,
 				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
 				E241F4631E7B333A0075EF2C /* CLUTextFieldViewRecordableAdditions.m in Sources */,
+				AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */,
 				E28258BF1E7ABCDF000DAAB4 /* CLULabelRecordableAdditions.m in Sources */,
 				E24E6CD01EAA13C100A2F0C1 /* CLUNSMutableDictionaryUtilsAdditionsTests.m in Sources */,
 				E241F4691E7B3D9A0075EF2C /* CLUCommunicationNetworkAdditions.m in Sources */,
@@ -1117,7 +1098,6 @@
 				AF5314671EB01931005A5146 /* DataWriterErrorTests.swift in Sources */,
 				E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
-				E241F46E1E7BE12D0075EF2C /* CLUObserveModuleTests.m in Sources */,
 				AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */,
 				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */,

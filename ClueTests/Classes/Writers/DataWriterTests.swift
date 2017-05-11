@@ -44,9 +44,9 @@ class DataWriterTests: XCTestCase {
             XCTFail("Invalid data")
             return
         }
-        let bytesCount = writer.append(data: contentData)
+        let result = writer.append(data: contentData)
         let expectedBytesCount = content.characters.count
-        XCTAssertEqual(bytesCount, expectedBytesCount)
+        XCTAssertEqual(result.value, expectedBytesCount)
         XCTAssertNil(writer.error)
     }
 
@@ -60,8 +60,8 @@ class DataWriterTests: XCTestCase {
             XCTFail("Invalid data")
             return
         }
-        let bytesCount = writer.append(data: contentData)
-        XCTAssertEqual(bytesCount, 0)
+        let result = writer.append(data: contentData)
+        XCTAssertEqual(result.value, 0)
         XCTAssertNil(writer.error)
     }
 }
