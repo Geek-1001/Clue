@@ -20,6 +20,7 @@
 		AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */; };
 		AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF121EC0C45400B8EA4D /* ExceptionInfoModule.swift */; };
 		AF73FF151EC0F28100B8EA4D /* Dictionary+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */; };
+		AF7879DF1EC516E500938263 /* UIDevice+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7879DE1EC516E500938263 /* UIDevice+Util.swift */; };
 		AF79EA561EAFCD42002231B9 /* Clue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; };
 		AF79EA571EAFCD42002231B9 /* Clue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E272DD821CD5223300F1FECA /* Clue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFBD5DB21EC0947300858442 /* NSMutableDictionary+CLUUtilsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,6 +213,7 @@
 		AF73FF101EC0C05F00B8EA4D /* DeviceInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoModule.swift; sourceTree = "<group>"; };
 		AF73FF121EC0C45400B8EA4D /* ExceptionInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionInfoModule.swift; sourceTree = "<group>"; };
 		AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Util.swift"; sourceTree = "<group>"; };
+		AF7879DE1EC516E500938263 /* UIDevice+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Util.swift"; sourceTree = "<group>"; };
 		AFBD5DB31EC09C0D00858442 /* UserInteractionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionModule.swift; sourceTree = "<group>"; };
 		AFD9F7111EBEC79E001EE2A7 /* ObserveModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModule.swift; sourceTree = "<group>"; };
 		E20F233F1D30F94700654690 /* CLUInfoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUInfoModule.h; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				E24E6CCB1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.h */,
 				E24E6CCC1EAA11C100A2F0C1 /* NSMutableDictionary+CLUUtilsAdditions.m */,
 				AF73FF141EC0F28100B8EA4D /* Dictionary+Util.swift */,
+				AF7879DE1EC516E500938263 /* UIDevice+Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1067,6 +1070,7 @@
 				AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */,
 				AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
+				AF7879DF1EC516E500938263 /* UIDevice+Util.swift in Sources */,
 				E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */,
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
