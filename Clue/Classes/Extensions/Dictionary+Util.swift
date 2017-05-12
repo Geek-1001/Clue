@@ -12,7 +12,7 @@ extension Dictionary {
     /// Returns a new dictionary containing the entries of this instance and another dictionary passed as a parameter.
     ///
     /// - Parameter other: The dictionary to use for the merge operation.
-     
+
     /// - Returns: A new dictionary containing the entries of this instance and another dictionary passed as a parameter.
     func merged(with other: Dictionary) -> Dictionary {
         var returnDictionary = self

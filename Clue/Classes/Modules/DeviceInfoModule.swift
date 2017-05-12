@@ -19,28 +19,9 @@ public class DeviceInfoModule: NSObject, CLUInfoModule {
 
     // MARK: - Public Methods
     public func recordInfoData() {
-        let deviceProperties = getDeviceProperties()
+        let deviceProperties = UIDevice.current.clueProperties()
         writer.startWriting()
         writer.append(json: deviceProperties)
         writer.finishWriting()
-    }
-}
-
-// MARK: - Private Methods
-fileprivate extension DeviceInfoModule {
-    func getDeviceProperties() -> [AnyHashable: Any] {
-        let device = UIDevice.current
-        var deviceProperties: [AnyHashable: Any] = [
-            "name": device.name,
-            "systemName": device.systemName,
-            "systemVersion": device.systemVersion,
-            "model": device.model,
-            "batteryLevel": device.batteryLevel,
-            "batteryState": device.batteryState.rawValue
-        ]
-        if let identifierForVendor = device.identifierForVendor?.uuidString {
-            deviceProperties["identifierForVendor"] = identifierForVendor
-        }
-        return deviceProperties
     }
 }
