@@ -33,3 +33,4 @@ FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 #import "CLUTouch.h"
 #import "CLUInfoModule.h"
 #import "NSException+CLUExceptionAdditions.h"
+#import "CLUReportFileManager.h"

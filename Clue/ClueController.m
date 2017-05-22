@@ -7,7 +7,6 @@
 //
 
 #import "ClueController.h"
-#import "CLUReportComposer.h"
 
 #import "CLUReportFileManager.h"
 #import "CLUMailHelper.h"
@@ -21,7 +20,7 @@
 @property (nonatomic) BOOL isEnabled;
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CLUOptions *options;
-@property (nonatomic) CLUReportComposer *reportComposer;
+@property (nonatomic) ReportComposer *reportComposer;
 @property (nonatomic) CLUMailDelegate *mailDelegate;
 
 @end
@@ -38,7 +37,7 @@
     _isEnabled = NO;
     NSMutableArray *modulesArray = [self configureRecordableModules];
     NSMutableArray *infoModulesArray = [self configureInfoModules];
-    _reportComposer = [[CLUReportComposer alloc] initWithModulesArray:modulesArray];
+    _reportComposer = [[ReportComposer alloc] initWith:modulesArray];
     [_reportComposer setInfoModules:infoModulesArray];
     NSSetUncaughtExceptionHandler(&didReceiveUncaughtException);
     _waitVideoRenderingQueue = dispatch_queue_create("ClueController.waitVideoRenderingQueue", DISPATCH_QUEUE_SERIAL);
