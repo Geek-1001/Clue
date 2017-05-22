@@ -9,7 +9,7 @@
 import Foundation
 
 /// `ObserveModule` is a base class for all modules which needs to observe their data
-/// (except `CLUVideoModule` module) and record them only if new data has arrived
+/// (except `VideoModule` module) and record them only if new data has arrived
 /// (like `NetworkModule` or `UserInteractionModule` modules) or something changed with
 /// the next frame iteration (like `ViewStructureModule` module). This class is responsible
 /// for thread safety of new data writing via Writers and Data Buffer management.

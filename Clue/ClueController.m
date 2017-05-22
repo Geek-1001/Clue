@@ -9,8 +9,6 @@
 #import "ClueController.h"
 #import "CLUReportComposer.h"
 
-#import "CLUVideoWriter.h"
-#import "CLUVideoModule.h"
 #import "CLUReportFileManager.h"
 #import "CLUMailHelper.h"
 #import "CLUMailDelegate.h"
@@ -206,7 +204,7 @@ void didReceiveUncaughtException(NSException *exception) {
 }
 
 - (NSMutableArray *)configureRecordableModules {
-    CLUVideoModule *videoModule = [self configureVideoModule];
+    VideoModule *videoModule = [self configureVideoModule];
     ViewStructureModule *viewStructureModule = [self configureViewStructureModule];
     UserInteractionModule *userInteractionModule = [self configureUserInteractionModule];
     NetworkModule *networkModule = [self configureNetworkModule];
@@ -226,13 +224,13 @@ void didReceiveUncaughtException(NSException *exception) {
 
 #pragma mark - Configure Recoradble modules
 
-- (CLUVideoModule *)configureVideoModule {
+- (VideoModule *)configureVideoModule {
     NSURL *recordableModulesDirectory = [[CLUReportFileManager sharedManager] recordableModulesDirectoryURL];
     CGSize viewSize = [UIApplication sharedApplication].delegate.window.bounds.size;
-    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat viewScale = [UIScreen mainScreen].scale;
     NSURL *outputURL = [recordableModulesDirectory URLByAppendingPathComponent:@"module_video.mp4"];
-    CLUVideoWriter *videoWriter = [[CLUVideoWriter alloc] initWithOutputURL:outputURL viewSize:viewSize scale:scale];
-    CLUVideoModule *videoModule = [[CLUVideoModule alloc] initWithWriter:videoWriter];
+    VideoWriter *videoWriter = [[VideoWriter alloc] initWithOutputURL:outputURL viewSize:viewSize viewScale:viewScale];
+    VideoModule *videoModule = [[VideoModule alloc] initWithWriter:videoWriter];
     return videoModule;
 }
 
