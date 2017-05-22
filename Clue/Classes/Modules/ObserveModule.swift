@@ -18,11 +18,12 @@ public class ObserveModule: NSObject {
     fileprivate let writer: JSONWriter
     fileprivate var bufferArray: [[AnyHashable: Any]]?
     fileprivate var frameRecordingSemaphore: DispatchSemaphore?
+
     var recordQueue: DispatchQueue?
 
     // MARK: - Public Properties
     /// Indicates whether video recording has started or not
-    public var isRecording: Bool = false
+    fileprivate(set) public var isRecording: Bool = false
     /// Current available timestamp. This property updating constantly with
     /// `addNewFrameWithTimestamp:` from `CLURecordableModule` protocol
     var currentTimestamp: TimeInterval = 0.0
@@ -32,7 +33,7 @@ public class ObserveModule: NSObject {
         self.writer = writer as! JSONWriter
         bufferArray = [[AnyHashable: Any]]()
         currentTimestamp = 0
-        recordQueue = DispatchQueue(label: "ObserveModule.record_queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: DispatchQueue.global())
+        recordQueue = DispatchQueue(label: "ObserveModule.recordQueue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: DispatchQueue.global())
         frameRecordingSemaphore = DispatchSemaphore(value: 1)
     }
 
