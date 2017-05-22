@@ -10,6 +10,7 @@
 		AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15549A1EB568F1005D1046 /* DataWriter.swift */; };
 		AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52611EBF97570026594F /* ViewStructureModule.swift */; };
 		AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52631EBF9CC30026594F /* NetworkModule.swift */; };
+		AF34EE2A1ED347C5005E05FC /* VideoWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34EE291ED347C5005E05FC /* VideoWriterTests.swift */; };
 		AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */; };
 		AF4B1EB11ED301160024AB1C /* VideoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B1EB01ED301160024AB1C /* VideoWriter.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
@@ -98,7 +99,6 @@
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
 		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */; };
-		E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */; };
 		E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C604981E80782900A0918D /* CLUTouchTests.m */; };
 		E2CDA6121D3903110079F784 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CDA6111D3903110079F784 /* libz.tbd */; };
 		E2CDA6951D3905D60079F784 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = E2CDA6711D3905D60079F784 /* aes.h */; };
@@ -202,6 +202,7 @@
 		AF15549A1EB568F1005D1046 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		AF2B52611EBF97570026594F /* ViewStructureModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStructureModule.swift; sourceTree = "<group>"; };
 		AF2B52631EBF9CC30026594F /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
+		AF34EE291ED347C5005E05FC /* VideoWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWriterTests.swift; sourceTree = "<group>"; };
 		AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModuleTests.swift; sourceTree = "<group>"; };
 		AF4B1EB01ED301160024AB1C /* VideoWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWriter.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
@@ -295,7 +296,6 @@
 		E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLURecordIndicatorView.m; sourceTree = "<group>"; };
 		E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLURecordIndicatorViewManager.h; sourceTree = "<group>"; };
 		E2ABF64A1D425108006646B3 /* CLURecordIndicatorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLURecordIndicatorViewManager.m; sourceTree = "<group>"; };
-		E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUVideoWriterTests.m; sourceTree = "<group>"; };
 		E2C604981E80782900A0918D /* CLUTouchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUTouchTests.m; sourceTree = "<group>"; };
 		E2CDA6111D3903110079F784 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E2CDA6711D3905D60079F784 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
@@ -697,10 +697,10 @@
 		E2AD27941E729ACD0062FE3D /* Writers */ = {
 			isa = PBXGroup;
 			children = (
-				E2AD27951E729B200062FE3D /* CLUVideoWriterTests.m */,
 				AF6756891EB674380057CA08 /* DataWriterTests.swift */,
 				AF5314651EB01931005A5146 /* DataWriterErrorTests.swift */,
 				AF5314661EB01931005A5146 /* JSONWriterTests.swift */,
+				AF34EE291ED347C5005E05FC /* VideoWriterTests.swift */,
 			);
 			path = Writers;
 			sourceTree = "<group>";
@@ -1086,6 +1086,7 @@
 			files = (
 				E2CEADBA1E8FFE8700CEF6AE /* CLUReportFileManagerTests.m in Sources */,
 				E241F46B1E7BDE000075EF2C /* CLUExceptionAdditions.m in Sources */,
+				AF34EE2A1ED347C5005E05FC /* VideoWriterTests.swift in Sources */,
 				AF67568A1EB674380057CA08 /* DataWriterTests.swift in Sources */,
 				E241F4671E7B39DE0075EF2C /* CLUErrorNetworkAdditions.m in Sources */,
 				E24E2D711E74C1AF00804E13 /* CLUUIViewAdditionsTests.m in Sources */,
@@ -1099,7 +1100,6 @@
 				E2C604991E80782900A0918D /* CLUTouchTests.m in Sources */,
 				E24E2D6E1E74899600804E13 /* CLUGeneralGestureRecognizerTests.m in Sources */,
 				AF5314681EB01931005A5146 /* JSONWriterTests.swift in Sources */,
-				E2AD27961E729B200062FE3D /* CLUVideoWriterTests.m in Sources */,
 				E28258C11E7AC3B3000DAAB4 /* CLUImageViewRecordableAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
