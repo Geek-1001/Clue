@@ -11,6 +11,7 @@
 		AF2B52621EBF97570026594F /* ViewStructureModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52611EBF97570026594F /* ViewStructureModule.swift */; };
 		AF2B52641EBF9CC30026594F /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2B52631EBF9CC30026594F /* NetworkModule.swift */; };
 		AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */; };
+		AF4B1EB11ED301160024AB1C /* VideoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B1EB01ED301160024AB1C /* VideoWriter.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
 		AF5314621EB018E8005A5146 /* JSONWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53145F1EB018E8005A5146 /* JSONWriter.swift */; };
 		AF5314631EB018E8005A5146 /* DataWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5314601EB018E8005A5146 /* DataWriterError.swift */; };
@@ -93,8 +94,6 @@
 		E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C881CED03F700A48C61 /* CLUVideoModule.h */; };
 		E2A30C8B1CED03F700A48C61 /* CLUVideoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C891CED03F700A48C61 /* CLUVideoModule.m */; };
 		E2A30C8D1CED08DA00A48C61 /* CLUWritable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */; };
-		E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */; };
 		E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */; };
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
 		E2ABF64B1D425108006646B3 /* CLURecordIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,6 +203,7 @@
 		AF2B52611EBF97570026594F /* ViewStructureModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStructureModule.swift; sourceTree = "<group>"; };
 		AF2B52631EBF9CC30026594F /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
 		AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModuleTests.swift; sourceTree = "<group>"; };
+		AF4B1EB01ED301160024AB1C /* VideoWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWriter.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
 		AF53145F1EB018E8005A5146 /* JSONWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWriter.swift; sourceTree = "<group>"; };
 		AF5314601EB018E8005A5146 /* DataWriterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriterError.swift; sourceTree = "<group>"; };
@@ -291,8 +291,6 @@
 		E2A30C881CED03F700A48C61 /* CLUVideoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUVideoModule.h; sourceTree = "<group>"; };
 		E2A30C891CED03F700A48C61 /* CLUVideoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUVideoModule.m; sourceTree = "<group>"; };
 		E2A30C8C1CED08DA00A48C61 /* CLUWritable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUWritable.h; sourceTree = "<group>"; };
-		E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUVideoWriter.h; sourceTree = "<group>"; };
-		E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUVideoWriter.m; sourceTree = "<group>"; };
 		E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLURecordIndicatorView.h; sourceTree = "<group>"; };
 		E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLURecordIndicatorView.m; sourceTree = "<group>"; };
 		E2ABF6491D425108006646B3 /* CLURecordIndicatorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLURecordIndicatorViewManager.h; sourceTree = "<group>"; };
@@ -676,11 +674,10 @@
 		E2A30C8E1CED0BC700A48C61 /* Writers */ = {
 			isa = PBXGroup;
 			children = (
-				E2A30C8F1CED0BF800A48C61 /* CLUVideoWriter.h */,
-				E2A30C901CED0BF800A48C61 /* CLUVideoWriter.m */,
 				AF53145F1EB018E8005A5146 /* JSONWriter.swift */,
 				AF15549A1EB568F1005D1046 /* DataWriter.swift */,
 				AF5314601EB018E8005A5146 /* DataWriterError.swift */,
+				AF4B1EB01ED301160024AB1C /* VideoWriter.swift */,
 			);
 			path = Writers;
 			sourceTree = "<group>";
@@ -851,7 +848,6 @@
 				E2CDA6991D3905D60079F784 /* aesopt.h in Headers */,
 				E2CDA69D1D3905D60079F784 /* brg_types.h in Headers */,
 				E21840D81CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.h in Headers */,
-				E2A30C911CED0BF800A48C61 /* CLUVideoWriter.h in Headers */,
 				E2CDA6AC1D3905D60079F784 /* crypt.h in Headers */,
 				E2A30C8A1CED03F700A48C61 /* CLUVideoModule.h in Headers */,
 				E2CDA6B21D3905D60079F784 /* unzip.h in Headers */,
@@ -1063,7 +1059,6 @@
 				AF73FF111EC0C05F00B8EA4D /* DeviceInfoModule.swift in Sources */,
 				E238913C1D1BDA8C00D688CD /* NSError+CLUNetworkAdditions.m in Sources */,
 				E2CDA6A01D3905D60079F784 /* fileenc.c in Sources */,
-				E2A30C921CED0BF800A48C61 /* CLUVideoWriter.m in Sources */,
 				E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */,
 				E232BA8F1CF821D400F5DB52 /* UIView+CLUViewRecordableAdditions.m in Sources */,
 				E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */,
@@ -1071,6 +1066,7 @@
 				AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */,
 				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
 				AF7879DF1EC516E500938263 /* UIDevice+Util.swift in Sources */,
+				AF4B1EB11ED301160024AB1C /* VideoWriter.swift in Sources */,
 				E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */,
 				E21840D51CFCD7F80053422C /* UIImageView+CLUViewRecordableAdditions.m in Sources */,
 				E21840D91CFCDA4B0053422C /* UITextField+CLUViewRecordableAdditions.m in Sources */,
