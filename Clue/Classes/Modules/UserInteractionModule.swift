@@ -22,7 +22,7 @@ public class UserInteractionModule: ObserveModule {
     fileprivate var gestureRecognizer = CLUGeneralGestureRecognizer()
 }
 
-// MARK: - UserInteractionModule + CLURecordableModule
+// MARK: - UserInteractionModule + RecordableModule
 extension UserInteractionModule {
     override public func startRecording() {
         if !isRecording {

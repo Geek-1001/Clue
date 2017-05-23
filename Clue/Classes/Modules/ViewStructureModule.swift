@@ -15,8 +15,8 @@ import Foundation
 public class ViewStructureModule: ObserveModule {
     fileprivate var lastRecordedViewStructure: [AnyHashable: Any]? = [:]
 
-    // MARK: - Override CLURecordableModule
-    override public func addNewFrame(withTimestamp timestamp: TimeInterval) {
+    // MARK: - Override RecordableModule
+    override public func addNewFrame(for timestamp: TimeInterval) {
         recordQueue?.sync {
             let currentViewStructure: [AnyHashable: Any]? = {
                 guard let view = CLURecordIndicatorViewManager.currentViewController().view,
@@ -31,7 +31,7 @@ public class ViewStructureModule: ObserveModule {
                 self.lastRecordedViewStructure = currentViewStructure
                 addViewStructureProperties(self.lastRecordedViewStructure, timestamp: timestamp)
             }
-            super.addNewFrame(withTimestamp: timestamp)
+            super.addNewFrame(for: timestamp)
         }
     }
 }

@@ -83,8 +83,8 @@ extension DataWriter: StreamDelegate {
     }
 }
 
-// MARK: - DataWriter + CLUWritable
-extension DataWriter: CLUWritable {
+// MARK: - DataWriter + Writable
+extension DataWriter: Writable {
     public func isReadyForWriting() -> Bool {
         return outputStream.streamStatus == .open
     }

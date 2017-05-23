@@ -25,11 +25,11 @@ public class ObserveModule: NSObject {
     /// Indicates whether video recording has started or not
     fileprivate(set) public var isRecording: Bool = false
     /// Current available timestamp. This property updating constantly with
-    /// `addNewFrameWithTimestamp:` from `CLURecordableModule` protocol
+    /// `addNewFrameWithTimestamp:` from `RecordableModule` protocol
     var currentTimestamp: TimeInterval = 0.0
 
     // MARK: - Lifecycle
-    public required init(writer: CLUWritable) {
+    public required init(writer: Writable) {
         self.writer = writer as! JSONWriter
         bufferArray = [[AnyHashable: Any]]()
         currentTimestamp = 0
@@ -39,7 +39,7 @@ public class ObserveModule: NSObject {
 
     // MARK: - Public Methods
     /// Adds a new entry to buffer, so it could be saved to file via Writer
-    /// on next iteration of `addNewFrameWithTimestamp:` from `CLURecordableModule` protocol.
+    /// on next iteration of `addNewFrameWithTimestamp:` from `RecordableModule` protocol.
     ///
     /// - Parameter bufferItem: The entry which you need to save to buffer.
     public func addData(bufferItem: [AnyHashable: Any]) {
@@ -61,8 +61,8 @@ public class ObserveModule: NSObject {
     }
 }
 
-// MARK: - ObserveModule + CLURecordableModule
-extension ObserveModule: CLURecordableModule {
+// MARK: - ObserveModule + RecordableModule
+extension ObserveModule: RecordableModule {
     public func startRecording() {
         if !isRecording {
             isRecording = true
@@ -84,7 +84,7 @@ extension ObserveModule: CLURecordableModule {
     ///
     /// - Parameter timestamp: `TimeInterval` timestamp of new frame. So module can add
     ///                         new data if available for this timestamp
-    public func addNewFrame(withTimestamp timestamp: TimeInterval) {
+    public func addNewFrame(for timestamp: TimeInterval) {
         currentTimestamp = timestamp
         if frameRecordingSemaphore?.wait(timeout: DispatchTime.now()) != .success {
             return
