@@ -21,7 +21,7 @@
  @param option `CLUOptions` object which contains email property where `CLUMailHelper` will send mail with .clue report. Get this options from first Clue Controller configuration
  @return `CLUMailHelper` instance with configure options
  */
-- (instancetype)initWithOption:(CLUOptions *)option;
+- (instancetype)initWithOptions:(CLUOptions *)options;
 
 /**
  Show mail composer modal view for specific view controller
