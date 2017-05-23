@@ -17,7 +17,7 @@
 
 // Handle shake gesture to start/stop recording
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    [[ClueController sharedInstance] handleShake:motion];
+    [[ClueController shared] handleShake:motion];
 }
 
 - (void)viewDidLoad {

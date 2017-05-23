@@ -16,6 +16,7 @@
 		AF34EE301ED37FEC005E05FC /* InfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34EE2F1ED37FEC005E05FC /* InfoModule.swift */; };
 		AF34EE321ED38264005E05FC /* RecordableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34EE311ED38264005E05FC /* RecordableModule.swift */; };
 		AF34EE341ED38682005E05FC /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34EE331ED38682005E05FC /* Writable.swift */; };
+		AF34EE361ED388C5005E05FC /* ClueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34EE351ED388C5005E05FC /* ClueController.swift */; };
 		AF422CBB1EC2166C0028AA33 /* ObserveModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */; };
 		AF4B1EB11ED301160024AB1C /* VideoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B1EB01ED301160024AB1C /* VideoWriter.swift */; };
 		AF4FB5D41EBACCB500FB9F0B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FB5D31EBACCB500FB9F0B /* Result.swift */; };
@@ -86,12 +87,10 @@
 		E28610131CEFB9C300FA9BAF /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */; };
 		E28610141CEFB9C300FA9BAF /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */; };
 		E28610151CEFB9C300FA9BAF /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28610111CEFB9C300FA9BAF /* Karla-Regular.ttf */; };
-		E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */ = {isa = PBXBuildFile; fileRef = E28CC0931CEE619000C9DFD9 /* ClueController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28CC0941CEE619000C9DFD9 /* ClueController.m */; };
 		E291DEAA1D14A04F009AB23F /* CLUURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E291DEAB1D14A04F009AB23F /* CLUURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */; };
 		E291DEAD1D14A741009AB23F /* CLUNetworkObserverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E29233D31D358B6300DA88C2 /* CLUMailHelper.h */; };
+		E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E29233D31D358B6300DA88C2 /* CLUMailHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E29233D61D358B6300DA88C2 /* CLUMailHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29233D41D358B6300DA88C2 /* CLUMailHelper.m */; };
 		E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2ABF6451D424531006646B3 /* CLURecordIndicatorView.h */; };
 		E2ABF6481D424531006646B3 /* CLURecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ABF6461D424531006646B3 /* CLURecordIndicatorView.m */; };
@@ -144,7 +143,7 @@
 		E2D9A4451E8F0EC20099B0AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4431E8F0EC20099B0AA /* Main.storyboard */; };
 		E2D9A4471E8F0EC20099B0AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4461E8F0EC20099B0AA /* Assets.xcassets */; };
 		E2D9A44A1E8F0EC20099B0AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A4481E8F0EC20099B0AA /* LaunchScreen.storyboard */; };
-		E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */; };
+		E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E2EBC7F51D3AE26D00E52D5D /* CLUMailDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2EBC7F81D3AE26D00E52D5D /* CLUMailDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBC7F61D3AE26D00E52D5D /* CLUMailDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +205,7 @@
 		AF34EE2F1ED37FEC005E05FC /* InfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModule.swift; sourceTree = "<group>"; };
 		AF34EE311ED38264005E05FC /* RecordableModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordableModule.swift; sourceTree = "<group>"; };
 		AF34EE331ED38682005E05FC /* Writable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writable.swift; sourceTree = "<group>"; };
+		AF34EE351ED388C5005E05FC /* ClueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueController.swift; sourceTree = "<group>"; };
 		AF422CBA1EC2166C0028AA33 /* ObserveModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserveModuleTests.swift; sourceTree = "<group>"; };
 		AF4B1EB01ED301160024AB1C /* VideoWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWriter.swift; sourceTree = "<group>"; };
 		AF4FB5D31EBACCB500FB9F0B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utils/Result.swift; sourceTree = "<group>"; };
@@ -281,8 +281,6 @@
 		E286100F1CEFB9C300FA9BAF /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E28610101CEFB9C300FA9BAF /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
 		E28610111CEFB9C300FA9BAF /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
-		E28CC0931CEE619000C9DFD9 /* ClueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClueController.h; path = ../ClueController.h; sourceTree = "<group>"; };
-		E28CC0941CEE619000C9DFD9 /* ClueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClueController.m; path = ../ClueController.m; sourceTree = "<group>"; };
 		E291DEA81D14A04F009AB23F /* CLUURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUURLProtocol.h; sourceTree = "<group>"; };
 		E291DEA91D14A04F009AB23F /* CLUURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUURLProtocol.m; sourceTree = "<group>"; };
 		E291DEAC1D14A741009AB23F /* CLUNetworkObserverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUNetworkObserverDelegate.h; sourceTree = "<group>"; };
@@ -525,8 +523,7 @@
 		E272DD9C1CD5225B00F1FECA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E28CC0931CEE619000C9DFD9 /* ClueController.h */,
-				E28CC0941CEE619000C9DFD9 /* ClueController.m */,
+				AF34EE351ED388C5005E05FC /* ClueController.swift */,
 				E28CC08A1CEE210D00C9DFD9 /* Composers */,
 				E2A30C851CED017F00A48C61 /* Protocols */,
 				E2A30C841CED017200A48C61 /* Modules */,
@@ -795,6 +792,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */,
+				E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */,
 				E20F23481D31947300654690 /* CLUReportFileManager.h in Headers */,
 				E215639A1D25A15A005EDF61 /* NSException+CLUExceptionAdditions.h in Headers */,
 				E22F60EF1D265DBE0062D6B8 /* CLUTouch.h in Headers */,
@@ -814,10 +813,8 @@
 				E2CDA69F1D3905D60079F784 /* entropy.h in Headers */,
 				E2CDA6B01D3905D60079F784 /* mztools.h in Headers */,
 				E272DD861CD5223300F1FECA /* Clue.h in Headers */,
-				E2EBC7F71D3AE26D00E52D5D /* CLUMailDelegate.h in Headers */,
 				E2CDA6A51D3905D60079F784 /* prng.h in Headers */,
 				E24AEE021D06E9DC001F31FF /* UITouch+CLUUserInteractionAdditions.h in Headers */,
-				E28CC0951CEE619000C9DFD9 /* ClueController.h in Headers */,
 				E2CDA6B71D3905D60079F784 /* ZipArchive.h in Headers */,
 				E2CDA6A71D3905D60079F784 /* pwd2key.h in Headers */,
 				E2CDA6A91D3905D60079F784 /* sha1.h in Headers */,
@@ -830,7 +827,6 @@
 				E2CDA6951D3905D60079F784 /* aes.h in Headers */,
 				E2CDA69B1D3905D60079F784 /* aestab.h in Headers */,
 				E2CDA69C1D3905D60079F784 /* brg_endian.h in Headers */,
-				E29233D51D358B6300DA88C2 /* CLUMailHelper.h in Headers */,
 				E2CDA6A11D3905D60079F784 /* fileenc.h in Headers */,
 				E2ABF6471D424531006646B3 /* CLURecordIndicatorView.h in Headers */,
 				E2CDA6A31D3905D60079F784 /* hmac.h in Headers */,
@@ -1016,6 +1012,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF34EE361ED388C5005E05FC /* ClueController.swift in Sources */,
 				E2CDA6971D3905D60079F784 /* aescrypt.c in Sources */,
 				E24AEDFF1D06DD28001F31FF /* CLUGeneralGestureRecognizer.m in Sources */,
 				AF34EE2C1ED354F9005E05FC /* VideoModule.swift in Sources */,
@@ -1055,7 +1052,6 @@
 				E23891401D1BDC3C00D688CD /* NSURLResponse+CLUNetworkAdditions.m in Sources */,
 				AF15549B1EB568F1005D1046 /* DataWriter.swift in Sources */,
 				AF73FF131EC0C45400B8EA4D /* ExceptionInfoModule.swift in Sources */,
-				E28CC0961CEE619000C9DFD9 /* ClueController.m in Sources */,
 				AF7879DF1EC516E500938263 /* UIDevice+Util.swift in Sources */,
 				AF4B1EB11ED301160024AB1C /* VideoWriter.swift in Sources */,
 				E2ABF64C1D425108006646B3 /* CLURecordIndicatorViewManager.m in Sources */,

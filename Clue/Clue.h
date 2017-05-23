@@ -14,9 +14,6 @@ FOUNDATION_EXPORT double ClueVersionNumber;
 //! Project version string for Clue.
 FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 
-#import <Clue/ClueController.h>
-#import <Clue/CLUOptions.h>
-
 #import "CLURecordIndicatorViewManager.h"
 #import "UIView+CLUViewRecordableAdditions.h"
 #import "CLUNetworkObserverDelegate.h"
@@ -31,3 +28,6 @@ FOUNDATION_EXPORT const unsigned char ClueVersionString[];
 #import "CLUTouch.h"
 #import "NSException+CLUExceptionAdditions.h"
 #import "CLUReportFileManager.h"
+#import "CLUOptions.h"
+#import "CLUMailDelegate.h"
+#import "CLUMailHelper.h"

@@ -48,7 +48,7 @@ public class ReportComposer: NSObject {
     /// Needs to be set up before startic the actual recording.
     ///
     /// - Parameter infoModules: The info modules array which will record the required data
-    public func setInfoModules(_ infoModules: [InfoModule]) {
+    public func setInfoModules(_ infoModules: [InfoModule]?) {
         if !isRecording {
             self.infoModules = infoModules
         }
