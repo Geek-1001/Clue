@@ -26,6 +26,8 @@
         case MFMailComposeResultFailed:
             break;
     }
+
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
