@@ -10,7 +10,7 @@ import XCTest
 @testable import Clue
 
 class JSONWriterTests: XCTestCase {
-    fileprivate lazy var testOutputURL: URL = {
+    fileprivate lazy var outputURL: URL = {
         return URL(fileURLWithPath: "test-file")
     }()
     fileprivate lazy var fileManager: FileManager = {
@@ -20,16 +20,16 @@ class JSONWriterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        writer = JSONWriter(outputURL: testOutputURL)
+        writer = JSONWriter(outputURL: outputURL)
         writer?.startWriting()
     }
 
     override func tearDown() {
         writer?.finishWriting()
         do {
-            try fileManager.removeItem(at: testOutputURL)
+            try fileManager.removeItem(at: outputURL)
         } catch {
-            XCTFail("Error removing test file: \(testOutputURL)")
+            XCTFail("Error removing test file: \(outputURL)")
         }
         super.tearDown()
     }
