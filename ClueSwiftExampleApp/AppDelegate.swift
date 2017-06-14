@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
         
         // Enable Clue
-        ClueController.sharedInstance().enable(with: CLUOptions(email: "ahmed.sulajman@gmail.com"))
+        ClueController.shared.enable(with: CLUOptions(email: "ahmed.sulajman@gmail.com"))
         
         return true
     }

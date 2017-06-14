@@ -2,7 +2,7 @@
 //  VideoModule.swift
 //  Clue
 //
-//  Created by Prearo, Andrea on 5/22/17.
+//  Created by Andrea Prearo on 5/22/17.
 //  Copyright © 2017 Ahmed Sulaiman. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 /**
- `VideoModule` is a class (module) for screen recording which implements `CLURecordableModule` protocol.
+ `VideoModule` is a class (module) for screen recording which implements `RecordableModule` protocol.
  It's responsible for thread safety while video recording, operations with `CVPixelBuffer` and 
  current view hierarchy drawing (see `UIView` `drawViewHierarchyInRect:afterScreenUpdates:`) and frames overlapping while recording.
  */
@@ -24,7 +24,7 @@ public class VideoModule: NSObject {
 
     fileprivate(set) public var isRecording = false
 
-    public required init(writer: CLUWritable) {
+    public required init(writer: Writable) {
         self.writer = writer as! VideoWriter
         isRecording = false
 
@@ -35,8 +35,8 @@ public class VideoModule: NSObject {
     }
 }
 
-// MARK: - VideoModule + CLURecordableModule
-extension VideoModule: CLURecordableModule {
+// MARK: - VideoModule + RecordableModule
+extension VideoModule: RecordableModule {
     public func startRecording() {
         if !isRecording {
             writer.startWriting()
@@ -51,7 +51,7 @@ extension VideoModule: CLURecordableModule {
         }
     }
 
-    public func addNewFrame(withTimestamp timestamp: CFTimeInterval) {
+    public func addNewFrame(for timestamp: TimeInterval) {
         // Throttle the number of frames to prevent meltdown.
         // Technique gleaned from Brad Larson's answer here: http://stackoverflow.com/a/5956119
         if frameRenderingSemaphore?.wait(timeout: DispatchTime.now()) != .success {

@@ -62,7 +62,12 @@ public class VideoWriter: DataWriter {
         }
         CVPixelBufferLockBaseAddress(buffer, [])
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
-        let bitmapContext = CGContext(data: CVPixelBufferGetBaseAddress(buffer), width: CVPixelBufferGetWidth(buffer), height: CVPixelBufferGetHeight(buffer), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(buffer), space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        let bitmapContext = CGContext(data: CVPixelBufferGetBaseAddress(buffer),
+                                      width: CVPixelBufferGetWidth(buffer),
+                                      height: CVPixelBufferGetHeight(buffer),
+                                      bitsPerComponent: 8,
+                                      bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
+                                      space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
         guard let context = bitmapContext else {
             assertionFailure("Failed to create the bitmap context")
             return (nil, bitmapContext)
@@ -100,7 +105,7 @@ public class VideoWriter: DataWriter {
     }
 }
 
-// MARK: - VideoWriter + CLUWritable
+// MARK: - VideoWriter + Writable
 public extension VideoWriter {
     override func isReadyForWriting() -> Bool {
         return videoWriterInput?.isReadyForMoreMediaData ?? false
@@ -150,7 +155,8 @@ fileprivate extension VideoWriter {
             AVVideoHeightKey: viewSize.height * viewScale,
             AVVideoCompressionPropertiesKey: videoCompression
         ]
-        videoWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
+        videoWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo,
+                                              outputSettings: videoSettings)
         guard let videoWriterInput = videoWriterInput else {
             assertionFailure("Failed to create the asset writer input")
             return
@@ -164,7 +170,9 @@ fileprivate extension VideoWriter {
             assertionFailure("Asset writer input not initialized")
             return
         }
-        videoWriterAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoWriterInput, sourcePixelBufferAttributes: nil)
+        videoWriterAdaptor =
+            AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoWriterInput,
+                                                 sourcePixelBufferAttributes: nil)
         guard let _ = videoWriterAdaptor else {
             assertionFailure("Failed to create the asset writer adaptor")
             return

@@ -17,16 +17,16 @@
 
 @implementation CLUMailHelper
 
-- (instancetype)initWithOption:(CLUOptions *)option {
+- (instancetype)initWithOptions:(CLUOptions *)options {
     self = [super init];
-    if (!self || !option) {
+    if (!self || !options) {
         return nil;
     }
     _mailComposeViewController = [[MFMailComposeViewController alloc] init];
     NSString *currentReportSubject = [self currentReportSubject];
     [_mailComposeViewController setSubject:currentReportSubject];
-    if (option.email) {
-        [_mailComposeViewController setToRecipients:@[option.email]];
+    if (options.email) {
+        [_mailComposeViewController setToRecipients:@[options.email]];
     }
     BOOL isZipFileCreatedSuccessfully = [[CLUReportFileManager sharedManager] createZipReportFile];
     if (isZipFileCreatedSuccessfully) {

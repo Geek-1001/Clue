@@ -9,11 +9,11 @@
 import Foundation
 
 /// `DeviceInfoModule` is a info module (with static, one-time informations) for current devices' information recording on start.
-public class DeviceInfoModule: NSObject, CLUInfoModule {
+public class DeviceInfoModule: NSObject, InfoModule {
     fileprivate let writer: JSONWriter
 
     // MARK: - Lifecycle
-    public required init(writer: CLUWritable) {
+    public required init(writer: Writable) {
         self.writer = writer as! JSONWriter
     }
 

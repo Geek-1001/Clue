@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[ClueController sharedInstance] enableWithOptions:[CLUOptions optionsWithEmail:@"ahmed.sulajman@gmail.com"]];
+    [[ClueController shared] enableWith:[CLUOptions optionsWithEmail:@"ahmed.sulajman@gmail.com"]];
     return YES;
 }
 

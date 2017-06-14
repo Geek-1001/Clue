@@ -15,7 +15,7 @@ import Foundation
 /// `NetworkModule` can add this data to buffer with specific timestamp.
 public class NetworkModule: ObserveModule {}
 
-// MARK: - NetworkModule + CLURecordableModule
+// MARK: - NetworkModule + RecordableModule
 extension NetworkModule {
     override public func startRecording() {
         if !isRecording {

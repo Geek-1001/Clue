@@ -10,16 +10,18 @@ import Foundation
 
 /// `ExceptionInfoModule` is a info module (with static, one-time informations) for 
 /// unexpected exception recording if occurred.
-public class ExceptionInfoModule: NSObject, CLUInfoModule {
+public class ExceptionInfoModule: NSObject, InfoModule {
+    var exception: NSException?
+
+    // MARK: - Private Properties
     fileprivate let writer: JSONWriter
-    fileprivate var exception: NSException?
 
     // MARK: - Lifecycle
-    public required init(writer: CLUWritable) {
+    public required init(writer: Writable) {
         self.writer = writer as! JSONWriter
     }
 
-    public convenience init(writer: CLUWritable, exception: NSException) {
+    public convenience init(writer: Writable, exception: NSException) {
         self.init(writer: writer)
         self.exception = exception
     }

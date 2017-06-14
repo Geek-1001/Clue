@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController {
     
     // Handle shake gesture to start/stop recording
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        ClueController.sharedInstance().handleShake(motion);
+        ClueController.shared.handleShake(motion);
     }
 
     override func viewDidLoad() {
